@@ -99,3 +99,45 @@ W
     --bs-btn-disabled-bg: #004E98;
     --bs-btn-disabled-border-color: #004E98;
 }
+
+body { 
+    margin: 0;
+    padding: 0; 
+}
+
+#map {
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+     /* Ensures it stays above the map */
+    z-index: 2;
+    width: 20%; /* Adjust width */
+    max-height: 90vh; /* Prevent it from getting too tall */
+    overflow: visible; /* Allow scrolling if content overflows */
+} 
+
+/* Styling for the monitored locations panel */
+.sub-overlay {
+    max-width: 100%; /* Ensures it doesn’t exceed the overlay width */
+}
+
+/* Ensure search box is above other elements */
+.mapboxgl-ctrl {
+    position: relative;  /* Needed for absolute positioning of results */
+    z-index: 1100;  /* Higher than other elements */
+}
+
+.location-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
