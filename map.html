@@ -83,9 +83,6 @@
     // TO MAKE THE MAP APPEAR YOU MUST
 	// ADD YOUR ACCESS TOsKEN FROM
 	// https://account.mapbox.com
-
-    
-
     
     const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY204YjBqNGVhMWEwYzJuczc5dmcyOWM0biJ9.Fsdka6-GWmAFXeLPsg9_dg';
 	mapboxgl.accessToken = ACCESS_TOKEN;
@@ -213,32 +210,7 @@
                 "government": "assets/icons/Government.svg"
             };
             iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
-            
-
-            //  // Create a popup
-            // let popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false })
-            //     .setHTML(`<strong>${name}</strong><br>${distance} km away`);
-
-
-            // Create a DOM element for each marker.
-            const el = document.createElement('div');
-            el.className = 'marker';
-            el.style.backgroundImage = iconPath;
-            el.style.width = `50px`;
-            el.style.height = `50px`;
-            el.style.backgroundSize = '100%';
-
-
-            // Add markers to the map.
-            let marker = new mapboxgl.Marker(el)
-                .setLngLat(coordinates)
-                .addTo(map);
                 
-            // // Create a marker
-            // let marker = new mapboxgl.Marker({ color: "orange" })
-            //     .setLngLat(coordinates)
-            //     .addTo(map);
-
             // Show popup on hover
             marker.getElement().addEventListener('mouseenter', () => {
                 popup.setLngLat(coordinates).addTo(map);
@@ -266,19 +238,8 @@
 
             // Append the card to the facility list
             facilityList.appendChild(card);
-            // let listItem = document.createElement("li");
-            // listItem.innerHTML = `<strong>${name}</strong><br>${distance} km away`;
-
-            // facilityList.appendChild(listItem);
         });
     }
-    // const map = new mapboxgl.Map({
-    //     container: 'map', // container ID
-    //     style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l/draft', // style URL
-    //     center: [123.160705, 13.623460], // starting position [lng, lat]. Note that lat must be set between -90 and 90
-    //     zoom: 15.5, // starting zoom
-    //     pitch: 45
-    // });
 
     
 
