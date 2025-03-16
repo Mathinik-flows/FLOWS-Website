@@ -32,7 +32,8 @@
         </div>
     </nav>
 
-    
+       
+    <!--Map-->    
     <section id="map">
         <div id="map"></div>
         <div class="overlay">
@@ -61,7 +62,7 @@
                     <div class="card-body">
                         <h5 class="fw-bold text-white ">Nearby Critical Facilities</h5>
                         <p class="card-subtitle text-white lh-sm fs-6">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
-                        <div class="card mt-2 text-dark rounded-5 p-2">
+                        <ul id="facility-list"></ul>
                         </div>
                     </div>
                 </div>
@@ -71,10 +72,7 @@
     </section>
             
 
-    
-    <!--Map-->
-    
-    
+ 
     
     
     <!-- Scripts -->
@@ -86,30 +84,12 @@
     
 
     
-    const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY203ZTI3YWc0MDhodDJqcXd5dWYxZXNtbCJ9.HS6i_BziOIc6OV5Qv4vTnw';
+    const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY204YjBqNGVhMWEwYzJuczc5dmcyOWM0biJ9.Fsdka6-GWmAFXeLPsg9_dg';
 	mapboxgl.accessToken = ACCESS_TOKEN;
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, { enableHighAccuracy: true });
     const datasetId = 'cm89a2b3m4ab51mpd8gm1v4u9'; // Replace with your actual dataset ID
     const accessToken = ACCESS_TOKEN; // Replace with your access token
-
-    function fetchJSON(url) {
-        return fetch(url)
-            .then(function(response) {
-            return response.json();
-            });
-    }
-    var data = fetchJSON('dataset.geojson')
-            .then(function(data) { 
-
-        // do what you want to do with `data` here...
-        data.features.forEach(function(feature) {
-                console.log(feature);
-                var symbol = feature.properties['icon'];
-                console.log(symbol);
-            });
-
-    });
-
+    
 
     function successLocation(position) {
         console.log(position);
@@ -136,90 +116,114 @@
             trackUserLocation: true
         }), 'top-right');
 
-        
+        fetch('dataset.geojson') // Load the downloaded GeoJSON file
+        .then(response => response.json())
+        .then(geojsonData => {
+            console.log("Loaded GeoJSON Data:", geojsonData);
 
-        const customData = {
-            'features': [
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'title': 'Camaligan Fire Station'
-                    },
-                    'geometry': {
-                        'coordinates': [123.1672308, 13.6246216],
-                        'type': 'Point'
-                    },
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'title': 'Dugcal Barangay Health Station'
-                    },
-                    'geometry': {
-                        'coordinates': [123.161025, 13.625026],
-                        'type': 'Point'
-                    },
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'title': 'Camaligan Municipal Health Office'
-                    },
-                    'geometry': {
-                        'coordinates': [123.168717, 13.619472],
-                        'type': 'Point'
-                    },
-                },
-                {
-                    'type': 'Feature',
-                    'properties': {
-                        'title': 'Marupit Barangay Health Station'
-                    },
-                    'geometry': {
-                        'coordinates': [123.166548, 13.627749],
-                        'type': 'Point'
-                    },
-                },
-                
-            ]
-        };
-
-        function forwardGeocoder(query) {
-            const matchingFeatures = [];
-            for (const feature of data.features) {
-                // Handle queries with different capitalization
-                // than the source data by calling toLowerCase().
-                if (
-                    feature.properties.title
-                        .toLowerCase()
-                        .includes(query.toLowerCase())
-                ) {
-                    // Add a tree emoji as a prefix for custom
-                    // data results using carmen geojson format:
-                    // https://github.com/mapbox/carmen/blob/master/carmen-geojson.md
-                    feature['place_name'] = `🌲 ${feature.properties.title}`;
-                    feature['center'] = feature.geometry.coordinates;
-                    feature['place_type'] = ['park'];
-                    matchingFeatures.push(feature);
-                }
+                        // Check if data is in expected format
+            if (!geojsonData.features) {
+                console.error("GeoJSON format is incorrect. No 'features' property found.");
+                return;
             }
-            return matchingFeatures;
-        }
-        
-        const geocoder = new MapboxGeocoder({
-            accessToken: mapboxgl.accessToken,
-            localGeocoder: forwardGeocoder,
-            zoom: 17,
-            mapboxgl: mapboxgl,
-            placeholder: 'Search for a location',
-            container: document.getElementById('search-container') // Replace with your div ID
-        });
 
-        document.getElementById('search-container').appendChild(geocoder.onAdd(map));
+            // Example: Log the first feature to verify structure
+            if (geojsonData.features.length > 0) {
+                console.log("First Feature:", geojsonData.features[0]);
+            }
+
+            // Define localGeocoder function for searching within the dataset
+            function localGeocoder(query) {
+                console.log("Geocoder Search Query:", query); // Debug search query
+
+                const results = geojsonData.features
+                    .filter(feature => 
+                        feature.properties && 
+                        feature.properties.name &&
+                        feature.properties.name.toLowerCase().includes(query.toLowerCase())
+                    )
+                    .map(feature => ({
+                        text: feature.properties.name, // Display name in search results
+                        place_name: feature.properties.name,
+                        center: feature.geometry.coordinates, // Coordinates for result
+                        geometry: feature.geometry,
+                    }));
+
+                console.log("Filtered Results:", results); // Debug filtered results
+                return results;
+            }
+
+            // Initialize MapboxGeocoder with local dataset search
+            const geocoder = new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                localGeocoder: localGeocoder,
+                zoom: 17,
+                mapboxgl: mapboxgl,
+                placeholder: 'Search for a location',
+                container: document.getElementById('search-container')
+            });
+
+            document.getElementById('search-container').appendChild(geocoder.onAdd(map));
+
+            geocoder.on('result', async (event) => {
+            // When the geocoder returns a result
+            const point = event.result.center; // Capture the result coordinates
+            console.log(point);
+            const tileset = 'gavincii.cm89a2b3m4ab51mpd8gm1v4u9-4tsoc'; // replace this with the ID of the tileset you created
+            const radius = 1609; // 1609 meters is roughly equal to one mile
+            const limit = 50; // The maximum amount of results to return
+
+           // marker.setLngLat(point).addTo(map); // Add the marker to the map at the result coordinates
+            const query = await fetch(
+                `https://api.mapbox.com/v4/${tileset}/tilequery/${point[0]},${point[1]}.json?radius=${radius}&limit=${limit}&access_token=${mapboxgl.accessToken}`,
+                { method: 'GET' }
+            );
+            const json = await query.json();
+                console.log(json);
+                //const features = json.features;
+                updateOverlay(json.features, map);
+            });
+                
+        })
+        .catch(error => console.error("Error loading GeoJSON:", error));
 
     }
 
-    
+ 
+    function updateOverlay(features, map) {
+        const facilityList = document.getElementById("facility-list");
+        facilityList.innerHTML = ""; // Clear previous entries
+
+        features.forEach(feature => {
+            let coordinates = feature.geometry.coordinates; // Extract coordinates
+            let name = feature.properties.name || "Unknown Facility";
+            let distance = (feature.properties.tilequery.distance / 1000).toFixed(2); // Convert meters to km
+        
+             // Create a popup
+            let popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false })
+                .setHTML(`<strong>${name}</strong><br>${distance} km away`);
+
+            // Create a marker
+            let marker = new mapboxgl.Marker({ color: "orange" })
+                .setLngLat(coordinates)
+                .addTo(map);
+
+            // Show popup on hover
+            marker.getElement().addEventListener('mouseenter', () => {
+                popup.setLngLat(coordinates).addTo(map);
+            });
+
+            // Hide popup when mouse leaves
+            marker.getElement().addEventListener('mouseleave', () => {
+                popup.remove();
+            });
+
+            let listItem = document.createElement("li");
+            listItem.innerHTML = `<strong>${name}</strong><br>${distance} km away`;
+
+            facilityList.appendChild(listItem);
+        });
+    }
     // const map = new mapboxgl.Map({
     //     container: 'map', // container ID
     //     style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l/draft', // style URL
