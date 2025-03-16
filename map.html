@@ -61,8 +61,11 @@
                 <div class="card bg-lightBlue border-0 rounded-5 p-2">
                     <div class="card-body">
                         <h5 class="fw-bold text-white ">Nearby Critical Facilities</h5>
-                        <p class="card-subtitle text-white lh-sm fs-6">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
-                        <ul id="facility-list"></ul>
+                        <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
+                        <div id="facility-list-container">
+                            <div id="facility-list">
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,7 +106,7 @@
     function setupMap(center) {
         const map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l', // style URL
+            style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l/draft', // style URL
             //style: 'mapbox://styles/mapbox/satellite-streets-v12',
             center: [123.160705, 13.623460], // starting position [lng, lat]. Note that lat must be set between -90 and 90
             zoom: 15.5, // starting zoom
@@ -157,7 +160,7 @@
             const geocoder = new MapboxGeocoder({
                 accessToken: mapboxgl.accessToken,
                 localGeocoder: localGeocoder,
-                zoom: 17,
+                zoom: 15,
                 mapboxgl: mapboxgl,
                 placeholder: 'Search for a location',
                 container: document.getElementById('search-container')
@@ -169,9 +172,9 @@
             // When the geocoder returns a result
             const point = event.result.center; // Capture the result coordinates
             console.log(point);
-            const tileset = 'gavincii.cm89a2b3m4ab51mpd8gm1v4u9-4tsoc'; // replace this with the ID of the tileset you created
+            const tileset = 'gavincii.cm8bbl9jm8w9n1nnbrh5vzu9t-4sfg3'; // replace this with the ID of the tileset you created
             const radius = 1609; // 1609 meters is roughly equal to one mile
-            const limit = 50; // The maximum amount of results to return
+            const limit = 10; // The maximum amount of results to return
 
            // marker.setLngLat(point).addTo(map); // Add the marker to the map at the result coordinates
             const query = await fetch(
@@ -198,15 +201,43 @@
             let coordinates = feature.geometry.coordinates; // Extract coordinates
             let name = feature.properties.name || "Unknown Facility";
             let distance = (feature.properties.tilequery.distance / 1000).toFixed(2); // Convert meters to km
-        
-             // Create a popup
-            let popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false })
-                .setHTML(`<strong>${name}</strong><br>${distance} km away`);
+            let amenity = feature.properties.amenity || "default"; // Get the amenity type
+            
+            const iconMap = {
+                "police_station": "assets/icons/GovernmentService.svg",
+                "fire_station": "assets/icons/GovernmentService.svg",
+                "school": "assets/icons/School.svg",
+                "hospital": "assets/icons/Hospital.svg",
+                "evacuation_centerr": "assets/icons/Evacuation.svg",
+                "miscellaneous": "assets/icons/Misc.svg",
+                "government": "assets/icons/Government.svg"
+            };
+            iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
+            
 
-            // Create a marker
-            let marker = new mapboxgl.Marker({ color: "orange" })
+            //  // Create a popup
+            // let popup = new mapboxgl.Popup({ closeButton: false, closeOnClick: false })
+            //     .setHTML(`<strong>${name}</strong><br>${distance} km away`);
+
+
+            // Create a DOM element for each marker.
+            const el = document.createElement('div');
+            el.className = 'marker';
+            el.style.backgroundImage = iconPath;
+            el.style.width = `50px`;
+            el.style.height = `50px`;
+            el.style.backgroundSize = '100%';
+
+
+            // Add markers to the map.
+            let marker = new mapboxgl.Marker(el)
                 .setLngLat(coordinates)
                 .addTo(map);
+                
+            // // Create a marker
+            // let marker = new mapboxgl.Marker({ color: "orange" })
+            //     .setLngLat(coordinates)
+            //     .addTo(map);
 
             // Show popup on hover
             marker.getElement().addEventListener('mouseenter', () => {
@@ -218,10 +249,27 @@
                 popup.remove();
             });
 
-            let listItem = document.createElement("li");
-            listItem.innerHTML = `<strong>${name}</strong><br>${distance} km away`;
+             // Create Bootstrap Card
+            let card = document.createElement("div");
+            card.className = "card mb-2 rounded-4"; // Add Bootstrap card classes
+            card.innerHTML = `
+                <div class="card-body d-flex align-items-center p-3">
+                    <div class="me-3">
+                        <img src="${iconPath}" alt="${amenity}" width="30" height="30">
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-darkBlue">${name}</h6>
+                        <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
+                    </div>
+                </div>
+            `;
 
-            facilityList.appendChild(listItem);
+            // Append the card to the facility list
+            facilityList.appendChild(card);
+            // let listItem = document.createElement("li");
+            // listItem.innerHTML = `<strong>${name}</strong><br>${distance} km away`;
+
+            // facilityList.appendChild(listItem);
         });
     }
     // const map = new mapboxgl.Map({
