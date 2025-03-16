@@ -210,6 +210,17 @@
                 "government": "assets/icons/Government.svg"
             };
             iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
+
+            const el = document.createElement('div');
+             el.className = 'marker';
+             el.style.backgroundImage = iconPath;
+             el.style.width = `50px`;
+             el.style.height = `50px`;
+             el.style.backgroundSize = '100%';
+
+            let marker = new mapboxgl.Marker(el)
+                 .setLngLat(coordinates)
+                 .addTo(map);
                 
             // Show popup on hover
             marker.getElement().addEventListener('mouseenter', () => {
