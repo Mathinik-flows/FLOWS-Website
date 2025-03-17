@@ -185,7 +185,7 @@
             console.log(json);
             //const features = json.features;
             updateNearby(json.features, map);
-            updateOverlay(json.features, map, placeName, point);
+            addMonitored(map, placeName, point);
 
             });
                 
@@ -197,7 +197,7 @@
     let selectedLocations = [];
     let markers = [];
 
-    function updateOverlay(features, map, placeName, coordinates) {
+    function addMonitored(map, placeName, coordinates) {
         if (selectedLocations.some(loc => loc.name === placeName)) return;
 
         // Mock flood level (replace this with actual data source)
