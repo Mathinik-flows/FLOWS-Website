@@ -9,16 +9,16 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-white">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white"  style="position: fixed; width: 100vw;">
         <div class="container-fluid py-2 d-flex justify-content-evenly">
             <a class="navbar-brand" href="index.html">
-            <img src="/assets/logo.png" alt="Flows Logo" width="60" height="54">
+            <img src="./assets/logo.png" alt="Flows Logo" width="60" height="54">
             </a>
             <div class="navbar-nav">
                 <a class="nav-link fs-5 fw-semibold mx-2 text-black" href="map.html">Flood Extent Map</a>
-                <a class="nav-link fs-5 fw-semibold mx-2 text-black" href="aboutus.html">About</a>
+                <a class="nav-link fs-5 fw-semibold mx-2 text-black" href="about.html">About</a>
             </div>
-            <a class="btn btn-darkBlue rounded-pill fw-semibold px-4 fs-5 me-5" href="#">Read the Paper</a>
+            <a class="btn btn-darkBlue rounded-pill fw-semibold px-4 fs-5" href="#">Read the Paper</a>
         </div>
     </nav>
 
@@ -26,7 +26,7 @@
     <!-- Welcome -->
         <section id="welcome" class="text-white py-5 mt-1 mb-5">
             <div class="container text-dark p-5">
-                <h1 class="display-1 fw-bold text-center">Welcome to <img src="/assets/logo_full.png" alt="Flows" style=" height: 1em; vertical-align: top; margin-top: 7.5px;"></h1>
+                <h1 class="display-1 fw-bold text-center">Welcome to <img src="./assets/logo_full.png" alt="Flows" style=" height: 1em; vertical-align: top; margin-top: 7.5px;"></h1>
                 <h5 class="my-4 lh-sm fw-semibold fs-3 text-center mx-5 px-5">A web application developed to leverage machine learning for fluvial flood prediction for the municipality of Camaligan.
                     Our goal is to empower communities with accurate and timely information to mitigate the risks associated with flooding.
                     <br><br>
@@ -36,28 +36,28 @@
     </div>
     
     <!-- Footer -->
-    <footer class="footer" style="background-image: url(/assets/Footer.png); background-size: 100% 100%;">
+    <footer class="footer" style="background-image: url(./assets/Footer.png); background-size: 100% 100%;">
         <div class="container-fluid pt-5">
-            <div class="d-flex justify-content-evenly text-white text-start align-items-center pt-5 pb-4">
-                <div class="col-auto">
-                    <div class="row m-0">
+            <div class="d-flex justify-content-evenly text-white text-start align-items-start pt-5 pb-4">
+                <div class="col-auto align-self-center">
+                    <div class="row m-0 ">
                         <div class="col-auto">
-                            <img src="/assets/logo_white.png" alt="Logo" width="60px" height="60px" style="vertical-align: center;">
+                            <img src="./assets/logo_white.png" alt="Logo" width="60px" height="60px" style="vertical-align: center;">
                         </div>
                         <div class="col-auto">
                             <h5 class="fw-semibold">Flood Level Observation<br>Warning System</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-auto">
+                <div class="col-auto pt-5">
                     <h6 class="fw-semibold lh-sm text-white fs-5 m-0">In Partnership with</h6>
                     <div class="pt-2">
-                        <img src="/assets/logo_cbsua.png" width="50px" height="50px" alt="Partner 1">
-                        <img src="/assets/logo_pagasa.png" width="50px" height="50px" alt="Partner 2">
-                        <img src="/assets/logo_cadressmo.png"  width="60px" height="60px"  alt="Partner 3">
+                        <img src="./assets/logo_cbsua.png" width="50px" height="50px" alt="Partner 1">
+                        <img src="./assets/logo_pagasa.png" width="50px" height="50px" alt="Partner 2">
+                        <img src="./assets/logo_cadressmo.png"  width="60px" height="60px"  alt="Partner 3">
                     </div>
                 </div>
-                <div class="col-auto">
+                <div class="col-auto pt-5">
                     <h6 class="fw-semibold lh-sm fs-5 m-0">Important Links</h6>
                     <ul class="pt-1">
                         <li><a class="link-light link-underline-opacity-0" href="#">Link to research paper</a></li>
