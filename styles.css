@@ -112,6 +112,28 @@ body {
     width: 100%;
 }
 
+/* Make the Geocoder search bar responsive */
+.mapboxgl-ctrl-geocoder {
+    width: 100% !important; /* Force it to take full width of its parent */
+    max-width: 600px; /* Prevent it from getting too wide */
+    min-width: 200px; /* Prevent it from getting too small */
+    transition: width 0.3s ease-in-out; /* Smooth resizing effect */
+}
+
+/* Adjust width for tablets */
+@media (max-width: 768px) {
+    .mapboxgl-ctrl-geocoder {
+        max-width: 90vw !important;
+    }
+}
+
+/* Adjust width for mobile devices */
+@media (max-width: 480px) {
+    .mapboxgl-ctrl-geocoder {
+        max-width: 95vw !important;
+    }
+}
+
 .overlay {
     position: absolute;
     top: 10px; /* Distance from the top */
@@ -134,15 +156,7 @@ body {
     z-index: 1100;  /* Higher than other elements */
 }
 
-.location-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-}
-
-#facility-list-container {
+#location-list-container {
     /* padding-left: 10px;
     padding-right: 10px; */
     max-height: 400px; /* Adjust height as needed */
@@ -150,6 +164,6 @@ body {
     border-radius: 10px;
 }
 
-#facility-list-container::-webkit-scrollbar {
+#location-list-container::-webkit-scrollbar {
     width: 6px; /* Thin scrollbar */
 }

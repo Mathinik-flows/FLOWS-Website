@@ -53,7 +53,10 @@
                         <h5 class="fw-bold text-white ">Monitored Locations</h5>
                         <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
                         <div id="search-container"></div>
-                        <div id="location-list"></div>	
+                        <div id="location-list-container">
+                            <div id="monitored-list">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,9 +65,8 @@
                     <div class="card-body">
                         <h5 class="fw-bold text-white ">Nearby Critical Facilities</h5>
                         <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
-                        <div id="facility-list-container">
-                            <div id="facility-list">
-
+                        <div id="location-list-container">
+                            <div id="location-list">
                             </div>
                         </div>
                     </div>
@@ -167,7 +169,8 @@
 
             geocoder.on('result', async (event) => {
             // When the geocoder returns a result
-            const point = event.result.center; // Capture the result coordinates
+            const point = event.result.center; // Capture the result 
+            const placeName = event.result.text;
             console.log(point);
             const tileset = 'gavincii.cm8bbl9jm8w9n1nnbrh5vzu9t-4sfg3'; // replace this with the ID of the tileset you created
             const radius = 1609; // 1609 meters is roughly equal to one mile
@@ -179,9 +182,11 @@
                 { method: 'GET' }
             );
             const json = await query.json();
-                console.log(json);
-                //const features = json.features;
-                updateOverlay(json.features, map);
+            console.log(json);
+            //const features = json.features;
+            updateNearby(json.features, map);
+            updateOverlay(json.features, map, placeName, point);
+
             });
                 
         })
@@ -189,10 +194,74 @@
 
     }
 
+    let selectedLocations = [];
+    let markers = [];
+
+    function updateOverlay(features, map, placeName, coordinates) {
+        if (selectedLocations.some(loc => loc.name === placeName)) return;
+
+        // Mock flood level (replace this with actual data source)
+        const floodLevel = getFloodLevel();
+        selectedLocations.push({ name: placeName, coordinates, floodLevel });
+    
+
+        // Add marker to the map
+        let marker = new mapboxgl.Marker({ color: "blue" })
+            .setLngLat(coordinates)
+            .addTo(map);
+
+        // Update UI list
+        markers.push(marker); // Store marker for later removal
+        updateLocationList();
+    }
+
+    // Mock function to get flood level
+    function getFloodLevel() {
+        const levels = ["No Flood", "Moderate Flood", "High Flood Level"];
+        //return levels[Math.floor(Math.random() * levels.length)];
+        return "Moderate Flood";
+    }
+
+    function updateLocationList() {
+        const monitoredList = document.getElementById("monitored-list");
+        monitoredList.innerHTML = "";
+
+        selectedLocations.forEach((loc, index) => {
+            let textColor = loc.floodLevel === "High Flood Level" ? "red" :
+                            loc.floodLevel === "Moderate Flood" ? "orange" : "green";
+
+            let card = document.createElement("div");
+            card.className = "card my-2 rounded-4";
+            card.innerHTML = `
+                <div class="card-body d-flex justify-content-between align-items-center p-3">
+                    <div>
+                        <p class="fw-medium lh-sm text-darkBlue m-0">${loc.name}</p>
+                        <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
+                    </div>
+                    <button class="btn btn-sm remove-btn" onclick="removeLocation(${index})" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
+                        <img src="assets/remove.svg" alt="Remove" width="30" height="30">
+                    </button>
+                </div>
+            `;
+
+            // <h6 class="fw-bold text-darkBlue">${name}</h6>
+            // <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
+
+            monitoredList.appendChild(card);
+        });
+    }
+
+    // Remove location from the list
+    function removeLocation(index) {
+        selectedLocations.splice(index, 1);
+        markers[index].remove();
+        markers.splice(index, 1); // Remove marker from array
+        updateLocationList();
+    }
  
-    function updateOverlay(features, map) {
-        const facilityList = document.getElementById("facility-list");
-        facilityList.innerHTML = ""; // Clear previous entries
+    function updateNearby(features, map) {
+        const locationList = document.getElementById("location-list");
+        locationList.innerHTML = ""; // Clear previous entries
 
         features.forEach(feature => {
             let coordinates = feature.geometry.coordinates; // Extract coordinates
@@ -248,7 +317,7 @@
             `;
 
             // Append the card to the facility list
-            facilityList.appendChild(card);
+            locationList.appendChild(card);
         });
     }
 
