@@ -100,6 +100,58 @@ W
     --bs-btn-disabled-border-color: #004E98;
 }
 
+.btn-darkOrange {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #FF6700;
+    --bs-btn-border-color: #FF6700;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #E25B00;
+    --bs-btn-hover-border-color: #E25B00;
+    --bs-btn-focus-shadow-rgb: 48, 87, 145;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #E25B00;
+    --bs-btn-active-border-color: #E25B00;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #FF6700;
+    --bs-btn-disabled-border-color: #FF6700;
+}
+
+.btn-dropdown {
+    --bs-btn-color: #004E98;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #fff;
+    --bs-btn-hover-color: #004E98;
+    --bs-btn-hover-bg: #E6EEFA;
+    --bs-btn-hover-border-color: #E6EEFA;
+    --bs-btn-focus-shadow-rgb: 211, 212, 213;
+    --bs-btn-active-color: #004e98;
+    --bs-btn-active-bg: #fff;
+    --bs-btn-active-border-color: #babbbc;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #f8f9fa;
+    --bs-btn-disabled-border-color: #f8f9fa;
+}
+
+.dropdown-item {
+    --bs-btn-color: #004E98;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #fff;
+    --bs-btn-hover-color: #004E98;
+    --bs-btn-hover-bg: #E6EEFA;
+    --bs-btn-hover-border-color: #E6EEFA;
+    --bs-btn-focus-shadow-rgb: 211, 212, 213;
+    --bs-btn-active-color: #004e98;
+    --bs-btn-active-bg: #fff;
+    --bs-btn-active-border-color: #babbbc;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #f8f9fa;
+    --bs-btn-disabled-border-color: #f8f9fa;
+}
+
+
 body { 
     margin: 0;
     padding: 0; 
@@ -107,7 +159,7 @@ body {
 
 #map {
     position: absolute;
-    top: 100px;
+    top: 90px; /* Distance from the top */
     bottom: 0;
     width: 100%;
 }
@@ -142,12 +194,26 @@ body {
     z-index: 2;
     width: 20%; /* Adjust width */
     max-height: 100%; /* Prevent it from getting too tall */
-    overflow: visible; /* Allow scrolling if content overflows */
+    transition: max-height 0.3s ease-in-out;
+    /* overflow: visible; Allow scrolling if content overflows */
 } 
 
 /* Styling for the monitored locations panel */
 .sub-overlay {
     max-width: 100%; /* Ensures it doesn’t exceed the overlay width */
+}
+
+.overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.toggle {
+    --bs-btn-color: transparent;
+    border: none;
+    padding: 0;
 }
 
 /* Ensure search box is above other elements */
@@ -167,3 +233,78 @@ body {
 #location-list-container::-webkit-scrollbar {
     width: 6px; /* Thin scrollbar */
 }
+
+#disclaimer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(58, 110, 165, 0.3); /* Dark transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Ensures it stays on top */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#disclaimer-overlay.hidden {
+    opacity: 0;
+    pointer-events: none; /* Prevents interaction when hidden */
+}
+
+.legend-button {
+    position: absolute;
+    bottom: 20px; /* Distance from bottom */
+    right: 5px; /* Distance from right */
+    z-index: 1000; /* Ensure it's above the map */
+    /* width: 75px;
+    height: 75px; */
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/* Popover container */
+/* Popover title */
+.legend-title {
+    color: #e65100;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+/* Legend items */
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+}
+
+/* Legend circles (Flood Levels) */
+.legend-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Legend icons (Locations) */
+.legend-icon {
+ 
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.tippy-box[data-theme~='legend'] {
+    background-color: white;
+    border-radius: 2rem;
+    padding: 15px
+}
+
+.tippy-box[data-theme~='legend'] > .tippy-arrow::before {
+    transform: scale(0);
+  }
