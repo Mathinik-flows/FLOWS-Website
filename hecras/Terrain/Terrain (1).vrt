@@ -1,0 +1,32 @@
+<VRTDataset rasterXSize="522" rasterYSize="303">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["WGS 84 / UTM zone 51N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",123],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32651"]]</SRS>
+  <GeoTransform>  5.1447235669781483e+05,  9.7702630051979664e+00,  0.0000000000000000e+00,  1.5072788647160803e+06,  0.0000000000000000e+00, -9.7702630051979664e+00</GeoTransform>
+  <VRTRasterBand dataType="Float32" band="1">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">596.8046875</MDI>
+      <MDI key="STATISTICS_MEAN">225.70549575232</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">64.330563263722</MDI>
+    </Metadata>
+    <NoDataValue>-9999</NoDataValue>
+    <ColorInterp>Gray</ColorInterp>
+    <Histograms>
+      <HistItem>
+        <HistMin>0</HistMin>
+        <HistMax>596.8046875</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>2923|162|120|64|21|18|13|37|13|33|12|12|39|18|45|51|48|19|23|10|17|28|29|34|13|19|39|23|29|22|19|23|17|15|47|95|45|47|100|181|67|159|217|239|354|281|259|192|245|216|244|217|244|369|369|371|416|453|488|660|675|566|565|539|591|570|673|634|797|944|860|1012|1074|1150|1188|1342|1436|1651|1730|1793|2100|2108|2407|2706|2743|2754|2884|3054|3339|3438|3554|3441|3120|3209|3099|2918|3111|3136|3095|2891|2728|2893|2795|2555|2531|2415|2279|2164|2139|2158|2081|2046|1916|1903|2036|1779|1708|1640|1630|1633|1613|1550|1600|1362|1115|1002|1010|920|836|780|761|715|697|652|639|557|522|555|639|545|483|431|387|461|364|309|281|255|230|205|222|219|208|221|214|242|263|213|197|192|180|125|97|99|88|105|91|100|105|93|99|33|40|43|34|23|13|31|19|21|19|22|45|23|14|11|16|17|8|15|17|9|17|17|16|9|13|9|9|5|12|10|9|12|11|5|4|3|2|2|3|2|4|2|2|7|3|4|2|3|3|3|5|1|2|1|6|3|2|2|3|4|1|1|5|2|4|4|5|5|3|0|1|8|4|2|7|6|3|3|9|2|14|6|6|2</HistCounts>
+      </HistItem>
+    </Histograms>
+    <ComplexSource>
+      <SourceFilename relativeToVRT="1">Terrain (1).CamaliganDEM_Smooth.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="522" RasterYSize="303" DataType="Float32" BlockXSize="256" BlockYSize="256" />
+      <SrcRect xOff="0" yOff="0" xSize="522" ySize="303" />
+      <DstRect xOff="0" yOff="0" xSize="522" ySize="303" />
+      <NODATA>-9999</NODATA>
+    </ComplexSource>
+  </VRTRasterBand>
+</VRTDataset>
