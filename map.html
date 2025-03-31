@@ -20,18 +20,34 @@
     <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.css" type="text/css">
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top bg-white"  style="position: fixed; width: 100vw; z-index: 1000;">
-        <div class="container-fluid py-2 d-flex justify-content-evenly">
-            <a class="navbar-brand" href="index.html">
-            <img src="./assets/logo.png" alt="Flows Logo" width="60" height="54">
-            </a>
-            <div class="navbar-nav">
-                <a class="nav-link fs-5 fw-semibold mx-2 text-black" href="map.html">Flood Extent Map</a>
-                <a class="nav-link fs-5 fw-semibold mx-2 text-black" href="about.html">About</a>
+    <header>
+        <nav class="navbar navbar-expand-lg sticky-top bg-white">
+            <div class="container px-5 py-2">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./assets/logo.png" alt="Flows Logo" width="60" height="55">
+                </a>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation" href="/">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse fw-semibold justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto align-items-lg-center align-items-end">
+                        <li class="nav-item ">
+                            <a class="nav-link fs-5 mx-2 fw-semibold text-black" href="map.html">Flood Extent Map</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link fs-5 fw-semibold mx-2 text-black" href="about.html">About</a>
+                        </li>  
+                        <li class="nav-item ">
+                            <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-5" href="#">Read the Paper</a>
+                        </li>                    
+                    </ul>
+                </div>
             </div>
-            <a class="btn btn-darkBlue rounded-pill fw-semibold px-4 fs-5" href="#">Read the Paper</a>
-        </div>
-    </nav>
+        </nav>    
+    </header>
 
 
        
