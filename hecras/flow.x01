@@ -1,6 +1,6 @@
 HEC-RAS 6.7 Beta Development
 Section - Arrays Sizes
-Plan2                                                           
+Plan9                                                           
        1       1       0       2       8       F
        3       3       0       0       0       0       0       0
        0       0       0       F       T       0       0       0       1       0       0       0
@@ -27,7 +27,7 @@ Section - Roughness Change Factors
 Section - Breach Data
 Section - Storage Area Data
 SA     8                                                        river           
-       0       0       0      72       T
+       0       0       0      77       T
 Section - Storage Area Connection Data
 Section - Pump Station Data
 Section - River Reach Data

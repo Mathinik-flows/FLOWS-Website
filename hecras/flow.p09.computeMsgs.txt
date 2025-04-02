@@ -1,0 +1,164 @@
+Message  | Notes generated when writing the computation files:
+Message  | Testing program set the number of cores for 2d flow area: 'river' from 0 to 0
+Message  | 
+Message  | Plan: 'Plan 09' (flow.p09)
+Message  | Simulation started at: 02Apr2025 04:20:38 PM
+Message  | 
+Message  | PROCESS:RasProcess
+Message  | Writing Plan GIS Data...
+Progress | 100
+Message  | Completed Writing Plan GIS Data
+Message  | Writing Geometry...
+Message  | river: Mesh property tables are current.
+Progress | 30
+Progress | 50
+Progress | 80
+Progress | 100
+Message  | Completed Writing Geometry
+Message  | Writing Event Conditions ...
+Message  | Completed Writing Event Condition Data
+Message  | 
+Message  | PROCESS:RASGeomPreprocess
+Message  | 	
+Message  | Geometric Preprocessor HEC-RAS 6.7 Beta January 2025
+Progress | 0.2
+Progress | 0.3
+Message  |  
+Progress | 0.3333333
+Progress | 1
+Message  | 
+Message  | Finished Processing Geometry
+Message  | 
+Message  | PROCESS:RasUnsteady
+Message  | 
+Message  | Performing Unsteady Flow Simulation  HEC-RAS 6.7 Beta January 2025
+Progress | 0.1
+Progress | 0.2
+Progress | 0.3
+Message  |  
+Progress | 5.703125E-02
+Progress | 7.929687E-02
+Message  | 	
+Message  | Unsteady Input Summary:
+Message  |      2D Unsteady Diffusion Wave Equation Set (fastest)
+Message  |      2D number of Solver Cores:   10
+Progress | 0.3
+Progress | 0.4
+Progress | 0.5
+Progress | 0.6
+Progress | 0.7333333
+Message  | 
+Message  | Maximum iteration location		Cell	 WSEL	ERROR	ITERATIONS
+Message  | 
+Message  | 03APR2025 00:01:00  river	Cell #	     61963	  207.28	   3.717	20
+Progress | 3.333333E-03
+Message  | 03APR2025 00:05:00  river	Cell #	     33532	  186.70	   0.020	20
+Progress | 3.333334E-02
+Message  | 03APR2025 00:18:00  river	Cell #	     64497	  151.08	   0.005	20
+Progress | 0.06
+Progress | 8.666667E-02
+Progress | 0.1133333
+Progress | 0.1466667
+Progress | 0.17
+Progress | 0.1966667
+Message  | 03APR2025 01:02:00  river	Cell #	     41118	  162.59	   0.004	20
+Progress | 0.22
+Progress | 0.2433333
+Message  | 
+Message  | 03APR2025 01:14:00  river	Cell #	     41118	  162.82	   0.005	20
+Message  | 03APR2025 01:16:00  river	Cell #	     53098	  114.76	   0.005	20
+Progress | 0.2666667
+Message  | 03APR2025 01:22:00  river	Cell #	     53098	  114.72	   0.004	20
+Message  | 03APR2025 01:23:00  river	Cell #	     64192	   59.01	   0.007	20
+Message  | 
+Message  | 03APR2025 01:24:00  river	Cell #	     53098	  114.77	   0.004	20
+Message  | 03APR2025 01:26:00  river	Cell #	     53098	  114.79	   0.004	20
+Progress | 0.29
+Message  | 03APR2025 01:31:00  river	Cell #	     52657	   98.91	   0.003	20
+Message  | 03APR2025 01:33:00  river	Cell #	     52657	   98.88	   0.003	20
+Message  | 
+Message  | 03APR2025 01:35:00  river	Cell #	     52657	   98.89	   0.004	20
+Progress | 0.3166667
+Message  | 03APR2025 01:37:00  river	Cell #	     52657	   98.89	   0.004	20
+Message  | 03APR2025 01:39:00  river	Cell #	     52657	   98.88	   0.004	20
+Progress | 0.34
+Message  | 03APR2025 01:43:00  river	Cell #	     52657	   98.90	   0.003	20
+Progress | 0.3633333
+Progress | 0.39
+Progress | 0.4166667
+Progress | 0.44
+Progress | 0.4666666
+Progress | 0.49
+Message  | 
+Message  | 03APR2025 02:33:00  river	Cell #	     51911	   85.27	   0.004	20
+Progress | 0.5166667
+Progress | 0.54
+Message  | 03APR2025 02:46:00  river	Cell #	     51911	   85.24	   0.004	20
+Message  | 03APR2025 02:48:00  river	Cell #	     51476	   99.00	   0.003	20
+Progress | 0.5666667
+Message  | 03APR2025 02:51:00  river	Cell #	     51911	   85.25	   0.004	20
+Message  | 
+Message  | 03APR2025 02:53:00  river	Cell #	     51476	   98.97	   0.003	20
+Message  | 03APR2025 02:54:00  river	Cell #	     51911	   85.32	   0.003	20
+Progress | 0.59
+Message  | 03APR2025 02:59:00  river	Cell #	     51911	   85.31	   0.003	20
+Message  | 03APR2025 03:04:00  river	Cell #	     51911	   85.29	   0.004	20
+Progress | 0.6166667
+Message  | 
+Message  | 03APR2025 03:06:00  river	Cell #	     51911	   85.13	   0.003	20
+Progress | 0.6433333
+Progress | 0.67
+Progress | 0.6933333
+Progress | 0.72
+Message  | 03APR2025 03:41:00  river	Cell #	     54424	  122.81	   0.005	20
+Progress | 0.7433333
+Message  | 03APR2025 03:48:00  river	Cell #	     62310	  113.50	   0.003	20
+Progress | 0.77
+Message  | 03APR2025 03:52:00  river	Cell #	     53084	   80.44	   0.004	20
+Message  | 
+Message  | 03APR2025 03:53:00  river	Cell #	     54424	  122.92	   0.004	20
+Message  | 03APR2025 03:55:00  river	Cell #	     62749	  129.78	   0.005	20
+Message  | 03APR2025 03:57:00  river	Cell #	     54424	  122.57	   0.007	20
+Progress | 0.7933334
+Message  | 03APR2025 04:01:00  river	Cell #	     62749	  129.76	   0.006	20
+Progress | 0.8166667
+Message  | 
+Message  | 03APR2025 04:07:00  river	Cell #	     62749	  129.78	   0.005	20
+Message  | 03APR2025 04:13:00  river	Cell #	     62749	  129.83	   0.004	20
+Progress | 0.8433334
+Progress | 0.87
+Progress | 0.8966666
+Progress | 0.9233333
+Progress | 0.95
+Progress | 0.9733334
+Progress | 1
+Message  | 
+Message  | Overall Volume Accounting Error in 1000 m^3:             2719.
+Message  | Overall Volume Accounting Error as percentage:            0.3077
+Message  | Please review "Computational Log File" output for volume accounting details
+Message  | 
+Message  | Writing Results to DSS
+Message  | 
+Message  | The maximum cell wsel error was     3.72
+Message  | At river    cell    61963
+Message  | 
+Message  | Finished Unsteady Flow Simulation
+Message  | 
+Message  | 1D Post Process Skipped (simulation is all 2D)
+Message  | 
+Message  | PROCESS:RasProcess
+Message  | Computing Stored Results Maps
+Message  | 0 Maps generated for 'flow.p09.hdf'
+Message  | 
+Message  | Computations Summary
+Message  | 
+Message  | Computation Task	Time(hh:mm:ss)
+Message  | Completing Geometry, Flow and Plan	       1
+Message  | Preprocessing Geometry	<1
+Message  | Unsteady Flow Computations	    1:04
+Message  | Computing Maps	<1
+Message  | Complete Process	    1:06
+Message  | 
+Message  | Computation Speed	Simulation/Runtime
+Message  | Unsteady Flow Computations	281x
+Message  | Complete Process	270x

@@ -1,0 +1,277 @@
+2025-04-01 21:48:10,850 - HEC-RAS Controller initialized.
+2025-04-01 21:48:11,289 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 21:48:11,289 - Boundary conditions file 'C:\Yna\Thesis\FLOWS\hecras\flow.p01' read successfully.
+2025-04-01 21:48:11,290 - Failed to find 'Stage Hydrograph' line in 'C:\Yna\Thesis\FLOWS\hecras\flow.p01'.
+2025-04-01 21:48:11,290 - Error: Stage Hydrograph line not found.
+2025-04-01 21:48:35,466 - HEC-RAS Controller initialized.
+2025-04-01 21:48:35,756 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 21:48:35,756 - Boundary conditions file 'C:\Yna\Thesis\FLOWS\hecras\flow.u01' read successfully.
+2025-04-01 21:48:35,757 - Failed to find 'Stage Hydrograph' line in 'C:\Yna\Thesis\FLOWS\hecras\flow.u01'.
+2025-04-01 21:48:35,757 - Error: Stage Hydrograph line not found.
+2025-04-01 21:48:48,085 - HEC-RAS Controller initialized.
+2025-04-01 21:48:48,373 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 21:48:48,374 - Boundary conditions file 'C:\Yna\Thesis\FLOWS\hecras\flow.u01' read successfully.
+2025-04-01 21:48:48,374 - Failed to find 'Stage Hydrograph' line in 'C:\Yna\Thesis\FLOWS\hecras\flow.u01'.
+2025-04-01 21:48:48,374 - Error: Stage Hydrograph line not found.
+2025-04-01 21:49:35,984 - HEC-RAS Controller initialized.
+2025-04-01 21:49:36,297 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 21:49:36,298 - Boundary conditions file 'C:\Yna\Thesis\FLOWS\hecras\flow.u01' read successfully.
+2025-04-01 21:49:36,298 - Failed to find 'Stage Hydrograph' line in 'C:\Yna\Thesis\FLOWS\hecras\flow.u01'.
+2025-04-01 21:49:36,298 - Error: Stage Hydrograph line not found.
+2025-04-01 21:50:56,141 - HEC-RAS Controller initialized.
+2025-04-01 21:50:56,451 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 21:50:56,451 - Boundary conditions file 'C:\Yna\Thesis\FLOWS\hecras\flow.u01' read successfully.
+2025-04-01 21:50:56,452 - Updated stage hydrograph with values: [1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.4]
+2025-04-01 21:50:56,453 - Updated boundary conditions in 'C:\Yna\Thesis\FLOWS\hecras\flow.u01'.
+2025-04-01 21:50:56,501 - HEC-RAS simulation started.
+2025-04-01 21:51:06,501 - HEC-RAS simulation completed.
+2025-04-01 22:04:06,108 - GeoTIFF exported to 'C:\Yna\Thesis\FLOWS\hecras\TIFFs\output.tif'.
+2025-04-01 22:04:06,230 - HEC-RAS closed successfully.
+2025-04-01 22:04:12,749 - HEC-RAS Controller initialized.
+2025-04-01 22:04:12,749 - Error: name 'pd' is not defined
+2025-04-01 22:05:15,199 - HEC-RAS Controller initialized.
+2025-04-01 22:05:15,199 - Error: name 'pd' is not defined
+2025-04-01 22:05:22,649 - HEC-RAS Controller initialized.
+2025-04-01 22:05:22,653 - Error: name 'project_path' is not defined
+2025-04-01 22:05:44,739 - HEC-RAS Controller initialized.
+2025-04-01 22:05:45,104 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:06:29,564 - HEC-RAS Controller initialized.
+2025-04-01 22:06:29,885 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:06:29,885 - Error: 'Time (hours)'
+2025-04-01 22:06:57,279 - HEC-RAS Controller initialized.
+2025-04-01 22:06:57,591 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:06:57,592 - Error: 'Water_Level'
+2025-04-01 22:07:35,009 - HEC-RAS Controller initialized.
+2025-04-01 22:07:35,359 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:07:35,810 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:14:11,508 - HEC-RAS Controller initialized.
+2025-04-01 22:14:11,816 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:14:14,820 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:14:26,268 - HEC-RAS Controller initialized.
+2025-04-01 22:14:35,678 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:14:38,474 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:14:46,850 - HEC-RAS Controller initialized.
+2025-04-01 22:14:48,665 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:17:52,895 - HEC-RAS Controller initialized.
+2025-04-01 22:17:56,635 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:17:56,635 - Error: [Errno 2] No such file or directory: 'C:\\Yna\\Thesis\\FLOWS\\hecras\\flow.u01'
+2025-04-01 22:17:56,672 - HEC-RAS closed successfully.
+2025-04-01 22:18:08,965 - HEC-RAS Controller initialized.
+2025-04-01 22:18:12,618 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:18:12,619 - Error: [Errno 2] No such file or directory: 'C:\\Yna\\Thesis\\FLOWS\\hecras\\flow.u01'
+2025-04-01 22:19:17,523 - HEC-RAS Controller initialized.
+2025-04-01 22:19:17,821 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:19:24,276 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:19:24,293 - HEC-RAS closed successfully.
+2025-04-01 22:20:00,841 - HEC-RAS Controller initialized.
+2025-04-01 22:20:04,397 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:20:04,397 - Error: [Errno 2] No such file or directory: 'C:\\Yna\\Thesis\\FLOWS\\hecras\\flow.u01'
+2025-04-01 22:23:39,887 - HEC-RAS Controller initialized.
+2025-04-01 22:23:40,209 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:23:40,655 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:25:25,545 - HEC-RAS Controller initialized.
+2025-04-01 22:25:25,864 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:25:28,559 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:25:28,576 - HEC-RAS closed successfully.
+2025-04-01 22:26:58,376 - HEC-RAS Controller initialized.
+2025-04-01 22:27:00,186 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:27:13,205 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:27:13,208 - HEC-RAS closed successfully.
+2025-04-01 22:28:42,465 - HEC-RAS Controller initialized.
+2025-04-01 22:28:44,200 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:28:52,466 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:28:52,502 - HEC-RAS closed successfully.
+2025-04-01 22:29:54,739 - HEC-RAS Controller initialized.
+2025-04-01 22:29:56,579 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:29:58,918 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:29:58,962 - HEC-RAS closed successfully.
+2025-04-01 22:32:14,127 - HEC-RAS Controller initialized.
+2025-04-01 22:32:16,208 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:32:35,285 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:32:35,287 - HEC-RAS closed successfully.
+2025-04-01 22:40:56,529 - HEC-RAS Controller initialized.
+2025-04-01 22:40:58,065 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:44:16,689 - HEC-RAS Controller initialized.
+2025-04-01 22:44:16,997 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:44:17,441 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:44:17,459 - HEC-RAS closed successfully.
+2025-04-01 22:46:42,287 - HEC-RAS Controller initialized.
+2025-04-01 22:46:42,592 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:46:43,040 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:46:43,060 - HEC-RAS closed successfully.
+2025-04-01 22:48:16,112 - HEC-RAS Controller initialized.
+2025-04-01 22:48:16,424 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:48:16,867 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:48:16,887 - HEC-RAS closed successfully.
+2025-04-01 22:48:37,492 - HEC-RAS Controller initialized.
+2025-04-01 22:48:37,795 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:48:38,242 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:48:38,254 - HEC-RAS closed successfully.
+2025-04-01 22:49:03,061 - HEC-RAS Controller initialized.
+2025-04-01 22:49:03,374 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-01 22:49:03,818 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-01 22:49:03,839 - HEC-RAS closed successfully.
+2025-04-02 13:50:08,388 - HEC-RAS Controller initialized.
+2025-04-02 13:50:08,741 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 13:50:09,223 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 13:50:09,244 - HEC-RAS closed successfully.
+2025-04-02 13:58:23,259 - HEC-RAS Controller initialized.
+2025-04-02 13:58:51,718 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 13:58:52,187 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 13:58:52,254 - HEC-RAS closed successfully.
+2025-04-02 14:01:55,554 - HEC-RAS Controller initialized.
+2025-04-02 14:01:55,868 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:01:56,321 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:01:56,347 - HEC-RAS closed successfully.
+2025-04-02 14:02:47,167 - HEC-RAS Controller initialized.
+2025-04-02 14:02:49,150 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:02:49,629 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:02:49,697 - HEC-RAS closed successfully.
+2025-04-02 14:02:52,980 - HEC-RAS Controller initialized.
+2025-04-02 14:02:53,281 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:02:53,710 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:02:53,726 - HEC-RAS closed successfully.
+2025-04-02 14:03:57,832 - HEC-RAS Controller initialized.
+2025-04-02 14:03:58,188 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:03:58,677 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:03:58,696 - HEC-RAS closed successfully.
+2025-04-02 14:08:05,617 - HEC-RAS Controller initialized.
+2025-04-02 14:08:05,928 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:08:06,366 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:08:06,383 - HEC-RAS closed successfully.
+2025-04-02 14:08:34,498 - HEC-RAS Controller initialized.
+2025-04-02 14:08:34,734 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:08:35,174 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:08:35,199 - HEC-RAS closed successfully.
+2025-04-02 14:09:06,243 - HEC-RAS Controller initialized.
+2025-04-02 14:09:06,547 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:09:06,977 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:09:06,992 - HEC-RAS closed successfully.
+2025-04-02 14:09:17,905 - HEC-RAS Controller initialized.
+2025-04-02 14:09:18,216 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:09:18,665 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:09:18,680 - HEC-RAS closed successfully.
+2025-04-02 14:10:43,407 - HEC-RAS Controller initialized.
+2025-04-02 14:10:43,734 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:10:44,166 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:10:44,178 - HEC-RAS closed successfully.
+2025-04-02 14:10:57,361 - HEC-RAS Controller initialized.
+2025-04-02 14:10:57,683 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:10:58,118 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:10:58,137 - HEC-RAS closed successfully.
+2025-04-02 14:11:08,352 - HEC-RAS Controller initialized.
+2025-04-02 14:11:08,668 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:11:09,103 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:11:09,120 - HEC-RAS closed successfully.
+2025-04-02 14:11:22,899 - HEC-RAS Controller initialized.
+2025-04-02 14:11:23,207 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:11:23,634 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:11:23,648 - HEC-RAS closed successfully.
+2025-04-02 14:11:31,121 - HEC-RAS Controller initialized.
+2025-04-02 14:11:31,430 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:11:31,877 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:11:31,896 - HEC-RAS closed successfully.
+2025-04-02 14:12:57,597 - HEC-RAS Controller initialized.
+2025-04-02 14:12:57,848 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:12:58,314 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:13:28,635 - HEC-RAS Controller initialized.
+2025-04-02 14:13:28,948 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:13:29,383 - Error: Objects for SAFEARRAYS must be sequences (of sequences), or a buffer object.
+2025-04-02 14:13:29,397 - HEC-RAS closed successfully.
+2025-04-02 14:26:14,394 - HEC-RAS Controller initialized.
+2025-04-02 14:26:14,665 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:26:15,157 - Error: RAS67.HECRASController.UnsteadyFlow_UnsteadyFlowFile_Open
+2025-04-02 14:26:15,205 - HEC-RAS closed successfully.
+2025-04-02 14:27:21,175 - HEC-RAS Controller initialized.
+2025-04-02 14:27:21,485 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:27:21,936 - Error: RAS67.HECRASController.UnsteadyFlow_UnsteadyFlowFile_Open
+2025-04-02 14:27:21,954 - HEC-RAS closed successfully.
+2025-04-02 14:29:15,512 - HEC-RAS Controller initialized.
+2025-04-02 14:29:15,824 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:29:16,291 - Error: RAS67.HECRASController.CurrentPlan_Get
+2025-04-02 14:29:16,310 - HEC-RAS closed successfully.
+2025-04-02 14:29:31,554 - HEC-RAS Controller initialized.
+2025-04-02 14:29:31,873 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:29:32,333 - Error: RAS67.HECRASController.CurrentPlan
+2025-04-02 14:29:32,347 - HEC-RAS closed successfully.
+2025-04-02 14:31:09,496 - HEC-RAS Controller initialized.
+2025-04-02 14:31:09,801 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:31:10,285 - Error: RAS67.HECRASController.UnsteadyFlow_UnsteadyFlowFile_Open
+2025-04-02 14:31:10,303 - HEC-RAS closed successfully.
+2025-04-02 14:32:12,950 - HEC-RAS Controller initialized.
+2025-04-02 14:32:13,311 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:34:24,997 - HEC-RAS Controller initialized.
+2025-04-02 14:34:25,317 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:35:48,981 - HEC-RAS Controller initialized.
+2025-04-02 14:36:07,709 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:36:30,679 - HEC-RAS Controller initialized.
+2025-04-02 14:36:33,696 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:37:53,398 - HEC-RAS Controller initialized.
+2025-04-02 14:37:53,715 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:43:23,030 - HEC-RAS Controller initialized.
+2025-04-02 14:43:23,358 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:44:38,023 - HEC-RAS Controller initialized.
+2025-04-02 14:44:38,396 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:47:04,092 - HEC-RAS Controller initialized.
+2025-04-02 14:47:04,391 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:49:32,066 - HEC-RAS Controller initialized.
+2025-04-02 14:49:32,395 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:51:20,687 - HEC-RAS Controller initialized.
+2025-04-02 14:51:26,866 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 14:53:16,966 - HEC-RAS Controller initialized.
+2025-04-02 14:53:19,669 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:01:18,537 - HEC-RAS Controller initialized.
+2025-04-02 15:01:18,854 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:03:07,564 - HEC-RAS Controller initialized.
+2025-04-02 15:03:07,896 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:06:09,582 - HEC-RAS Controller initialized.
+2025-04-02 15:06:09,898 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:08:14,216 - HEC-RAS Controller initialized.
+2025-04-02 15:08:27,064 - Error: (-2147023170, 'The remote procedure call failed.', None, None)
+2025-04-02 15:08:30,200 - HEC-RAS Controller initialized.
+2025-04-02 15:09:26,444 - HEC-RAS Controller initialized.
+2025-04-02 15:09:50,840 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:15:13,766 - HEC-RAS Controller initialized.
+2025-04-02 15:15:29,911 - Error: (-2147023170, 'The remote procedure call failed.', None, None)
+2025-04-02 15:15:34,496 - HEC-RAS Controller initialized.
+2025-04-02 15:16:26,013 - Error: (-2147023170, 'The remote procedure call failed.', None, None)
+2025-04-02 15:16:54,667 - HEC-RAS Controller initialized.
+2025-04-02 15:17:34,190 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:18:27,582 - HEC-RAS Controller initialized.
+2025-04-02 15:18:33,015 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:22:57,609 - HEC-RAS Controller initialized.
+2025-04-02 15:22:57,914 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:24:02,802 - HEC-RAS Controller initialized.
+2025-04-02 15:24:03,164 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:25:52,199 - HEC-RAS Controller initialized.
+2025-04-02 15:25:52,538 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:26:47,419 - HEC-RAS Controller initialized.
+2025-04-02 15:26:47,743 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:27:24,885 - HEC-RAS Controller initialized.
+2025-04-02 15:27:25,244 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:30:46,473 - HEC-RAS Controller initialized.
+2025-04-02 15:30:46,476 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:30:46,945 - Error: RAS67.HECRASController.UnsteadyFlow_Edit
+2025-04-02 15:30:46,946 - HEC-RAS closed successfully.
+2025-04-02 15:35:48,985 - HEC-RAS Controller initialized.
+2025-04-02 15:35:48,988 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:35:49,434 - Error: name 'success' is not defined
+2025-04-02 15:35:49,436 - HEC-RAS closed successfully.
+2025-04-02 15:36:33,166 - HEC-RAS Controller initialized.
+2025-04-02 15:36:33,461 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:37:58,983 - HEC-RAS Controller initialized.
+2025-04-02 15:37:59,301 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:39:05,896 - HEC-RAS Controller initialized.
+2025-04-02 15:39:06,207 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:40:12,911 - HEC-RAS Controller initialized.
+2025-04-02 15:40:13,232 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:41:24,063 - HEC-RAS Controller initialized.
+2025-04-02 15:41:24,382 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:55:19,847 - HEC-RAS Controller initialized.
+2025-04-02 15:55:20,207 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 15:58:59,344 - HEC-RAS Controller initialized.
+2025-04-02 15:58:59,698 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 16:02:06,294 - HEC-RAS Controller initialized.
+2025-04-02 16:02:06,706 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-02 16:20:36,600 - HEC-RAS Controller initialized.
+2025-04-02 16:20:36,954 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.

@@ -1,16 +1,12 @@
-Flow Title=unsteady
+﻿Flow Title=flow2
 Program Version=6.70
 Use Restart= 0 
 Boundary Location=                ,                ,        ,        ,                ,river           ,                ,upstream                        ,                                
 Interval=1HOUR
-Stage Hydrograph= 10 
-     143      12     100     107     114     121     132 135.333 138.667     142
-Stage Hydrograph Use Initial Stage=-1
-Stage Hydrograph TW Check=0
-DSS Path=
-Use DSS=False
-Use Fixed Start Time=True
-Fixed Start Date/Time=27MAR2025,0000
+Stage Hydrograph= 6 
+    121.0     132.0     154.0     153.0     142.0     152.0
+Use Fixed Start Time=False
+Fixed Start Date/Time=,
 Is Critical Boundary=False
 Critical Boundary Flow=
 Boundary Location=                ,                ,        ,        ,                ,river           ,                ,downstream                      ,                                

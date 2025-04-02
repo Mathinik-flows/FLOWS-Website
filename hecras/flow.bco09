@@ -1,0 +1,70 @@
+ 
+                                              HEC-RAS - River Analysis System
+ 
+ 
+Project File:  C:\Yna\Thesis\FLOWS\hecras\flow.prj
+ 
+Project Name:  flow
+ 
+ 
+Plan Name:     Plan 09
+ 
+Short ID:      Plan9
+ 
+
+Starting Time:   02Apr2025 2400
+
+Ending Time:     03Apr2025 0500
+
+
+                ################################################
+                #                                              #
+                #                                              #
+                #       1D and 2D Unsteady Flow Module         #
+                #                                              #
+                #                                              #
+                #          HEC-RAS 6.7 Beta January 2025       #
+                #                                              #
+                #             02APR25 at 16:20:40              #
+                #                                              #
+                ################################################
+                
+ 
+ 
+ 
+
+         US Inflow      DS Outflow       Lat Hydro        SA Hydro     Groundwater      Diversions   Precip Excess
+         *********      **********       *********        ********     ***********      **********   *************
+                                                                                                                                  
+
+    Start 1D Reach  Final 1D Reach   Starting SA's      Final SA's
+    **************  **************   *************      **********
+                                                                  
+
+
+
+                 ***   Volume Accounting for 2D Flow Area in 1000 m^3   ***
+
+           2D Area    Starting Vol      Ending Vol      Cum Inflow     Cum Outflow           Error   Percent Error
+           *******    ************      **********      **********     ***********           *****   *************
+ 
+ 
+             river         453172.          26742.         430542.         859691.           2719.          0.3173
+
+
+
+                 ***  Total Volume Accounting (for the entire model) in 1000 m^3   ***
+
+Total Boundary Flux of Water In          430542.
+Total Boundary Flux of Water Out         859691.
+
+Starting Volume                          453172.
+Ending Volume                             26742.
+
+
+                             Error   Percent Error
+                             *****   *************
+                             2719.          0.3077
+
+
+

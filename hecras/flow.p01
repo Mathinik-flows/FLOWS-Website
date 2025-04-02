@@ -1,10 +1,10 @@
 Plan Title=Plan 01
-Program Version=6.70
-Short Identifier=Plan 02                                                         
-Simulation Date=26MAR2025,2400,27MAR2025,0500
-Geom File=g01
-Flow File=u01
-Subcritical Flow
+01Jan1000 01:00:00 1.50
+01Jan1000 02:00:00 1.55
+01Jan1000 03:00:00 1.60
+01Jan1000 04:00:00 1.65
+01Jan1000 05:00:00 1.70
+01Jan1000 06:00:00 1.75
 K Sum by GR= 0 
 Std Step Tol= 0.003 
 Critical Tol= 0.003 
