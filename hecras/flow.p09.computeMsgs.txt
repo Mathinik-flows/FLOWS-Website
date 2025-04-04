@@ -2,7 +2,7 @@ Message  | Notes generated when writing the computation files:
 Message  | Testing program set the number of cores for 2d flow area: 'river' from 0 to 0
 Message  | 
 Message  | Plan: 'Plan 09' (flow.p09)
-Message  | Simulation started at: 02Apr2025 04:20:38 PM
+Message  | Simulation started at: 04Apr2025 03:53:57 PM
 Message  | 
 Message  | PROCESS:RasProcess
 Message  | Writing Plan GIS Data...
@@ -36,8 +36,8 @@ Progress | 0.1
 Progress | 0.2
 Progress | 0.3
 Message  |  
-Progress | 5.703125E-02
-Progress | 7.929687E-02
+Progress | 0.0671875
+Progress | 9.101563E-02
 Message  | 	
 Message  | Unsteady Input Summary:
 Message  |      2D Unsteady Diffusion Wave Equation Set (fastest)
@@ -69,7 +69,7 @@ Message  | 03APR2025 01:14:00  river	Cell #	     41118	  162.82	   0.005	20
 Message  | 03APR2025 01:16:00  river	Cell #	     53098	  114.76	   0.005	20
 Progress | 0.2666667
 Message  | 03APR2025 01:22:00  river	Cell #	     53098	  114.72	   0.004	20
-Message  | 03APR2025 01:23:00  river	Cell #	     64192	   59.01	   0.007	20
+Message  | 03APR2025 01:23:00  river	Cell #	     64192	   59.05	   0.006	20
 Message  | 
 Message  | 03APR2025 01:24:00  river	Cell #	     53098	  114.77	   0.004	20
 Message  | 03APR2025 01:26:00  river	Cell #	     53098	  114.79	   0.004	20
@@ -92,13 +92,18 @@ Progress | 0.49
 Message  | 
 Message  | 03APR2025 02:33:00  river	Cell #	     51911	   85.27	   0.004	20
 Progress | 0.5166667
+Message  | 03APR2025 02:36:00  river	Cell #	     51474	  101.07	   0.003	20
+Message  | 03APR2025 02:41:00  river	Cell #	     51911	   85.28	   0.005	20
 Progress | 0.54
-Message  | 03APR2025 02:46:00  river	Cell #	     51911	   85.24	   0.004	20
-Message  | 03APR2025 02:48:00  river	Cell #	     51476	   99.00	   0.003	20
-Progress | 0.5666667
-Message  | 03APR2025 02:51:00  river	Cell #	     51911	   85.25	   0.004	20
+Message  | 03APR2025 02:43:00  river	Cell #	     51476	   99.01	   0.003	20
 Message  | 
-Message  | 03APR2025 02:53:00  river	Cell #	     51476	   98.97	   0.003	20
+Message  | 03APR2025 02:46:00  river	Cell #	     51911	   85.27	   0.004	20
+Message  | 03APR2025 02:48:00  river	Cell #	     51476	   98.98	   0.003	20
+Message  | 03APR2025 02:49:00  river	Cell #	     51911	   85.32	   0.003	20
+Progress | 0.5666667
+Message  | 03APR2025 02:51:00  river	Cell #	     51911	   85.25	   0.003	20
+Message  | 
+Message  | 03APR2025 02:53:00  river	Cell #	     51476	   98.96	   0.003	20
 Message  | 03APR2025 02:54:00  river	Cell #	     51911	   85.32	   0.003	20
 Progress | 0.59
 Message  | 03APR2025 02:59:00  river	Cell #	     51911	   85.31	   0.003	20
@@ -110,21 +115,20 @@ Progress | 0.6433333
 Progress | 0.67
 Progress | 0.6933333
 Progress | 0.72
-Message  | 03APR2025 03:41:00  river	Cell #	     54424	  122.81	   0.005	20
 Progress | 0.7433333
-Message  | 03APR2025 03:48:00  river	Cell #	     62310	  113.50	   0.003	20
+Message  | 03APR2025 03:45:00  river	Cell #	     54424	  122.90	   0.005	20
+Message  | 03APR2025 03:47:00  river	Cell #	     62749	  129.77	   0.005	20
 Progress | 0.77
-Message  | 03APR2025 03:52:00  river	Cell #	     53084	   80.44	   0.004	20
+Message  | 03APR2025 03:53:00  river	Cell #	     62749	  129.70	   0.006	20
 Message  | 
-Message  | 03APR2025 03:53:00  river	Cell #	     54424	  122.92	   0.004	20
-Message  | 03APR2025 03:55:00  river	Cell #	     62749	  129.78	   0.005	20
-Message  | 03APR2025 03:57:00  river	Cell #	     54424	  122.57	   0.007	20
+Message  | 03APR2025 03:54:00  river	Cell #	     53973	  111.97	   0.005	20
+Message  | 03APR2025 03:57:00  river	Cell #	     54424	  122.64	   0.007	20
 Progress | 0.7933334
-Message  | 03APR2025 04:01:00  river	Cell #	     62749	  129.76	   0.006	20
+Message  | 03APR2025 03:59:00  river	Cell #	     62749	  129.69	   0.006	20
+Message  | 03APR2025 04:05:00  river	Cell #	     62749	  129.71	   0.005	20
 Progress | 0.8166667
 Message  | 
-Message  | 03APR2025 04:07:00  river	Cell #	     62749	  129.78	   0.005	20
-Message  | 03APR2025 04:13:00  river	Cell #	     62749	  129.83	   0.004	20
+Message  | 03APR2025 04:11:00  river	Cell #	     62749	  129.77	   0.004	20
 Progress | 0.8433334
 Progress | 0.87
 Progress | 0.8966666
@@ -148,17 +152,16 @@ Message  | 1D Post Process Skipped (simulation is all 2D)
 Message  | 
 Message  | PROCESS:RasProcess
 Message  | Computing Stored Results Maps
-Message  | 0 Maps generated for 'flow.p09.hdf'
 Message  | 
 Message  | Computations Summary
 Message  | 
 Message  | Computation Task	Time(hh:mm:ss)
 Message  | Completing Geometry, Flow and Plan	       1
 Message  | Preprocessing Geometry	<1
-Message  | Unsteady Flow Computations	    1:04
+Message  | Unsteady Flow Computations	      42
 Message  | Computing Maps	<1
-Message  | Complete Process	    1:06
+Message  | Complete Process	      45
 Message  | 
 Message  | Computation Speed	Simulation/Runtime
-Message  | Unsteady Flow Computations	281x
-Message  | Complete Process	270x
+Message  | Unsteady Flow Computations	420x
+Message  | Complete Process	397x

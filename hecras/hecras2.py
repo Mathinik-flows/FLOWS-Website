@@ -3,6 +3,9 @@ import pandas as pd
 import time
 import logging
 import subprocess
+import h5py
+import numpy as np
+from osgeo import gdal
 
 # Configure basic logging
 logging.basicConfig(
@@ -20,6 +23,10 @@ try:
     project_file = r"C:\Yna\Thesis\FLOWS\hecras\flow.prj"
     unsteady_file = r"C:\Yna\Thesis\FLOWS\hecras\flow.u02"
     csv_file = r"C:\Yna\Thesis\FLOWS\hecras\waterlevels.csv"
+    hdf_file = r"C:\Yna\Thesis\FLOWS\hecras\flow.p09.hdf"
+
+    # Define output GeoTIFF file
+    output_tiff = r"C:\Yna\Thesis\FLOWS\hecras\TIFFs\FloodMap.tif"
 
     # Load water level data from CSV
     df = pd.read_csv(csv_file)
@@ -74,17 +81,13 @@ try:
             print("✅ HEC-RAS Unsteady Flow Simulation completed successfully.")
         else:
             print("❌ Error running HEC-RAS Unsteady Flow Simulation.")
-        # RAS.ShowRas()  # Show GUI to verify it loads correctly
-        # RAS.UnsteadyFlow_UnsteadyFlowFile_Open(UnsteadyFlowFile)
-        # print("🚀 Running HEC-RAS Simulation...")
+        
+    
 
-        # # Fix: Ensure correct argument format
-        # success = RAS.Compute_CurrentPlan(None, True)  # Use (None, True) instead of (0,1)
-
-        if success == 0:
-            print("❌ Simulation failed!")
-        else:
-            print("✅ Simulation completed.")
+        # Close HEC-RAS
+        # RAS.Project_save()
+        # RAS.QuitRAS()
+        # del RAS
 
     # Execute the workflow
     update_unsteady_flow(unsteady_file, df)

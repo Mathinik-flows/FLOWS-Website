@@ -320,3 +320,34 @@ main {
 .tippy-box[data-theme~='legend'] > .tippy-arrow::before {
     transform: scale(0);
   }
+
+/* Ensure the specific nav-link can contain the absolutely positioned pseudo-element */
+.navbar-nav .nav-link.underline-image {
+    position: relative; /* Needed for positioning the ::after */
+  }
+  
+  /* Style the pseudo-element for the underline image */
+  .navbar-nav .nav-link.underline-image::after {
+    content: '';
+    display: block;
+  
+    /* --- Image Settings --- */
+    background-image: url('./assets/path.svg'); /* ! tärkeää: CHANGE THIS PATH */
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain; /* Or specify dimensions */
+    height: 10px;          /* ! tärkeää: Adjust based on your image */
+    /* --- End Image Settings --- */
+  
+  
+    /* --- Positioning --- */
+    position: absolute;
+    left: 0;
+    right: 0;       /* Spans the width */
+    bottom: -5px;   /* ! tärkeää: Adjust this negative value to position below text */
+                    /* Consider Bootstrap's default padding */
+    /* --- End Positioning --- */
+  
+    /* Optional: Prevent image from interfering with clicks */
+    pointer-events: none;
+  }

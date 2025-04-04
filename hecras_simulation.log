@@ -275,3 +275,64 @@
 2025-04-02 16:02:06,706 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
 2025-04-02 16:20:36,600 - HEC-RAS Controller initialized.
 2025-04-02 16:20:36,954 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 10:51:43,621 - HEC-RAS Controller initialized.
+2025-04-03 10:51:44,309 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 10:53:48,243 - HEC-RAS Controller initialized.
+2025-04-03 10:53:48,595 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:04:19,138 - HEC-RAS Controller initialized.
+2025-04-03 15:04:19,537 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:04:21,142 - Error: RAS67.HECRASController.Output_ExportRasMap
+2025-04-03 15:04:21,157 - HEC-RAS closed successfully.
+2025-04-03 15:04:57,583 - HEC-RAS Controller initialized.
+2025-04-03 15:04:57,938 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:04:59,464 - Error: RAS67.HECRASController.Output_ExportRasMap
+2025-04-03 15:04:59,478 - HEC-RAS closed successfully.
+2025-04-03 15:05:17,204 - HEC-RAS Controller initialized.
+2025-04-03 15:05:17,558 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:05:19,073 - Error: RAS67.HECRASController.Output_ExportRasMap
+2025-04-03 15:05:19,088 - HEC-RAS closed successfully.
+2025-04-03 15:05:46,824 - HEC-RAS Controller initialized.
+2025-04-03 15:05:47,194 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:05:48,783 - Error: RAS67.HECRASController.Output_ExportRasMap
+2025-04-03 15:05:48,799 - HEC-RAS closed successfully.
+2025-04-03 15:06:06,996 - HEC-RAS Controller initialized.
+2025-04-03 15:06:07,362 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:06:53,326 - HEC-RAS Controller initialized.
+2025-04-03 15:06:53,708 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:06:55,226 - Error: RAS67.HECRASController.Output_ExportRasMap
+2025-04-03 15:06:55,239 - HEC-RAS closed successfully.
+2025-04-03 15:08:40,682 - HEC-RAS Controller initialized.
+2025-04-03 15:08:41,034 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:08:42,601 - Error: RAS67.HECRASController.Output_ExportRasMap
+2025-04-03 15:08:42,622 - HEC-RAS closed successfully.
+2025-04-03 15:10:03,544 - HEC-RAS Controller initialized.
+2025-04-03 15:10:03,892 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:10:04,374 - Error: RAS67.HECRASController.Output_ExportRasMap
+2025-04-03 15:10:04,390 - HEC-RAS closed successfully.
+2025-04-03 15:27:35,870 - HEC-RAS Controller initialized.
+2025-04-03 15:27:36,221 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:27:36,711 - Error: name 'ras' is not defined
+2025-04-03 15:27:36,729 - HEC-RAS closed successfully.
+2025-04-03 15:27:44,913 - HEC-RAS Controller initialized.
+2025-04-03 15:27:45,311 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:27:45,796 - Error: RAS67.HECRASController.Output_ExportGriddedData
+2025-04-03 15:27:45,815 - HEC-RAS closed successfully.
+2025-04-03 15:46:27,822 - HEC-RAS Controller initialized.
+2025-04-03 15:46:28,587 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:47:24,349 - GeoTIFF exported to 'C:\Yna\Thesis\FLOWS\hecras\TIFFs\output.tif'.
+2025-04-03 15:47:45,590 - HEC-RAS Controller initialized.
+2025-04-03 15:47:45,938 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:47:46,439 - Doing command 'C:\Yna\Thesis\FLOWS\hecras\TIFFs\output.tif'.
+2025-04-03 15:48:13,706 - GeoTIFF exported to 'C:\Yna\Thesis\FLOWS\hecras\TIFFs\output.tif'.
+2025-04-03 15:48:17,664 - HEC-RAS Controller initialized.
+2025-04-03 15:48:18,051 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:48:18,550 - GeoTIFF exported to 'C:\Yna\Thesis\FLOWS\hecras\flow.prj'.
+2025-04-03 15:48:18,550 - Doing command 'C:\Yna\Thesis\FLOWS\hecras\TIFFs\output.tif'.
+2025-04-03 15:52:15,806 - HEC-RAS Controller initialized.
+2025-04-03 15:52:16,170 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:52:16,641 - Error: 'NoneType' object has no attribute 'GetRasterBand'
+2025-04-03 15:52:16,662 - HEC-RAS closed successfully.
+2025-04-03 15:52:29,591 - HEC-RAS Controller initialized.
+2025-04-03 15:52:29,961 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
+2025-04-03 15:52:30,448 - Error: 'NoneType' object has no attribute 'XSize'
+2025-04-03 15:52:30,477 - HEC-RAS closed successfully.
