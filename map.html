@@ -12,6 +12,8 @@
     <link href="https://unpkg.com/tippy.js/themes/light.css" rel="stylesheet"/>
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
     
+
+    
     
 </head>
 <body>
@@ -175,6 +177,11 @@
     <!-- Development -->
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/geotiff"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.6/proj4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/geotiff"></script>
+    
+    
 
     <!-- Production -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -339,7 +346,6 @@
             // When the geocoder returns a result
             const point = event.result.center; // Capture the result 
             const placeName = event.result.text;
-            console.log(point);
             const tileset = 'gavincii.cm8bbl9jm8w9n1nnbrh5vzu9t-4sfg3'; // replace this with the ID of the tileset you created
             const radius = 1609; // 1609 meters is roughly equal to one mile
             const limit = 10; // The maximum amount of results to return
@@ -350,6 +356,7 @@
                 { method: 'GET' }
             );
             const json = await query.json();
+
             console.log(json);
             //const features = json.features;
             updateNearby(json.features, map);
@@ -365,29 +372,69 @@
     let selectedLocations = [];
     let markers = [];
 
-    function addMonitored(map, placeName, coordinates) {
+    async function addMonitored(map, placeName, coordinates) {
         if (selectedLocations.some(loc => loc.name === placeName)) return;
 
-        // Mock flood level (replace this with actual data source)
-        const floodLevel = getFloodLevel();
-        selectedLocations.push({ name: placeName, coordinates, floodLevel });
-    
+        try {
+            console.log("Fetching flood level for coordinates:", coordinates);
+            const result = await fetchBand1Value(coordinates[0], coordinates[1]);
 
-        // Add marker to the map
-        let marker = new mapboxgl.Marker({ color: "blue" })
-            .setLngLat(coordinates)
-            .addTo(map);
 
-        // Update UI list
-        markers.push(marker); // Store marker for later removal
-        updateLocationList();
+            console.log("Flood Value:", result.value);
+            console.log("Flood Level:", result.level);
+
+            // Push with the retrieved flood level
+            selectedLocations.push({
+                name: placeName,
+                coordinates,
+                floodLevel: result.level  // You can also include result.value if needed
+            });
+
+            // Add marker to the map
+            let marker = new mapboxgl.Marker({ color: "blue" })
+                .setLngLat(coordinates)
+                .addTo(map);
+
+            markers.push(marker); // Store marker for later removal
+            updateLocationList();
+
+        } catch (error) {
+            console.error("Error fetching flood level:", error);
+        }
     }
 
-    // Mock function to get flood level
-    function getFloodLevel() {
-        const levels = ["No Flood", "Moderate Flood", "High Flood Level"];
-        //return levels[Math.floor(Math.random() * levels.length)];
-        return "Moderate Flood";
+    async function fetchBand1Value(lng, lat) {
+        try {
+            const response = await fetch("http://localhost:5000/get-band1", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ lng, lat })
+            });
+
+            if (!response.ok) {
+                throw new Error("API call failed with status " + response.status);
+            }
+
+            const data = await response.json();
+            console.log("Received data from API:", data);
+
+            if (data.value !== undefined) {
+                console.log("Band1 value:", data.value);
+                console.log("Flood level:", data.flood_level);
+                return {
+                    value: data.value,
+                    level: data.flood_level,
+                    row: data.row,
+                    col: data.col
+                };
+            } else {
+                throw new Error("Invalid data structure: " + JSON.stringify(data));
+            }
+        } catch (err) {
+            console.error("Error in fetchBand1Value:", err);
+            throw err;  // Re-throw to be handled by the caller
+        }
+
     }
 
     function updateLocationList() {
@@ -396,7 +443,8 @@
 
         selectedLocations.forEach((loc, index) => {
             let textColor = loc.floodLevel === "High Flood Level" ? "red" :
-                            loc.floodLevel === "Moderate Flood" ? "orange" : "green";
+                            loc.floodLevel === "Moderate Flood Level" ? "orange" :
+                            loc.floodLevel === "Low Flood Level" ? "yellow" :"green";
 
             let card = document.createElement("div");
             card.className = "card my-2 rounded-4";

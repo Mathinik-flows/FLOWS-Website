@@ -16,5 +16,8 @@
     "url": "https://github.com/gavin-cii/FLOWS/issues"
   },
   "homepage": "https://github.com/gavin-cii/FLOWS#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "geotiff.js": "^1.0.1"
+  }
 }
