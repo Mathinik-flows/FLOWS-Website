@@ -62,7 +62,7 @@
                     Select prediction shown
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%";>
-                        <li><h6 class="dropdown-header">Prediction at this date & time</h6></li>
+                        <li><h6 class="dropdown-header">Show predictions for...</h6></li>
                         <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">April 9 1:00PM</a></li>
                         <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">April 9 2:00PM</a></li>
                         <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">April 9 3:00PM</a></li>
@@ -89,7 +89,7 @@
                     <p class=" text-dark lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
                     <div id="search-container"></div>
                     <div id="location-list-container">
-                        <div id="monitored-list">
+                        <div class="monitored-list" id="monitored-list">
                         </div>
                     </div>
                 
@@ -110,7 +110,7 @@
             
                 <p class="card-subtitle text-dark lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
                 <div id="location-list-container">
-                    <div id="location-list">
+                    <div class="location-list" id="location-list">
                     </div>
                 </div>
             
@@ -151,9 +151,9 @@
                                 Select an option
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%";>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">Option 1</a></li>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">Option 2</a></li>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">Option 3</a></li>
+                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">April 9 1:00PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">April 9 2:00PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">April 9 3:00PM</a></li>
                                 </ul>
                             </div>
                             <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0"><small>Map predictions last updated at 05/12/2025 1:01PM.</small></p>
@@ -173,9 +173,9 @@
                         <div class="overlay-content">
                             <div class="collapse mt-2" id="collapseMonitoredLocations">
                                 <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
-                                <div id="search-container"></div>
+                                <div id="search-container2"></div>
                                 <div id="location-list-container">
-                                    <div id="monitored-list">
+                                    <div class="monitored-list" id="monitored-list">
                                     </div>
                                 </div>
                             </div>
@@ -196,7 +196,7 @@
                             <div class="collapse mt-2" id="collapseNearbyLocations">
                                 <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
                                 <div id="location-list-container">
-                                    <div id="location-list">
+                                    <div class="location-list" id="location-list">
                                     </div>
                                 </div>
                             </div>    
@@ -262,7 +262,7 @@
 	// https://account.mapbox.com
 
     //BOOTSTRAP
-
+        
 
     document.addEventListener("DOMContentLoaded", function () {
         const overlay = document.getElementById("disclaimer-overlay");
@@ -289,20 +289,20 @@
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
-        document.querySelectorAll(".toggle").forEach(button => {
-            const collapseTarget = document.querySelector(button.getAttribute("data-bs-target"));
-            const icon = button.querySelector(".toggleIcon");
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     document.querySelectorAll(".toggle").forEach(button => {
+    //         const collapseTarget = document.querySelector(button.getAttribute("data-bs-target"));
+    //         const icon = button.querySelector(".toggleIcon");
 
-            collapseTarget.addEventListener("shown.bs.collapse", function () {
-                icon.src = "assets/arrow-up.svg"; // Change to "up" icon when expanded
-            });
+    //         collapseTarget.addEventListener("shown.bs.collapse", function () {
+    //             icon.src = "assets/arrow-up.svg"; // Change to "up" icon when expanded
+    //         });
 
-            collapseTarget.addEventListener("hidden.bs.collapse", function () {
-                icon.src = "assets/arrow-down.svg"; // Change back to "down" icon when collapsed
-            });
-        });
-    });
+    //         collapseTarget.addEventListener("hidden.bs.collapse", function () {
+    //             icon.src = "assets/arrow-down.svg"; // Change back to "down" icon when collapsed
+    //         });
+    //     });
+    // });
 
     document.addEventListener("DOMContentLoaded", function () {
         var popoverTrigger = new bootstrap.Popover(document.getElementById("legend-toggle"), {
@@ -399,6 +399,8 @@
                 return results;
             }
 
+            
+
             // Initialize MapboxGeocoder with local dataset search
             const geocoder = new MapboxGeocoder({
                 accessToken: mapboxgl.accessToken,
@@ -409,7 +411,38 @@
                 container: document.getElementById('search-container')
             });
 
-            document.getElementById('search-container').appendChild(geocoder.onAdd(map));
+                // Function to add the geocoder to a specified container
+            function addGeocoderToContainer(containerId) {
+                const container = document.getElementById(containerId);
+                container.appendChild(geocoder.onAdd(map));
+            }
+
+            // Function to update the visibility of the geocoder containers based on the window size
+            function updateGeocoderVisibility() {
+                const container1 = document.getElementById('search-container');
+                const container2 = document.getElementById('search-container2');
+
+                if (window.innerWidth <= 767) {
+                    document.getElementById("search-container").innerHTML = "";
+                    document.getElementById("search-container2").innerHTML = "";
+                    addGeocoderToContainer('search-container'); // Add geocoder to the first container
+                } else {
+                   
+                    document.getElementById("search-container").innerHTML = "";
+                    document.getElementById("search-container2").innerHTML = "";
+                    addGeocoderToContainer('search-container2'); // Add geocoder to the second container
+                }
+            }
+
+            // Initial visibility check
+            updateGeocoderVisibility();
+
+            // Update visibility on window resize
+            window.addEventListener('resize', updateGeocoderVisibility);
+
+            // document.getElementById('search-container').appendChild(geocoder.onAdd(map));
+            // document.getElementById('search-container2').appendChild(geocoder.onAdd(map));
+            
 
             geocoder.on('result', async (event) => {
             // When the geocoder returns a result
@@ -505,33 +538,62 @@
     }
 
     function updateLocationList() {
-        const monitoredList = document.getElementById("monitored-list");
-        monitoredList.innerHTML = "";
+        // Select all elements with the class "monitored-list"
+        const monitoredLists = document.querySelectorAll(".monitored-list");
 
-        selectedLocations.forEach((loc, index) => {
-            let textColor = loc.floodLevel === "High Flood Level" ? "red" :
-                            loc.floodLevel === "Moderate Flood Level" ? "orange" :
-                            loc.floodLevel === "Low Flood Level" ? "yellow" :"green";
+        // Clear the inner HTML of each monitored list
+        monitoredLists.forEach(monitoredList => {
+            monitoredList.innerHTML = ""; // Clear existing content
 
-            let card = document.createElement("div");
-            card.className = "card my-2 rounded-4";
-            card.innerHTML = `
-                <div class="card-body d-flex justify-content-between align-items-center p-3">
-                    <div>
-                        <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
-                        <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
+            selectedLocations.forEach((loc, index) => {
+                let textColor = loc.floodLevel === "High Flood Level" ? "red" :
+                                loc.floodLevel === "Moderate Flood Level" ? "orange" :
+                                loc.floodLevel === "Low Flood Level" ? "yellow" : "green";
+
+                let card = document.createElement("div");
+                card.className = "card my-2 rounded-4";
+                card.innerHTML = `
+                    <div class="card-body d-flex justify-content-between align-items-center p-3">
+                        <div>
+                            <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
+                            <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
+                        </div>
+                        <button class="btn btn-sm remove-btn" onclick="removeLocation(${index})" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
+                            <img src="assets/remove.svg" alt="Remove" width="30" height="30">
+                        </button>
                     </div>
-                    <button class="btn btn-sm remove-btn" onclick="removeLocation(${index})" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
-                        <img src="assets/remove.svg" alt="Remove" width="30" height="30">
-                    </button>
-                </div>
-            `;
+                `;
 
-            // <h6 class="fw-bold text-darkBlue">${name}</h6>
-            // <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
-
-            monitoredList.appendChild(card);
+                monitoredList.appendChild(card);
+            });
         });
+        // const monitoredList = document.getElementById("monitored-list");
+        // monitoredList.innerHTML = "";
+
+        // selectedLocations.forEach((loc, index) => {
+        //     let textColor = loc.floodLevel === "High Flood Level" ? "red" :
+        //                     loc.floodLevel === "Moderate Flood Level" ? "orange" :
+        //                     loc.floodLevel === "Low Flood Level" ? "yellow" :"green";
+
+        //     let card = document.createElement("div");
+        //     card.className = "card my-2 rounded-4";
+        //     card.innerHTML = `
+        //         <div class="card-body d-flex justify-content-between align-items-center p-3">
+        //             <div>
+        //                 <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
+        //                 <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
+        //             </div>
+        //             <button class="btn btn-sm remove-btn" onclick="removeLocation(${index})" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
+        //                 <img src="assets/remove.svg" alt="Remove" width="30" height="30">
+        //             </button>
+        //         </div>
+        //     `;
+
+        //     // <h6 class="fw-bold text-darkBlue">${name}</h6>
+        //     // <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
+
+        //     monitoredList.appendChild(card);
+        // });
     }
 
     // Remove location from the list
@@ -543,65 +605,130 @@
     }
  
     function updateNearby(features, map) {
-        const locationList = document.getElementById("location-list");
-        locationList.innerHTML = ""; // Clear previous entries
+        // Select all elements with the class "location-list"
+        const locationLists = document.querySelectorAll(".location-list");
 
-        features.forEach(feature => {
-            let coordinates = feature.geometry.coordinates; // Extract coordinates
-            let name = feature.properties.name || "Unknown Facility";
-            let distance = (feature.properties.tilequery.distance / 1000).toFixed(2); // Convert meters to km
-            let amenity = feature.properties.amenity || "default"; // Get the amenity type
-            
-            const iconMap = {
-                "police_station": "assets/icons/GovernmentService.svg",
-                "fire_station": "assets/icons/GovernmentService.svg",
-                "school": "assets/icons/School.svg",
-                "hospital": "assets/icons/Hospital.svg",
-                "evacuation_centerr": "assets/icons/Evacuation.svg",
-                "miscellaneous": "assets/icons/Misc.svg",
-                "government": "assets/icons/Government.svg"
-            };
-            iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
+        // Clear previous entries and populate each location list
+        locationLists.forEach(locationList => {
+            locationList.innerHTML = ""; // Clear previous entries
 
-            const el = document.createElement('div');
-             el.className = 'marker';
-             el.style.backgroundImage = iconPath;
-             el.style.width = `50px`;
-             el.style.height = `50px`;
-             el.style.backgroundSize = '100%';
-
-            let marker = new mapboxgl.Marker(el)
-                 .setLngLat(coordinates)
-                 .addTo(map);
+            features.forEach(feature => {
+                let coordinates = feature.geometry.coordinates; // Extract coordinates
+                let name = feature.properties.name || "Unknown Facility";
+                let distance = (feature.properties.tilequery.distance / 1000).toFixed(2); // Convert meters to km
+                let amenity = feature.properties.amenity || "default"; // Get the amenity type
                 
-            // Show popup on hover
-            marker.getElement().addEventListener('mouseenter', () => {
-                popup.setLngLat(coordinates).addTo(map);
-            });
+                const iconMap = {
+                    "police_station": "assets/icons/GovernmentService.svg",
+                    "fire_station": "assets/icons/GovernmentService.svg",
+                    "school": "assets/icons/School.svg",
+                    "hospital": "assets/icons/Hospital.svg",
+                    "evacuation_center": "assets/icons/Evacuation.svg",
+                    "miscellaneous": "assets/icons/Misc.svg",
+                    "government": "assets/icons/Government.svg"
+                };
+                const iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
 
-            // Hide popup when mouse leaves
-            marker.getElement().addEventListener('mouseleave', () => {
-                popup.remove();
-            });
+                // Create a marker
+                const el = document.createElement('div');
+                el.className = 'marker';
+                el.style.backgroundImage = `url(${iconPath})`;
+                el.style.width = `50px`;
+                el.style.height = `50px`;
+                el.style.backgroundSize = '100%';
 
-             // Create Bootstrap Card
-            let card = document.createElement("div");
-            card.className = "card mb-2 rounded-4"; // Add Bootstrap card classes
-            card.innerHTML = `
-                <div class="card-body d-flex align-items-center p-3">
-                    <div class="me-3">
-                        <img src="${iconPath}" alt="${amenity}" width="30" height="30">
+                let marker = new mapboxgl.Marker(el)
+                    .setLngLat(coordinates)
+                    .addTo(map);
+                
+                // Show popup on hover
+                marker.getElement().addEventListener('mouseenter', () => {
+                    popup.setLngLat(coordinates).addTo(map);
+                });
+
+                // Hide popup when mouse leaves
+                marker.getElement().addEventListener('mouseleave', () => {
+                    popup.remove();
+                });
+
+                // Create Bootstrap Card
+                let card = document.createElement("div");
+                card.className = "card mb-2 rounded-4"; // Add Bootstrap card classes
+                card.innerHTML = `
+                    <div class="card-body d-flex align-items-center p-3">
+                        <div class="me-3">
+                            <img src="${iconPath}" alt="${amenity}" width="30" height="30">
+                        </div>
+                        <div>
+                            <h6 class="fw-bold text-darkBlue">${name}</h6>
+                            <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
+                        </div>
                     </div>
-                    <div>
-                        <h6 class="fw-bold text-darkBlue">${name}</h6>
-                        <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
-                    </div>
-                </div>
-            `;
+                `;
 
-            // Append the card to the facility list
-            locationList.appendChild(card);
+                // Append the card to the facility list
+                locationList.appendChild(card);
+            });
         });
+        // const locationList = document.getElementById("location-list");
+        // locationList.innerHTML = ""; // Clear previous entries
+
+        // features.forEach(feature => {
+        //     let coordinates = feature.geometry.coordinates; // Extract coordinates
+        //     let name = feature.properties.name || "Unknown Facility";
+        //     let distance = (feature.properties.tilequery.distance / 1000).toFixed(2); // Convert meters to km
+        //     let amenity = feature.properties.amenity || "default"; // Get the amenity type
+            
+        //     const iconMap = {
+        //         "police_station": "assets/icons/GovernmentService.svg",
+        //         "fire_station": "assets/icons/GovernmentService.svg",
+        //         "school": "assets/icons/School.svg",
+        //         "hospital": "assets/icons/Hospital.svg",
+        //         "evacuation_centerr": "assets/icons/Evacuation.svg",
+        //         "miscellaneous": "assets/icons/Misc.svg",
+        //         "government": "assets/icons/Government.svg"
+        //     };
+        //     iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
+
+        //     const el = document.createElement('div');
+        //      el.className = 'marker';
+        //      el.style.backgroundImage = iconPath;
+        //      el.style.width = `50px`;
+        //      el.style.height = `50px`;
+        //      el.style.backgroundSize = '100%';
+
+        //     let marker = new mapboxgl.Marker(el)
+        //          .setLngLat(coordinates)
+        //          .addTo(map);
+                
+        //     // Show popup on hover
+        //     marker.getElement().addEventListener('mouseenter', () => {
+        //         popup.setLngLat(coordinates).addTo(map);
+        //     });
+
+        //     // Hide popup when mouse leaves
+        //     marker.getElement().addEventListener('mouseleave', () => {
+        //         popup.remove();
+        //     });
+
+        //      // Create Bootstrap Card
+        //     let card = document.createElement("div");
+        //     card.className = "card mb-2 rounded-4"; // Add Bootstrap card classes
+        //     card.innerHTML = `
+        //         <div class="card-body d-flex align-items-center p-3">
+        //             <div class="me-3">
+        //                 <img src="${iconPath}" alt="${amenity}" width="30" height="30">
+        //             </div>
+        //             <div>
+        //                 <h6 class="fw-bold text-darkBlue">${name}</h6>
+        //                 <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
+        //             </div>
+        //         </div>
+        //     `;
+
+        //     // Append the card to the facility list
+        //     locationList.appendChild(card);
+        // });
     }
 
     
