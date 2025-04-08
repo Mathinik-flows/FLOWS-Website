@@ -23,12 +23,11 @@ def classify_flood_level(value):
         return "Not in Scope"
 
 
-
 @app.route("/get-band1", methods=["POST"])
 def get_band1_value():
 
     try: 
-        # Load raster once at startup
+        #Load raster once at startup
         tif_path = "hecras/Plan9/Depth (03APR2025 00 00 00).Terrain.SmootherDEM.tif"
         dataset = rasterio.open(tif_path)
 
@@ -38,7 +37,6 @@ def get_band1_value():
         #print(f"Received coordinates: lng={lng}, lat={lat}")
         
         with rasterio.open(tif_path) as dataset:
-            value, flood_level = 0
             # Transform coordinate to raster CRS if needed
             if dataset.crs != CRS.from_epsg(4326):
                 transformer = Transformer.from_crs("EPSG:4326", dataset.crs, always_xy=True)
@@ -55,10 +53,9 @@ def get_band1_value():
             # Read Band 1 value at the given row/col
             band1 = dataset.read(1)  # read band 1 (2D array)
             value = band1[row, col]
-            flood_level = classify_flood_level(value-100) # Adjusted value for flood level classification
+            flood_level = classify_flood_level(value-100)
 
-            # print(f"Value at ({lng}, {lat}):", value)
-            # print(flood_level)
+            #print(f"Value at ({lng}, {lat}):", value)
         
         return jsonify({
             "value": float(value),  # ✅ Convert to native float
@@ -76,9 +73,9 @@ def get_band1_value():
             "col": 0,
             "message": "Band1 value retrieved unsuccessfully",
             "error": str(e)})
+        #return jsonify({"error": str(e)}), 500
     
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-

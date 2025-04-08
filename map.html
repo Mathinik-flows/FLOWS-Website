@@ -24,9 +24,9 @@
     <!-- Navbar -->
     <header>
         <nav class="navbar navbar-expand-lg sticky-top bg-white">
-            <div class="container px-5 py-2">
+            <div class="container px-5 py-1">
                 <a class="navbar-brand" href="index.html">
-                    <img src="./assets/logo.png" alt="Flows Logo" width="60" height="55">
+                    <img src="./assets/logo.png" alt="Flows Logo" width="50" height="45">
                 </a>
                 <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -37,13 +37,13 @@
                 <div class="collapse navbar-collapse fw-semibold justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto align-items-lg-center align-items-end">
                         <li class="nav-item ">
-                            <a class="nav-link fs-5 mx-2 fw-semibold text-black underline-image" href="map.html">Flood Extent Map</a>
+                            <a class="nav-link fs-6 mx-2 fw-semibold text-black underline-image" href="map.html">Flood Extent Map</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link fs-5 fw-semibold mx-2 text-black" href="about.html">About</a>
+                            <a class="nav-link fs-6 fw-semibold mx-2 text-black" href="about.html">About</a>
                         </li>  
                         <li class="nav-item ">
-                            <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-5" href="#">Read the Paper</a>
+                            <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-6" href="#">Read the Paper</a>
                         </li>                    
                     </ul>
                 </div>
@@ -269,7 +269,7 @@
     
 
     function successLocation(position) {
-        console.log(position);
+        // console.log(position);
         setupMap([position.coords.longitude, position.coords.latitude]);
     }
 
@@ -296,22 +296,22 @@
         fetch('dataset.geojson') // Load the downloaded GeoJSON file
         .then(response => response.json())
         .then(geojsonData => {
-            console.log("Loaded GeoJSON Data:", geojsonData);
+            // console.log("Loaded GeoJSON Data:", geojsonData);
 
-                        // Check if data is in expected format
-            if (!geojsonData.features) {
-                console.error("GeoJSON format is incorrect. No 'features' property found.");
-                return;
-            }
+            //             // Check if data is in expected format
+            // if (!geojsonData.features) {
+            //     console.error("GeoJSON format is incorrect. No 'features' property found.");
+            //     return;
+            // }
 
-            // Example: Log the first feature to verify structure
-            if (geojsonData.features.length > 0) {
-                console.log("First Feature:", geojsonData.features[0]);
-            }
+            // // Example: Log the first feature to verify structure
+            // if (geojsonData.features.length > 0) {
+            //     //console.log("First Feature:", geojsonData.features[0]);
+            // }
 
             // Define localGeocoder function for searching within the dataset
             function localGeocoder(query) {
-                console.log("Geocoder Search Query:", query); // Debug search query
+                // console.log("Geocoder Search Query:", query); // Debug search query
 
                 const results = geojsonData.features
                     .filter(feature => 
@@ -326,7 +326,7 @@
                         geometry: feature.geometry,
                     }));
 
-                console.log("Filtered Results:", results); // Debug filtered results
+                // console.log("Filtered Results:", results); // Debug filtered results
                 return results;
             }
 
@@ -356,9 +356,7 @@
                 { method: 'GET' }
             );
             const json = await query.json();
-
-            console.log(json);
-            //const features = json.features;
+            // console.log(json);
             updateNearby(json.features, map);
             addMonitored(map, placeName, point);
 
@@ -376,7 +374,7 @@
         if (selectedLocations.some(loc => loc.name === placeName)) return;
 
         try {
-            console.log("Fetching flood level for coordinates:", coordinates);
+            //console.log("Fetching flood level for coordinates:", coordinates);
             const result = await fetchBand1Value(coordinates[0], coordinates[1]);
 
 
@@ -416,7 +414,7 @@
             }
 
             const data = await response.json();
-            console.log("Received data from API:", data);
+            // console.log("Received data from API:", data);
 
             if (data.value !== undefined) {
                 console.log("Band1 value:", data.value);
