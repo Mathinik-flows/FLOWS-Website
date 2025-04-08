@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLOWS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    
+    
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
+    <link href="https://unpkg.com/tippy.js/themes/light.css" rel="stylesheet"/>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
+    
+
+    
+    
+</head>
+<body>
+    <!--plugins-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.min.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.3/mapbox-gl-geocoder.css" type="text/css">
+    
+    <!-- Navbar -->
+    <header class="d-none d-md-block">
+        <nav class="navbar navbar-expand-lg sticky-top bg-white">
+            <div class="container px-5 py-1">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./assets/logo.png" alt="Flows Logo" width="50" height="45">
+                </a>
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation" href="/">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse fw-semibold justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto align-items-lg-center align-items-end">
+                        <li class="nav-item ">
+                            <a class="nav-link fs-6 mx-2 fw-semibold text-black underline-image" href="map.html">Flood Extent Map</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link fs-6 fw-semibold mx-2 text-black" href="about.html">About</a>
+                        </li>  
+                        <li class="nav-item ">
+                            <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-6" href="#">Read the Paper</a>
+                        </li>                    
+                    </ul>
+                </div>
+            </div>
+        </nav>    
+    </header>
+
+    <header class="d-md-none">
+        <nav class="navbar navbar-expand-lg sticky-top bg-white">
+            <div class="container px-1 py-1">
+                <a class="navbar-brand" href="index.html">
+                    <img src="./assets/logo.png" alt="Flows Logo" width="50" height="45">
+                </a>
+                <div class="dropdown" >
+                    <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%"; >
+                    Select prediction shown
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%";>
+                        <li><h6 class="dropdown-header">Prediction at this date & time</h6></li>
+                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">April 9 1:00PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">April 9 2:00PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">April 9 3:00PM</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-nav ms-auto align-items-lg-center align-items-end">
+                        <button class="nav-link fs-6 mx-2 fw-semibold text-black underline-image" data-bs-toggle="modal" data-bs-target="#MonitoredLocations">Monitored Locations</button>
+                        <button class="nav-link fs-6 fw-semibold mx-2 text-black" data-bs-toggle="modal" data-bs-target="#NearbyLocations">Nearby Facilities</button>
+                </div>
+                
+            </div>
+        </nav>    
+    </header>
+
+    <div class="modal fade" id="MonitoredLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Monitored Locations</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                
+                    <p class=" text-dark lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
+                    <div id="search-container"></div>
+                    <div id="location-list-container">
+                        <div id="monitored-list">
+                        </div>
+                    </div>
+                
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="NearbyLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nearby Critical Facilities</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            
+                <p class="card-subtitle text-dark lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
+                <div id="location-list-container">
+                    <div id="location-list">
+                    </div>
+                </div>
+            
+            </div>
+            
+            </div>
+        </div>
+    </div>
+
+       
+    <!--Map-->    
+    <section id="map">
+        <div id="disclaimer-overlay">
+            <div class="card rounded-5 p-4 px-5" style="max-width: 35%; margin: 0 auto;">
+                <div class="card-body text-center">
+                    <h2 class=" fw-semibold text-darkOrange m-0" >Before you proceed...</h2>
+                    <p class="lead text-darkBlue fs-6 lh-sm mt-3">We would like to remind you that this project is an initial release based on historical data and flood simulations, and should not be solely depended on. Please exercise caution in acting on what the predictions show. The developers and researchers will not be liable for any damages and losses of any party as a result of using this website, its contents, and functionalities. 
+
+                    <br><br>
+                    This project is limited to the <span class="fw-semibold">Municipality of Camaligan, Camarines Sur</span>
+          
+                   </p>
+                    <button id="accept-disclaimer" class="btn btn-darkBlue rounded-pill fw-semibold px-4 fs-5 mt-3" href="#">I understand.</button>
+                </div>
+            </div>
+        </div>
+        <div id="map"></div>
+        <div class="overlay mt-2 d-none d-md-block">
+            <div class="sub-overlay">
+                <div class="card bg-lightBlue rounded-5 border-0 p-2">
+                    <div class="card-body">
+                        <div class="overlay-header">
+                            <h6 class="fw-bold text-white ">Showing prediction for:</h6>
+                        </div>
+                        <div class="overlay-content">
+                            <div class="dropdown" >
+                                <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%"; >
+                                Select an option
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%";>
+                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">Option 1</a></li>
+                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">Option 2</a></li>
+                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">Option 3</a></li>
+                                </ul>
+                            </div>
+                            <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0"><small>Map predictions last updated at 05/12/2025 1:01PM.</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-overlay mt-2" style="z-index: 13;">	
+                <div class="card bg-lightBlue border-0 rounded-5 p-2">
+                    <div class="card-body">
+                        <div class="overlay-header mb-0">
+                            <h6 class="fw-bold text-white m-0">Monitored Locations</h6>
+                            <button class="btn toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonitoredLocations" aria-expanded="false" aria-controls="collapseExample">
+                                <img id="toggle-icon" src="assets/arrow-down.svg" alt="Remove" width="20" height="20">
+                            </button>
+                        </div>
+                        <div class="overlay-content">
+                            <div class="collapse mt-2" id="collapseMonitoredLocations">
+                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
+                                <div id="search-container"></div>
+                                <div id="location-list-container">
+                                    <div id="monitored-list">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-overlay mt-2" style="z-index: 10;">
+                <div class="card bg-lightBlue border-0 rounded-5 p-2">
+                    <div class="card-body">
+                        <div class="overlay-header mb-0">
+                            <h6 class="fw-bold text-white m-0">Nearby Critical Facilities</h6>
+                            <button class="btn toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNearbyLocations" aria-expanded="false" aria-controls="collapseExample">
+                                <img id="toggle-icon" src="assets/arrow-down.svg" alt="Remove" width="20" height="20">
+                            </button>
+                        </div>
+                        <div class="overlay-content">
+                            <div class="collapse mt-2" id="collapseNearbyLocations">
+                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
+                                <div id="location-list-container">
+                                    <div id="location-list">
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>                  
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legend Button -->
+        <button id="myButton" class="legend-button">
+            <img id="toggle-icon" src="assets/question.svg" alt="Remove" width="50" height="50">
+        </button>
+        <div id="template" style="display: none; ">
+            <div>
+                <h6 class="legend-title mb-2 fs-5">Legend</h6>
+                <div class="legend-item">
+                    <span class="legend-circle" style="background-color: #f4b400;"></span> Low Flood Level 0.1-0.24m
+                </div>
+                <div class="legend-item">
+                    <span class="legend-circle" style="background-color: #fb8c00;"></span> Moderate Flood Level 0.25-0.5m
+                </div>
+                <div class="legend-item">
+                    <span class="legend-circle" style="background-color: #d50000;"></span> High Flood Level >0.5m
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon"><img src="assets/selected.svg" alt="Remove" width="15" height="15"></span>Monitored Location(s)
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon"><img src="assets/selected.svg" alt="Remove" width="15" height="15"></span>Selected Marker
+                </div>
+                <div class="legend-item">
+                    <p class="fst-italic m-0"><small>Flood levels are based from MMDA's Flood Gauge</small></p>
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+            
+
+ 
+    
+    
+    <!-- Scripts -->
+
+    <!-- Development -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/geotiff"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.6/proj4.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/geotiff"></script>
+    
+    
+
+    <!-- Production -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+    // TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOsKEN FROM
+	// https://account.mapbox.com
+
+    //BOOTSTRAP
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const overlay = document.getElementById("disclaimer-overlay");
+        const acceptButton = document.getElementById("accept-disclaimer");
+
+        // Check if the disclaimer has been accepted before (use localStorage)
+        if (localStorage.getItem("disclaimerAccepted")) {
+            overlay.style.display = "none";
+        }
+
+        acceptButton.addEventListener("click", function () {
+            overlay.classList.add("hidden"); // Add fade-out effect
+            setTimeout(() => {
+                overlay.style.display = "none"; // Hide completely after animation
+            }, 300); // Matches the transition time in CSS
+            localStorage.setItem("disclaimerAccepted", "true"); // Save acceptance
+        });
+    });
+
+
+    document.querySelectorAll(".dropdown-item").forEach(item => {
+        item.addEventListener("click", function() {
+            document.getElementById("dropdownMenuButton").textContent = this.textContent;
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".toggle").forEach(button => {
+            const collapseTarget = document.querySelector(button.getAttribute("data-bs-target"));
+            const icon = button.querySelector(".toggleIcon");
+
+            collapseTarget.addEventListener("shown.bs.collapse", function () {
+                icon.src = "assets/arrow-up.svg"; // Change to "up" icon when expanded
+            });
+
+            collapseTarget.addEventListener("hidden.bs.collapse", function () {
+                icon.src = "assets/arrow-down.svg"; // Change back to "down" icon when collapsed
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var popoverTrigger = new bootstrap.Popover(document.getElementById("legend-toggle"), {
+            container: "body", // Ensures the popover does not get clipped
+        });
+    });
+
+    //TIPPY
+
+
+    tippy('#myButton', {
+        theme: 'legend',
+        content: document.getElementById('template').innerHTML,
+        allowHTML: true,
+        trigger: "click",
+        hideOnClick: 'toggle',
+        placement: 'left-end',
+        offset: [0, -5]
+        // content: 'My tooltip!',
+    });
+
+
+
+
+    //MAPBOX
+
+    
+    const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY204YjBqNGVhMWEwYzJuczc5dmcyOWM0biJ9.Fsdka6-GWmAFXeLPsg9_dg';
+	mapboxgl.accessToken = ACCESS_TOKEN;
+    navigator.geolocation.getCurrentPosition(successLocation, errorLocation, { enableHighAccuracy: true });
+    const datasetId = 'cm89a2b3m4ab51mpd8gm1v4u9'; // Replace with your actual dataset ID
+    const accessToken = ACCESS_TOKEN; // Replace with your access token
+    
+
+    function successLocation(position) {
+        // console.log(position);
+        setupMap([position.coords.longitude, position.coords.latitude]);
+    }
+
+    function errorLocation() {
+        setupMap([123.160705, 13.623460]);
+    }
+
+    function setupMap(center) {
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l/draft', // style URL
+            //style: 'mapbox://styles/mapbox/satellite-streets-v12',
+            center: [123.160705, 13.623460], // starting position [lng, lat]. Note that lat must be set between -90 and 90
+            zoom: 15.5, // starting zoom
+            pitch: 45
+        });
+      
+        map.addControl(new mapboxgl.NavigationControl(), 'top-right');
+        map.addControl(new mapboxgl.GeolocateControl({
+            positionOptions: { enableHighAccuracy: true },
+            trackUserLocation: true
+        }), 'top-right');
+
+        fetch('dataset.geojson') // Load the downloaded GeoJSON file
+        .then(response => response.json())
+        .then(geojsonData => {
+            // console.log("Loaded GeoJSON Data:", geojsonData);
+
+            //             // Check if data is in expected format
+            // if (!geojsonData.features) {
+            //     console.error("GeoJSON format is incorrect. No 'features' property found.");
+            //     return;
+            // }
+
+            // // Example: Log the first feature to verify structure
+            // if (geojsonData.features.length > 0) {
+            //     //console.log("First Feature:", geojsonData.features[0]);
+            // }
+
+            // Define localGeocoder function for searching within the dataset
+            function localGeocoder(query) {
+                // console.log("Geocoder Search Query:", query); // Debug search query
+
+                const results = geojsonData.features
+                    .filter(feature => 
+                        feature.properties && 
+                        feature.properties.name &&
+                        feature.properties.name.toLowerCase().includes(query.toLowerCase())
+                    )
+                    .map(feature => ({
+                        text: feature.properties.name, // Display name in search results
+                        place_name: feature.properties.name,
+                        center: feature.geometry.coordinates, // Coordinates for result
+                        geometry: feature.geometry,
+                    }));
+
+                // console.log("Filtered Results:", results); // Debug filtered results
+                return results;
+            }
+
+            // Initialize MapboxGeocoder with local dataset search
+            const geocoder = new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                localGeocoder: localGeocoder,
+                zoom: 15,
+                mapboxgl: mapboxgl,
+                placeholder: 'Search for a location',
+                container: document.getElementById('search-container')
+            });
+
+            document.getElementById('search-container').appendChild(geocoder.onAdd(map));
+
+            geocoder.on('result', async (event) => {
+            // When the geocoder returns a result
+            const point = event.result.center; // Capture the result 
+            const placeName = event.result.text;
+            const tileset = 'gavincii.cm8bbl9jm8w9n1nnbrh5vzu9t-4sfg3'; // replace this with the ID of the tileset you created
+            const radius = 1609; // 1609 meters is roughly equal to one mile
+            const limit = 10; // The maximum amount of results to return
+
+           // marker.setLngLat(point).addTo(map); // Add the marker to the map at the result coordinates
+            const query = await fetch(
+                `https://api.mapbox.com/v4/${tileset}/tilequery/${point[0]},${point[1]}.json?radius=${radius}&limit=${limit}&access_token=${mapboxgl.accessToken}`,
+                { method: 'GET' }
+            );
+            const json = await query.json();
+            // console.log(json);
+            updateNearby(json.features, map);
+            addMonitored(map, placeName, point);
+
+            });
+                
+        })
+        .catch(error => console.error("Error loading GeoJSON:", error));
+
+    }
+
+    let selectedLocations = [];
+    let markers = [];
+
+    async function addMonitored(map, placeName, coordinates) {
+        if (selectedLocations.some(loc => loc.name === placeName)) return;
+
+        try {
+            //console.log("Fetching flood level for coordinates:", coordinates);
+            const result = await fetchBand1Value(coordinates[0], coordinates[1]);
+
+
+            console.log("Flood Value:", result.value);
+            console.log("Flood Level:", result.level);
+
+            // Push with the retrieved flood level
+            selectedLocations.push({
+                name: placeName,
+                coordinates,
+                floodLevel: result.level  // You can also include result.value if needed
+            });
+
+            // Add marker to the map
+            let marker = new mapboxgl.Marker({ color: "blue" })
+                .setLngLat(coordinates)
+                .addTo(map);
+
+            markers.push(marker); // Store marker for later removal
+            updateLocationList();
+
+        } catch (error) {
+            console.error("Error fetching flood level:", error);
+        }
+    }
+
+    async function fetchBand1Value(lng, lat) {
+        try {
+            const response = await fetch("http://localhost:5000/get-band1", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ lng, lat })
+            });
+
+            if (!response.ok) {
+                throw new Error("API call failed with status " + response.status);
+            }
+
+            const data = await response.json();
+            // console.log("Received data from API:", data);
+
+            if (data.value !== undefined) {
+                console.log("Band1 value:", data.value);
+                console.log("Flood level:", data.flood_level);
+                return {
+                    value: data.value,
+                    level: data.flood_level,
+                    row: data.row,
+                    col: data.col
+                };
+            } else {
+                throw new Error("Invalid data structure: " + JSON.stringify(data));
+            }
+        } catch (err) {
+            console.error("Error in fetchBand1Value:", err);
+            throw err;  // Re-throw to be handled by the caller
+        }
+
+    }
+
+    function updateLocationList() {
+        const monitoredList = document.getElementById("monitored-list");
+        monitoredList.innerHTML = "";
+
+        selectedLocations.forEach((loc, index) => {
+            let textColor = loc.floodLevel === "High Flood Level" ? "red" :
+                            loc.floodLevel === "Moderate Flood Level" ? "orange" :
+                            loc.floodLevel === "Low Flood Level" ? "yellow" :"green";
+
+            let card = document.createElement("div");
+            card.className = "card my-2 rounded-4";
+            card.innerHTML = `
+                <div class="card-body d-flex justify-content-between align-items-center p-3">
+                    <div>
+                        <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
+                        <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
+                    </div>
+                    <button class="btn btn-sm remove-btn" onclick="removeLocation(${index})" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
+                        <img src="assets/remove.svg" alt="Remove" width="30" height="30">
+                    </button>
+                </div>
+            `;
+
+            // <h6 class="fw-bold text-darkBlue">${name}</h6>
+            // <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
+
+            monitoredList.appendChild(card);
+        });
+    }
+
+    // Remove location from the list
+    function removeLocation(index) {
+        selectedLocations.splice(index, 1);
+        markers[index].remove();
+        markers.splice(index, 1); // Remove marker from array
+        updateLocationList();
+    }
+ 
+    function updateNearby(features, map) {
+        const locationList = document.getElementById("location-list");
+        locationList.innerHTML = ""; // Clear previous entries
+
+        features.forEach(feature => {
+            let coordinates = feature.geometry.coordinates; // Extract coordinates
+            let name = feature.properties.name || "Unknown Facility";
+            let distance = (feature.properties.tilequery.distance / 1000).toFixed(2); // Convert meters to km
+            let amenity = feature.properties.amenity || "default"; // Get the amenity type
+            
+            const iconMap = {
+                "police_station": "assets/icons/GovernmentService.svg",
+                "fire_station": "assets/icons/GovernmentService.svg",
+                "school": "assets/icons/School.svg",
+                "hospital": "assets/icons/Hospital.svg",
+                "evacuation_centerr": "assets/icons/Evacuation.svg",
+                "miscellaneous": "assets/icons/Misc.svg",
+                "government": "assets/icons/Government.svg"
+            };
+            iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
+
+            const el = document.createElement('div');
+             el.className = 'marker';
+             el.style.backgroundImage = iconPath;
+             el.style.width = `50px`;
+             el.style.height = `50px`;
+             el.style.backgroundSize = '100%';
+
+            let marker = new mapboxgl.Marker(el)
+                 .setLngLat(coordinates)
+                 .addTo(map);
+                
+            // Show popup on hover
+            marker.getElement().addEventListener('mouseenter', () => {
+                popup.setLngLat(coordinates).addTo(map);
+            });
+
+            // Hide popup when mouse leaves
+            marker.getElement().addEventListener('mouseleave', () => {
+                popup.remove();
+            });
+
+             // Create Bootstrap Card
+            let card = document.createElement("div");
+            card.className = "card mb-2 rounded-4"; // Add Bootstrap card classes
+            card.innerHTML = `
+                <div class="card-body d-flex align-items-center p-3">
+                    <div class="me-3">
+                        <img src="${iconPath}" alt="${amenity}" width="30" height="30">
+                    </div>
+                    <div>
+                        <h6 class="fw-bold text-darkBlue">${name}</h6>
+                        <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
+                    </div>
+                </div>
+            `;
+
+            // Append the card to the facility list
+            locationList.appendChild(card);
+        });
+    }
+
+    
+
+    </script>
+</body>
+</html>
