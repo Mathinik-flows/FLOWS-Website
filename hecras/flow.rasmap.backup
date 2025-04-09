@@ -339,7 +339,7 @@
         <Layer Name="Regions" Type="RASEncroachmentPolygons" Filename=".\flow.p09.hdf" />
       </Layer>
       <Layer Name="Depth" Type="RASResultsMap" Checked="True">
-        <MapParameters MapType="depth" ProfileIndex="0" ProfileName="03APR2025 00:00:00" />
+        <MapParameters MapType="depth" ProfileIndex="2" ProfileName="03APR2025 02:00:00" />
       </Layer>
       <Layer Name="Velocity" Type="RASResultsMap">
         <MapParameters MapType="velocity" ProfileIndex="2147483647" ProfileName="Max" />
@@ -368,10 +368,10 @@
     </Layer>
   </Terrains>
   <CurrentView>
-    <MaxX>520033.956445627</MaxX>
-    <MinX>513153.193192959</MinX>
-    <MaxY>1507946.24274685</MaxY>
-    <MinY>1502644.67106037</MinY>
+    <MaxX>517943.483125053</MaxX>
+    <MinX>514652.435391668</MinX>
+    <MaxY>1506893.83090411</MaxY>
+    <MinY>1504358.10560134</MinY>
   </CurrentView>
   <VelocitySettings>
     <Density>1.5</Density>
