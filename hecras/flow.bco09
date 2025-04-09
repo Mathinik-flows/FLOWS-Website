@@ -2,7 +2,7 @@
                                               HEC-RAS - River Analysis System
  
  
-Project File:  C:\Yna\Thesis\FLOWS\hecras\flow.prj
+Project File:  d:\FLOWS\FLOWS-Website\hecras\flow.prj
  
 Project Name:  flow
  
@@ -23,9 +23,9 @@ Ending Time:     03Apr2025 0500
                 #       1D and 2D Unsteady Flow Module         #
                 #                                              #
                 #                                              #
-                #          HEC-RAS 6.7 Beta January 2025       #
+                #          HEC-RAS 6.7 Beta2 April 2025        #
                 #                                              #
-                #             04APR25 at 15:53:59              #
+                #             08APR25 at 16:28:47              #
                 #                                              #
                 ################################################
                 
@@ -49,22 +49,22 @@ Ending Time:     03Apr2025 0500
            *******    ************      **********      **********     ***********           *****   *************
  
  
-             river         453172.          26742.         430542.         859691.           2719.          0.3173
+             river          38680.          15881.         103630.         128761.           2333.           1.845
 
 
 
                  ***  Total Volume Accounting (for the entire model) in 1000 m^3   ***
 
-Total Boundary Flux of Water In          430542.
-Total Boundary Flux of Water Out         859691.
+Total Boundary Flux of Water In          103630.
+Total Boundary Flux of Water Out         128761.
 
-Starting Volume                          453172.
-Ending Volume                             26742.
+Starting Volume                           38680.
+Ending Volume                             15881.
 
 
                              Error   Percent Error
                              *****   *************
-                             2719.          0.3077
+                             2333.           1.639
 
 
 
