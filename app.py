@@ -28,7 +28,7 @@ def get_band1_value():
 
     try: 
         #Load raster once at startup
-        tif_path = "hecras/Plan9/Depth (03APR2025 00 00 00).Terrain.SmootherDEM.tif"
+        tif_path = "final/test/Depth (09APR2025 00 00 00).Terrain.LargerTerrain_div50_shifted.tif"
         dataset = rasterio.open(tif_path)
 
         data = request.get_json()
@@ -53,7 +53,7 @@ def get_band1_value():
             # Read Band 1 value at the given row/col
             band1 = dataset.read(1)  # read band 1 (2D array)
             value = band1[row, col]
-            flood_level = classify_flood_level(value-100)
+            flood_level = classify_flood_level(value)
 
             #print(f"Value at ({lng}, {lat}):", value)
         
