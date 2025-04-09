@@ -171,44 +171,35 @@ main {
 
 #map {
     position: absolute;
-    top: 90px; /* Distance from the top */
+    top: 80px; /* Distance from the top */
     bottom: 0;
     width: 100%;
 }
 
-/* Make the Geocoder search bar responsive */
-.mapboxgl-ctrl-geocoder {
-    width: 100% !important; /* Force it to take full width of its parent */
-    max-width: 600px; /* Prevent it from getting too wide */
-    min-width: 200px; /* Prevent it from getting too small */
-    transition: width 0.3s ease-in-out; /* Smooth resizing effect */
-}
 
-/* Adjust width for tablets */
-@media (max-width: 768px) {
-    .mapboxgl-ctrl-geocoder {
-        max-width: 90vw !important;
-    }
-}
-
-/* Adjust width for mobile devices */
-@media (max-width: 480px) {
-    .mapboxgl-ctrl-geocoder {
-        max-width: 95vw !important;
-    }
-}
-
+  
 .overlay {
     position: absolute;
+    /* background-color: white; */
+    /* border-radius: 40px; */
+    padding: 10px;
     top: 10px; /* Distance from the top */
     left: 10px; /* Distance from the left */
      /* Ensures it stays above the map */
     z-index: 2;
-    width: 20%; /* Adjust width */
+    width: 25%; /* Adjust width */
     max-height: 100%; /* Prevent it from getting too tall */
     transition: max-height 0.3s ease-in-out;
-    /* overflow: visible; Allow scrolling if content overflows */
+    overflow-y: auto;
+    overflow: visible; 
 } 
+
+
+@media (max-width: 992px) {
+    .overlay {
+        width: 40% !important; /* Adjusts max width for smaller screens */
+    }
+}
 
 /* Styling for the monitored locations panel */
 .sub-overlay {
@@ -219,7 +210,6 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .toggle {
