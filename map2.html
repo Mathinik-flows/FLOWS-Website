@@ -365,19 +365,7 @@
         fetch('dataset.geojson') // Load the downloaded GeoJSON file
         .then(response => response.json())
         .then(geojsonData => {
-            // console.log("Loaded GeoJSON Data:", geojsonData);
-
-            //             // Check if data is in expected format
-            // if (!geojsonData.features) {
-            //     console.error("GeoJSON format is incorrect. No 'features' property found.");
-            //     return;
-            // }
-
-            // // Example: Log the first feature to verify structure
-            // if (geojsonData.features.length > 0) {
-            //     //console.log("First Feature:", geojsonData.features[0]);
-            // }
-
+            
             // Define localGeocoder function for searching within the dataset
             function localGeocoder(query) {
                 // console.log("Geocoder Search Query:", query); // Debug search query
@@ -567,33 +555,7 @@
                 monitoredList.appendChild(card);
             });
         });
-        // const monitoredList = document.getElementById("monitored-list");
-        // monitoredList.innerHTML = "";
-
-        // selectedLocations.forEach((loc, index) => {
-        //     let textColor = loc.floodLevel === "High Flood Level" ? "red" :
-        //                     loc.floodLevel === "Moderate Flood Level" ? "orange" :
-        //                     loc.floodLevel === "Low Flood Level" ? "yellow" :"green";
-
-        //     let card = document.createElement("div");
-        //     card.className = "card my-2 rounded-4";
-        //     card.innerHTML = `
-        //         <div class="card-body d-flex justify-content-between align-items-center p-3">
-        //             <div>
-        //                 <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
-        //                 <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
-        //             </div>
-        //             <button class="btn btn-sm remove-btn" onclick="removeLocation(${index})" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
-        //                 <img src="assets/remove.svg" alt="Remove" width="30" height="30">
-        //             </button>
-        //         </div>
-        //     `;
-
-        //     // <h6 class="fw-bold text-darkBlue">${name}</h6>
-        //     // <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
-
-        //     monitoredList.appendChild(card);
-        // });
+        
     }
 
     // Remove location from the list
@@ -629,28 +591,6 @@
                 };
                 const iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
 
-                // Create a marker
-                const el = document.createElement('div');
-                el.className = 'marker';
-                el.style.backgroundImage = `url(${iconPath})`;
-                el.style.width = `50px`;
-                el.style.height = `50px`;
-                el.style.backgroundSize = '100%';
-
-                let marker = new mapboxgl.Marker(el)
-                    .setLngLat(coordinates)
-                    .addTo(map);
-                
-                // Show popup on hover
-                marker.getElement().addEventListener('mouseenter', () => {
-                    popup.setLngLat(coordinates).addTo(map);
-                });
-
-                // Hide popup when mouse leaves
-                marker.getElement().addEventListener('mouseleave', () => {
-                    popup.remove();
-                });
-
                 // Create Bootstrap Card
                 let card = document.createElement("div");
                 card.className = "card mb-2 rounded-4"; // Add Bootstrap card classes
@@ -670,65 +610,6 @@
                 locationList.appendChild(card);
             });
         });
-        // const locationList = document.getElementById("location-list");
-        // locationList.innerHTML = ""; // Clear previous entries
-
-        // features.forEach(feature => {
-        //     let coordinates = feature.geometry.coordinates; // Extract coordinates
-        //     let name = feature.properties.name || "Unknown Facility";
-        //     let distance = (feature.properties.tilequery.distance / 1000).toFixed(2); // Convert meters to km
-        //     let amenity = feature.properties.amenity || "default"; // Get the amenity type
-            
-        //     const iconMap = {
-        //         "police_station": "assets/icons/GovernmentService.svg",
-        //         "fire_station": "assets/icons/GovernmentService.svg",
-        //         "school": "assets/icons/School.svg",
-        //         "hospital": "assets/icons/Hospital.svg",
-        //         "evacuation_centerr": "assets/icons/Evacuation.svg",
-        //         "miscellaneous": "assets/icons/Misc.svg",
-        //         "government": "assets/icons/Government.svg"
-        //     };
-        //     iconPath = iconMap[amenity] || "assets/icons/Misc.svg";
-
-        //     const el = document.createElement('div');
-        //      el.className = 'marker';
-        //      el.style.backgroundImage = iconPath;
-        //      el.style.width = `50px`;
-        //      el.style.height = `50px`;
-        //      el.style.backgroundSize = '100%';
-
-        //     let marker = new mapboxgl.Marker(el)
-        //          .setLngLat(coordinates)
-        //          .addTo(map);
-                
-        //     // Show popup on hover
-        //     marker.getElement().addEventListener('mouseenter', () => {
-        //         popup.setLngLat(coordinates).addTo(map);
-        //     });
-
-        //     // Hide popup when mouse leaves
-        //     marker.getElement().addEventListener('mouseleave', () => {
-        //         popup.remove();
-        //     });
-
-        //      // Create Bootstrap Card
-        //     let card = document.createElement("div");
-        //     card.className = "card mb-2 rounded-4"; // Add Bootstrap card classes
-        //     card.innerHTML = `
-        //         <div class="card-body d-flex align-items-center p-3">
-        //             <div class="me-3">
-        //                 <img src="${iconPath}" alt="${amenity}" width="30" height="30">
-        //             </div>
-        //             <div>
-        //                 <h6 class="fw-bold text-darkBlue">${name}</h6>
-        //                 <p class="card-subtitle text-lightBlue fw-medium fs-6 fst-italic lh-sm">${distance} km away</p>
-        //             </div>
-        //         </div>
-        //     `;
-
-        //     // Append the card to the facility list
-        //     locationList.appendChild(card);
-        // });
     }
 
     
