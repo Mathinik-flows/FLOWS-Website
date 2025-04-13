@@ -223,10 +223,10 @@
                     <span class="legend-circle" style="background-color: #d50000;"></span> High Flood Level >0.5m
                 </div>
                 <div class="legend-item">
-                    <span class="legend-icon"><img src="assets/selected.svg" alt="Remove" width="15" height="15"></span>Monitored Location(s)
+                    <span class="legend-icon"><img src="assets/pinpoint.svg" alt="pinpoint" width="15" height="15"></span>Monitored Location(s)
                 </div>
                 <div class="legend-item">
-                    <span class="legend-icon"><img src="assets/selected.svg" alt="Remove" width="15" height="15"></span>Selected Marker
+                    <span class="legend-icon"><img src="assets/pinpoint_selected.svg" alt="pinpoint_selected" width="15" height="15"></span>Selected Location
                 </div>
                 <div class="legend-item">
                     <p class="fst-italic m-0"><small>Flood levels are based from MMDA's Flood Gauge</small></p>
@@ -450,7 +450,11 @@
             updateNearby(json.features, map);
             addMonitored(map, placeName, point);
 
+            
+     
             });
+
+            
                 
         })
         .catch(error => console.error("Error loading GeoJSON:", error));
@@ -467,14 +471,13 @@
             //console.log("Fetching flood level for coordinates:", coordinates);
             const result = await fetchBand1Value(coordinates[0], coordinates[1]);
 
-
-            console.log("Flood Value:", result.value);
-            console.log("Flood Level:", result.level);
+            // console.log("Flood Value:", result.value);
+            // console.log("Flood Level:", result.level);
 
             // Push with the retrieved flood level
             selectedLocations.push({
                 name: placeName,
-                coordinates,
+                coordinates: coordinates,
                 floodLevel: result.level  // You can also include result.value if needed
             });
 
@@ -484,7 +487,8 @@
                 .addTo(map);
 
             markers.push(marker); // Store marker for later removal
-            updateLocationList();
+            updateLocationList(map);
+
 
         } catch (error) {
             console.error("Error fetching flood level:", error);
@@ -507,8 +511,8 @@
             // console.log("Received data from API:", data);
 
             if (data.value !== undefined) {
-                console.log("Band1 value:", data.value);
-                console.log("Flood level:", data.flood_level);
+                // console.log("Band1 value:", data.value);
+                // console.log("Flood level:", data.flood_level);
                 return {
                     value: data.value,
                     level: data.flood_level,
@@ -525,13 +529,15 @@
 
     }
 
-    function updateLocationList() {
+    function updateLocationList(map) {
         // Select all elements with the class "monitored-list"
         const monitoredLists = document.querySelectorAll(".monitored-list");
 
         // Clear the inner HTML of each monitored list
         monitoredLists.forEach(monitoredList => {
             monitoredList.innerHTML = ""; // Clear existing content
+            window._mapRef = map;
+
 
             selectedLocations.forEach((loc, index) => {
                 let textColor = loc.floodLevel === "High Flood Level" ? "red" :
@@ -539,31 +545,65 @@
                                 loc.floodLevel === "Low Flood Level" ? "yellow" : "green";
 
                 let card = document.createElement("div");
-                card.className = "card my-2 rounded-4";
+                card.className = "card my-2 rounded-4 monitored-location";
+                // Set the data-index attribute here
+                card.setAttribute("data-index", index);
                 card.innerHTML = `
                     <div class="card-body d-flex justify-content-between align-items-center p-3">
                         <div>
                             <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
                             <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
                         </div>
-                        <button class="btn btn-sm remove-btn" onclick="removeLocation(${index})" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
+                        <button class="btn btn-sm remove-btn" onclick="removeLocation(${index}, window._mapRef)" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
                             <img src="assets/remove.svg" alt="Remove" width="30" height="30">
                         </button>
                     </div>
                 `;
+                
+                // ✅ Add event listener directly here
+                card.addEventListener("click", (e) => {
+                    // Prevent the click from triggering when clicking the remove button
+                    if (e.target.closest('.remove-btn')) return;
+
+                    const currentIndex = parseInt(card.getAttribute("data-index"));
+                    const location = selectedLocations[currentIndex];
+                    if (location && location.coordinates) {
+                        // 🔹 Highlight only the selected card
+                        document.querySelectorAll(".monitored-location").forEach(card => {
+                            card.classList.remove("selected-location");
+                        });
+                        card.classList.add("selected-location");
+
+                        map.flyTo({
+                            center: location.coordinates,
+                            zoom: 15,
+                            essential: true
+                        });
+
+                        markers.forEach(marker => {
+                            marker.remove();
+                        });
+                        markers = selectedLocations.map((loc, i) => {
+                            const color = (i === currentIndex) ? '#FF6700' : 'blue'; // orange for selected
+                            return new mapboxgl.Marker({ color })
+                                .setLngLat(loc.coordinates)
+                                .addTo(map);
+                        });
+                    }
+                });
 
                 monitoredList.appendChild(card);
             });
         });
-        
+
     }
 
     // Remove location from the list
-    function removeLocation(index) {
+    function removeLocation(index, map) {
         selectedLocations.splice(index, 1);
         markers[index].remove();
         markers.splice(index, 1); // Remove marker from array
-        updateLocationList();
+        updateLocationList(map);
     }
  
     function updateNearby(features, map) {
@@ -611,6 +651,7 @@
             });
         });
     }
+
 
     
 

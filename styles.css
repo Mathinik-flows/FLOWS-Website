@@ -176,7 +176,10 @@ main {
     width: 100%;
 }
 
-
+.card.selected-location {
+    border: 2px solid #007BFF;  /* Blue border or any style */
+    background-color: #EAF3FF;  /* Light background */
+  }
   
 .overlay {
     position: absolute;
