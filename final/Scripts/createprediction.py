@@ -4,8 +4,12 @@ import tensorflow as tf
 from tensorflow.keras.losses import mse 
 from sklearn.preprocessing import MinMaxScaler
 
+#------ CONFIG ---------
+CSV_LOCATION = r"D:\FLOWS\Ver2\FLOWS-Website\final\Config\finaldata2.csv"
+MODEL_LOCATION = r"D:\FLOWS\Ver2\FLOWS-Website\final\Config\flows_modelv4.h5"
+
 # Load your dataset
-data = pd.read_csv("finaldata2.csv")  # Replace with your actual dataset file
+data = pd.read_csv(CSV_LOCATION)  # Replace with your actual dataset file
 
 # Assuming your dataset has columns: 'Year', 'Month', 'Day', 'Rainfall', 'WaterLevel', 'FWaterLevel'
 # Filter the data to get the relevant historical data before January 2025
@@ -41,7 +45,7 @@ X, _ = create_narx_dataset(waterlevel_scaled, rainfall_scaled, fwaterlevel_scale
 
 # Load your trained model (assuming you have saved it)
 from tensorflow.keras.models import load_model
-model = tf.keras.models.load_model("flows_modelv4.h5", custom_objects={'mse': mse})
+model = tf.keras.models.load_model(MODEL_LOCATION, custom_objects={'mse': mse})
 
 # Prepare input for January 2025 prediction
 # Assuming you have rainfall data for January 2025

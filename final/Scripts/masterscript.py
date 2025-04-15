@@ -15,12 +15,12 @@ import re
 # === CONFIGURATION ===
 mapbox_token = 'sk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY205Zjl3NHhkMGlvYzJyc2MwNm05b2c0ayJ9.OTA15_jphYcO85Cj46F4VQ'
 username = 'gavincii'
-PROJECT_FILE = r"D:\FLOWS\New folder\FLOWS-Website\hecras\flow.prj"
-UNSTEADY_FILE = r"D:\FLOWS\New folder\FLOWS-Website\hecras\flow.u02"
-CSV_FILE = r"D:\FLOWS\New folder\FLOWS-Website\model\january2025_predictions.csv"
-INPUT_FOLDER = r"D:\FLOWS\New folder\FLOWS-Website\hecras\testfolder"
-OUTPUT_FOLDER = r"D:\FLOWS\New folder\FLOWS-Website\model\converted_8bit"
-ICON_FOLDER = r"D:\FLOWS\New folder\FLOWS-Website\hecras\pyautogui"
+PROJECT_FILE = r"D:\FLOWS\Ver2\FLOWS-Website\final\flow.prj"
+UNSTEADY_FILE = r"D:\FLOWS\Ver2\FLOWS-Website\final\flow.u01"
+CSV_FILE = r"D:\FLOWS\Ver2\FLOWS-Website\final\Config\january2025_predictions.csv"
+INPUT_FOLDER = r"D:\FLOWS\Ver2\FLOWS-Website\hecras\Plan9" #folder ng mga exported na tif galing hec-ras
+OUTPUT_FOLDER = r"D:\FLOWS\Ver2\FLOWS-Website\hecras\converted_8bit" #gagawin niya nalang to pag wala pa
+ICON_FOLDER = r"D:\FLOWS\Ver2\FLOWS-Website\hecras\pyautogui"
 BASE_ELEVATION = 125
 TARGET_CRS = 'EPSG:32651'
 batch_size = 6
