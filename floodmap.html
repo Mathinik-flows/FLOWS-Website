@@ -214,8 +214,8 @@
                                         <div class="card mb-2 rounded-4 card-empty mt-1">
                                             <div class="card-body d-flex align-items-center p-3 ">
                                                 <div>
-                                                    <h6 class="fw-bold text-darkBlue text-white">Nothing to show here yet...</h6>
-                                                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add/select a monitored location to show nearby facilities.</p>
+                                                    <h6 class="fw-bold text-darkBlue text-white">Nothing nearby to show yet...</h6>
+                                                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add/select a monitored location to see nearby facilities</p>
                                                 </div>
                                             </div>
                                         </div>  
@@ -498,11 +498,9 @@
             );
             const json = await query.json();
             // console.log(json);
-            updateNearby(json.features, map);
-            addMonitored(map, placeName, point);
-
-            
-     
+           
+            addMonitored(map, placeName, point);  
+            updateNearby(json.features, map);   
             });
 
             
@@ -681,26 +679,26 @@
         // Select all elements with the class "location-list"
         const locationLists = document.querySelectorAll(".location-list");
 
-        
-        if (selectedLocations.length === 0) {
-            const emptyCardHTML = `
+        // Define the HTML for the "Nothing nearby to show" message
+        const emptyNearbyHTML = `
             <div class="card mb-2 rounded-4 card-empty mt-3">
-                <div class="card-body d-flex align-items-center p-3 ">
+            <div class="card-body d-flex align-items-center p-3 ">
                 <div>
-                    <h6 class="fw-bold text-darkBlue text-white">Nothing to show here yet...</h6>
-                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add a monitored location to see a flood alert level.</p>
-                </div>
+                <h6 class="fw-bold text-darkBlue text-white">Nothing nearby to show yet...</h6>
+                <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add/select a monitored location to see nearby facilities.</p>
                 </div>
             </div>
-            `;
+            </div>
+        `;
 
-            // Set the innerHTML of *each* monitored-list element to the empty message
+        if (features.length === 0) {
+            // If there are no features, set the innerHTML of each location-list to the empty message
             locationLists.forEach(locationList => {
-                locationList.innerHTML = emptyCardHTML;
+            locationList.innerHTML = emptyNearbyHTML;
             });
             return; // Exit the function early
         }
-
+  
         // Clear previous entries and populate each location list
         locationLists.forEach(locationList => {
             locationList.innerHTML = ""; // Clear previous entries
