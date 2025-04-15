@@ -34,6 +34,7 @@ def get_band1_value():
         data = request.get_json()
         lng = data["lng"]
         lat = data["lat"]
+        index = data["layerIndex"]
         #print(f"Received coordinates: lng={lng}, lat={lat}")
         
         with rasterio.open(tif_path) as dataset:

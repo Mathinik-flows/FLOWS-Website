@@ -20,7 +20,7 @@ CORS(app) # Allow Cross-Origin Requests
 
 # --- Configuration ---
 # Make sure this path is correct relative to /home/ubuntu or use an absolute path
-TIF_FILE_PATH = "depth.tif"
+
 # Optional: Check if file exists at startup (won't prevent errors if file disappears later)
 # if not os.path.exists(TIF_FILE_PATH):
 #     app.logger.warning(f"Raster file not found at expected location: {TIF_FILE_PATH}")
@@ -57,15 +57,19 @@ def get_band1_value():
             app.logger.warning("No JSON data received.")
             return jsonify({"error": "Request must contain JSON data"}), 400
 
-        # Validate incoming data
-        if "lng" not in data or "lat" not in data:
-             app.logger.warning("Missing 'lng' or 'lat' in JSON payload.")
-             return jsonify({"error": "Missing 'lng' or 'lat' in request body"}), 400
+        # --- Validate incoming data keys ---
+        required_keys = ["lng", "lat", "layerIndex"]
+        if not all(key in data for key in required_keys):
+             missing_keys = [key for key in required_keys if key not in data]
+             app.logger.warning(f"Missing keys in JSON payload: {missing_keys}")
+             return jsonify({"error": f"Missing required keys in request body: {', '.join(missing_keys)}"}), 400
 
         lng = data["lng"]
         lat = data["lat"]
-        app.logger.info(f"Processing coordinates: lng={lng}, lat={lat}")
+        index = data["layerIndex"]  # Default to 1 if not provided
+        app.logger.info(f"Processing coordinates: lng={lng}, lat={lat} and layerIndex={index}")
 
+        TIF_FILE_PATH = f'var/www/html/assets/map/original/tif_rgb_00.tif' if index == 0 else f'var/www/html/assets/map/original/tif_rgb_{index}.tif';  # Update this path as needed
         # Consider opening the dataset once at app startup for efficiency if the app
         # handles high traffic, but be mindful of Gunicorn workers.
         # Per-request opening is simpler to manage initially.

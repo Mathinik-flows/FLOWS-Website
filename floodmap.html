@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLOWS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.v=1.2.css">
+    <link rel="stylesheet" href="assets/css/styles.v=1.3.css">
     
     
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
@@ -58,15 +58,24 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="./assets/logo.png" alt="Flows Logo" width="50" height="45">
                 </a>
-                <div class="dropdown" >
-                    <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%"; >
-                    Select prediction shown
+                <div class="dropdown">
+                    <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
+                        Select prediction shown
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%";>
+                    <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 100%;">
                         <li><h6 class="dropdown-header">Show predictions for...</h6></li>
-                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">April 9 1:00PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">April 9 2:00PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">April 9 3:00PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12NN</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="6">Oct 22, 2024 6PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="7">Oct 22, 2024 7PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="8">Oct 22, 2024 8PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="9">Oct 22, 2024 9PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="10">Oct 22, 2024 10PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="11">Oct 22, 2024 11PM</a></li>
                     </ul>
                 </div>
                 <div class="navbar-nav ms-auto align-items-lg-center align-items-end">
@@ -151,14 +160,23 @@
                             <h6 class="fw-bold text-white ">Showing prediction for:</h6>
                         </div>
                         <div class="overlay-content">
-                            <div class="dropdown" >
-                                <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%"; >
-                                Select an option
+                            <div class="dropdown">
+                                <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
+                                    Select prediction shown
                                 </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%";>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">April 9 1:00PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">April 9 2:00PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">April 9 3:00PM</a></li>
+                                <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton2" style="width: 100%;">
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12NN</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="6">Oct 22, 2024 6PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="7">Oct 22, 2024 7PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="8">Oct 22, 2024 8PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="9">Oct 22, 2024 9PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="10">Oct 22, 2024 10PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="11">Oct 22, 2024 11PM</a></li>
                                 </ul>
                             </div>
                             <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0"><small>Map predictions last updated at 05/12/2025 1:01PM.</small></p>
@@ -359,10 +377,11 @@
     const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY204YjBqNGVhMWEwYzJuczc5dmcyOWM0biJ9.Fsdka6-GWmAFXeLPsg9_dg';
 	mapboxgl.accessToken = ACCESS_TOKEN;
     const username = 'gavincii'; // Replace with your Mapbox username
-    const tilesetId = 'flood'; // Replace with your actual tileset ID
+    
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, { enableHighAccuracy: true });
     const datasetId = 'cm89a2b3m4ab51mpd8gm1v4u9'; // Replace with your actual dataset ID
     const accessToken = ACCESS_TOKEN; // Replace with your access token
+    layerIndex = 0;
     
 
     function successLocation(position) {
@@ -383,27 +402,102 @@
             zoom: 15.5, // starting zoom
             pitch: 45
         });
-
+        const totalTilesets = 12; // 0 through 11
 
         map.on('load', () => {
-            const sourceId = 'flood-tiff';
-            const layerId = 'flood-layer';
-            if (map.getLayer(layerId)) map.removeLayer(layerId);
-            if (map.getSource(sourceId)) map.removeSource(sourceId);
-            map.addSource('flood-tiff', {
-                type: 'raster',
-                url: `mapbox://${username}.${tilesetId}`,  // replace this with your actual tileset ID
-                tileSize: 256
+            console.log("Map loaded.");
+
+            // --- Add all sources and layers initially (SAME AS BEFORE) ---
+            for (let i = 0; i < totalTilesets; i++) {
+                const tilesetId = (i === 0) ? `tif_rgb_00` : `tif_rgb_${i}`;
+                const sourceId = `source_${tilesetId}`;
+                const layerId = `layer_${tilesetId}`;
+
+                // Safety check: Don't re-add if already exists (useful for hot-reloading dev envs)
+                if (!map.getSource(sourceId)) {
+                    map.addSource(sourceId, {
+                        type: 'raster',
+                        url: `mapbox://${username}.${tilesetId}`,
+                        tileSize: 256
+                    });
+                }
+
+                if (!map.getLayer(layerId)) {
+                    map.addLayer({
+                        id: layerId,
+                        type: 'raster',
+                        source: sourceId,
+                        paint: {
+                            'raster-opacity': 0.7
+                        },
+                        layout: {
+                            'visibility': (i === 0) ? 'visible' : 'none' // Only layer 0 visible initially
+                        }
+                    });
+                }
+            }
+            console.log("Initial layers added or confirmed.");
+
+            // --- NEW Event listener setup for MULTIPLE Bootstrap Dropdowns ---
+            const dropdownMenus = document.querySelectorAll('.tileset-dropdown-menu'); // Select ALL menus by common class
+
+            if (dropdownMenus.length > 0) {
+                dropdownMenus.forEach(menu => { // Attach listener to each menu found
+                    menu.addEventListener('click', (event) => {
+                        // Check if the clicked element is a dropdown item with the data attribute
+                        if (event.target.matches('.dropdown-item[data-tileset-index]')) {
+                            event.preventDefault(); // Prevent default anchor link behavior
+
+                            const selectedIndex = parseInt(event.target.dataset.tilesetIndex, 10);
+                            const selectedText = event.target.textContent;
+                            layerIndex = selectedIndex;
+
+                            console.log(`Dropdown item clicked. Selected index: ${selectedIndex}`);
+
+                            // Find the button associated *specifically* with the clicked menu
+                            const parentDropdown = event.target.closest('.dropdown'); // Find the parent .dropdown container
+                            if (parentDropdown) {
+                                const button = parentDropdown.querySelector('.dropdown-toggle'); // Find the button within that container
+                                if (button) {
+                                    button.textContent = selectedText; // Update the correct button's text
+                                }
+                            }
+
+
+                            // --- Map Layer Visibility Logic (Stays the Same) ---
+                            // This part affects the single map globally based on the index
+                            for (let i = 0; i < totalTilesets; i++) {
+                                const layerId = (i === 0) ? `layer_tif_rgb_00` : `layer_tif_rgb_${i}`;
+                                if (map.getLayer(layerId)) {
+                                    const visibility = (i === selectedIndex) ? 'visible' : 'none';
+                                    map.setLayoutProperty(layerId, 'visibility', visibility);
+                                } else {
+                                    console.warn(`Layer ${layerId} not found on map during visibility toggle.`);
+                                }
+                            }
+                            // --- End Map Layer Logic ---
+
+                            refreshSelectedLocations(selectedIndex, map);
+                        }
+                    });
+                });
+                console.log(`Bootstrap dropdown event listeners added to ${dropdownMenus.length} menus.`);
+
+                // Set initial button text for ALL dropdowns based on default layer (layer 0)
+                dropdownMenus.forEach(menu => {
+                    const initialItem = menu.querySelector('[data-tileset-index="0"]');
+                    const parentDropdown = menu.closest('.dropdown');
+                    if (initialItem && parentDropdown) {
+                        const button = parentDropdown.querySelector('.dropdown-toggle');
+                        if (button) {
+                            button.textContent = initialItem.textContent;
+                        }
+                    }
                 });
 
-            map.addLayer({
-                id: 'flood-layer',
-                type: 'raster',
-                source: 'flood-tiff',
-                paint: {
-                    'raster-opacity': 0.9  // adjust as needed
-                }
-            });
+            } else {
+                console.error("Could not find any dropdown menu elements with class 'tileset-dropdown-menu'.");
+            }
         });
 
         map.addControl(new mapboxgl.NavigationControl(), 'top-right');
@@ -549,7 +643,7 @@
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
 
-                body: JSON.stringify({ lng, lat })
+                body: JSON.stringify({ lng, lat, layerIndex })
             });
 
             if (!response.ok) {
@@ -576,6 +670,53 @@
             throw err;  // Re-throw to be handled by the caller
         }
 
+    }
+
+        /**
+     * Re-fetches flood levels for all currently monitored locations based on the provided layer index,
+     * updates the selectedLocations array, and refreshes the UI list.
+     * @param {number} layerIndex The new layer index (0-11) to fetch data for.
+     * @param {mapboxgl.Map} map The Mapbox map instance.
+     */
+    async function refreshSelectedLocations(layerIndex, map) {
+        console.log(`Refreshing ${selectedLocations.length} selected locations for index ${layerIndex}...`);
+
+        if (selectedLocations.length === 0) {
+            console.log("No locations selected, nothing to refresh.");
+            // Ensure the list shows the "empty" message if needed
+            updateLocationList(map); // Call it even if empty to show the correct message
+            return;
+        }
+
+        // Set a temporary "Loading..." state in the UI if desired
+        // selectedLocations.forEach(loc => loc.floodLevel = "Updating...");
+        // updateLocationList(map); // Show "Updating..." immediately
+
+        const updatePromises = selectedLocations.map((location, index) => // Use map to preserve order if needed later
+            fetchBand1Value(location.coordinates[0], location.coordinates[1])
+                .then(result => {
+                    // --- Directly update the object in the selectedLocations array ---
+                    location.floodLevel = result.level;
+                    // location.value = result.value; // Update value too if you store it
+                    console.log(`Refreshed ${location.name}: Level=${location.floodLevel}`);
+                    return { status: 'fulfilled', index: index }; // Indicate success
+                })
+                .catch(error => {
+                    console.error(`Failed to refresh ${location.name}: ${error.message}`);
+                    // --- Update the object to show an error state ---
+                    location.floodLevel = "Error";
+                    // location.value = null;
+                    return { status: 'rejected', index: index, reason: error.message }; // Indicate failure
+                })
+        );
+
+        // Wait for all fetches to complete or fail
+        await Promise.allSettled(updatePromises); // Use allSettled
+        console.log("Finished refreshing selected locations batch.");
+
+        // --- Now call your existing function to redraw the list ---
+        // updateLocationList will use the updated floodLevel values in the selectedLocations array
+        updateLocationList(map);
     }
 
     function updateLocationList(map) {
