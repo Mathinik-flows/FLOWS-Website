@@ -53,7 +53,7 @@
 
     <header class="d-md-none">
         <nav class="navbar navbar-expand-lg sticky-top bg-white">
-            <div class="container px-1 py-1">
+            <div class="container px-3 py-1">
                 <a class="navbar-brand" href="index.html">
                     <img src="./assets/logo.png" alt="Flows Logo" width="50" height="45">
                 </a>
@@ -124,18 +124,23 @@
     <!--Map-->    
     <section id="map">
         <div id="disclaimer-overlay">
-            <div class="card rounded-5 p-4 px-5" style="max-width: 35%; margin: 0 auto;">
-                <div class="card-body text-center">
-                    <h2 class=" fw-semibold text-darkOrange m-0" >Before you proceed...</h2>
-                    <p class="lead text-darkBlue fs-6 lh-sm mt-3">We would like to remind you that this project is an initial release based on historical data and flood simulations, and should not be solely depended on. Please exercise caution in acting on what the predictions show. The developers and researchers will not be liable for any damages and losses of any party as a result of using this website, its contents, and functionalities. 
-
-                    <br><br>
-                    This project is limited to the <span class="fw-semibold">Municipality of Camaligan, Camarines Sur</span>
-          
-                   </p>
-                    <button id="accept-disclaimer" class="btn btn-darkBlue rounded-pill fw-semibold px-4 fs-5 mt-3" href="#">I understand.</button>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-9 col-lg-7">
+                    <div class="card rounded-5 p-4 px-md-5">
+                        <div class="card-body text-center">
+                            <h2 class=" fw-semibold text-darkOrange m-0" >Before you proceed...</h2>
+                            <h6 class="lead text-darkBlue fs-6 lh-sm mt-3">We would like to remind you that this project is an initial release based on historical data and flood simulations, and should not be solely depended on. Please exercise caution in acting on what the predictions show. The developers and researchers will not be liable for any damages and losses of any party as a result of using this website, its contents, and functionalities. 
+        
+                            <br><br>
+                            This project is limited to the <span class="fw-semibold">Municipality of Camaligan, Camarines Sur</span>
+                  
+                            </h6>
+                            <button id="accept-disclaimer" class="btn btn-darkBlue rounded-pill fw-semibold px-4 fs-5 mt-3" href="#">I understand.</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
         </div>
         <div id="map"></div>
         <div class="overlay mt-2 d-none d-md-block">
@@ -521,6 +526,7 @@
 
     async function fetchBand1Value(lng, lat) {
         try {
+            //  const response = await fetch("/api/get-band1", # for server deployment
             const response = await fetch("http://localhost:5000/get-band1", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
