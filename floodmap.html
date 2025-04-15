@@ -551,6 +551,7 @@
             const response = await fetch("/api/get-band1", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
+
                 body: JSON.stringify({ lng, lat })
             });
 
@@ -694,7 +695,7 @@
             `;
 
             // Set the innerHTML of *each* monitored-list element to the empty message
-            locationLists.forEach(monitoredList => {
+            locationLists.forEach(locationList => {
                 locationList.innerHTML = emptyCardHTML;
             });
             return; // Exit the function early
