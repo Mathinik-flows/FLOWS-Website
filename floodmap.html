@@ -130,10 +130,9 @@
                     <div class="card rounded-5 p-4 px-md-5" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" data-aos-anchor-placement="center-bottom">
                         <div class="card-body text-center">
                             <h2 class=" fw-semibold text-darkOrange m-0" >Before you proceed...</h2>
-                            <h6 class="lead text-darkBlue fs-6 lh-sm mt-3">We would like to remind you that this project is an initial release based on historical data and flood simulations, and should not be solely depended on. Please exercise caution in acting on what the predictions show. The developers and researchers will not be liable for any damages and losses of any party as a result of using this website, its contents, and functionalities. 
-        
+                            <h6 class="lead text-darkBlue fs-6 lh-sm mt-3">Please note that this system is still in its early stages and is based on historical data and flood simulations. While it aims to provide helpful information, it should not be your only source for making important safety decisions. Always stay alert and follow official updates from your local authorities. The developers and researchers are not responsible for any damages or losses that may occur from using this website or its features.
                             <br><br>
-                            This project is limited to the <span class="fw-semibold">Municipality of Camaligan, Camarines Sur</span>
+                            This project is limited to the <span class="fw-semibold">Municipality of Camaligan, Camarines Sur ONLY</span>
                   
                             </h6>
                             <button id="accept-disclaimer" class="btn btn-darkBlue rounded-pill fw-semibold px-4 fs-5 mt-3" href="#">I understand.</button>
@@ -208,7 +207,7 @@
                         </div>
                         <div class="overlay-content">
                             <div class="collapse show mt-2" id="collapseNearbyLocations">
-                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
+                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are essential public structures such as hospitals, schools, evacuation centers, or government offices near your selected location.</p>
                                 <div id="location-list-container">
                                     <div class="location-list" id="location-list">
                                         <div class="card mb-2 rounded-4 card-empty mt-1">
@@ -360,7 +359,7 @@
     const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY204YjBqNGVhMWEwYzJuczc5dmcyOWM0biJ9.Fsdka6-GWmAFXeLPsg9_dg';
 	mapboxgl.accessToken = ACCESS_TOKEN;
     const username = 'gavincii'; // Replace with your Mapbox username
-    const tilesetId = 'flood-map'; // Replace with your actual tileset ID
+    const tilesetId = 'flood'; // Replace with your actual tileset ID
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, { enableHighAccuracy: true });
     const datasetId = 'cm89a2b3m4ab51mpd8gm1v4u9'; // Replace with your actual dataset ID
     const accessToken = ACCESS_TOKEN; // Replace with your access token

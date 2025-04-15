@@ -157,8 +157,8 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    
 }
+
 
 
 main {
@@ -168,6 +168,26 @@ main {
     align-items: center; /* Centers vertically (optional) */
     text-align: center; /* Ensures text elements are also centered */
 }
+
+main::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Position relative to the body */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the pseudo-element BEHIND the body's content */
+  
+    /* Apply the background image to the pseudo-element */
+    background-image: url('../background.png'); /* <-- UPDATE PATH */
+    background-size: cover; /* Adjust as needed (cover, contain, etc.) */
+    background-position: center center; /* Adjust as needed */
+    background-repeat: no-repeat;
+  
+    /* Set the desired opacity */
+    opacity: 0.20; /* Example: 15% opacity. Adjust between 0.0 (invisible) and 1.0 (fully opaque) */
+}
+  
 
 #map {
     position: absolute;
@@ -478,12 +498,12 @@ main {
 .navbar-nav .nav-link.underline-image {
     position: relative; /* Needed for positioning the ::after */
   }
-  
-  /* Style the pseudo-element for the underline image */
-  .navbar-nav .nav-link.underline-image::after {
+
+/* Style the pseudo-element for the underline image */
+.navbar-nav .nav-link.underline-image::after {
     content: '';
     display: block;
-  
+
     /* --- Image Settings --- */
     background-image: url('../path.svg'); /* ! tärkeää: CHANGE THIS PATH */
     background-repeat: no-repeat;
@@ -491,8 +511,8 @@ main {
     background-size: contain; /* Or specify dimensions */
     height: 10px;          /* ! tärkeää: Adjust based on your image */
     /* --- End Image Settings --- */
-  
-  
+
+
     /* --- Positioning --- */
     position: absolute;
     left: 0;
@@ -500,8 +520,71 @@ main {
     bottom: -5px;   /* ! tärkeää: Adjust this negative value to position below text */
                     /* Consider Bootstrap's default padding */
     /* --- End Positioning --- */
-  
+
     /* Optional: Prevent image from interfering with clicks */
     pointer-events: none;
-  }
+}
 
+
+.nav-link {
+    /*
+        All of the base styles have
+        moved to the “CSS” tab above.
+    */
+    color: black;
+    transition: 0.5s;
+}
+
+/* Style when hovering over the links */
+.nav-link:hover {
+    color: #004E98;
+    transform: translateY(-3px);
+
+    
+}
+
+
+.main-nav-link:hover {
+    background: url('../path.svg');
+    background-repeat: no-repeat;
+    background-position: bottom center; /* Example: SVG at top */
+    background-size: contain; /* Or specify dimensions */
+    
+    animation: line 1s;
+}
+
+/* Style the pseudo-element for the underline image */
+.navbar-nav .nav-link.underline-image::after {
+    content: '';
+    display: block;
+
+    /* --- Image Settings --- */
+    background-image: url('../path.svg'); /* ! tärkeää: CHANGE THIS PATH */
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain; /* Or specify dimensions */
+    height: 10px;          /* ! tärkeää: Adjust based on your image */
+    /* --- End Image Settings --- */
+
+
+    /* --- Positioning --- */
+    position: absolute;
+    left: 0;
+    right: 0;       /* Spans the width */
+    bottom: -5px;   /* ! tärkeää: Adjust this negative value to position below text */
+                    /* Consider Bootstrap's default padding */
+    /* --- End Positioning --- */
+
+    /* Optional: Prevent image from interfering with clicks */
+    pointer-events: none;
+}
+
+
+@keyframes line {
+    0% {
+        background-position-x: 390px;
+    }
+}
+
+
+  

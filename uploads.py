@@ -7,9 +7,9 @@ import time
 # CONFIGURATION
 mapbox_token = 'sk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY205Zjl3NHhkMGlvYzJyc2MwNm05b2c0ayJ9.OTA15_jphYcO85Cj46F4VQ'
 username = 'gavincii'
-tileset_id = f'{username}.flood-map'
+tileset_id = f'{username}.flood'
 tileset_name = 'Flood Map'
-tif_path = r'assets/map/output_8bit.tif'
+tif_path = r'assets/map/test_tiff.tif'
 zip_path = 'floodmap.zip'
 
 # # 1. ZIP the GeoTIFF
