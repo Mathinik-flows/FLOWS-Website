@@ -28,7 +28,7 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="./assets/logo.png" alt="Flows Logo" width="50" height="45">
                 </a>
-                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler border-0  ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation" href="/">
                     <span class="navbar-toggler-icon"></span>
@@ -125,7 +125,7 @@
     <section id="map">
         <div id="disclaimer-overlay">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-9 col-lg-7">
+                <div class="col-12 col-md-9 col-lg-6">
                     <div class="card rounded-5 p-4 px-md-5">
                         <div class="card-body text-center">
                             <h2 class=" fw-semibold text-darkOrange m-0" >Before you proceed...</h2>
@@ -234,7 +234,7 @@
                     <span class="legend-icon"><img src="assets/pinpoint_selected.svg" alt="pinpoint_selected" width="15" height="15"></span>Selected Location
                 </div>
                 <div class="legend-item">
-                    <p class="fst-italic m-0"><small>Flood levels are based from MMDA's Flood Gauge</small></p>
+                    <p class="fst-italic m-0"><small>Flood level legends are based on MMDA's Flood Gauge</small></p>
                 </div>
                 
             </div>
@@ -275,7 +275,7 @@
 
         // Check if the disclaimer has been accepted before (use localStorage)
         if (localStorage.getItem("disclaimerAccepted")) {
-            overlay.style.display = "none";
+            // overlay.style.display = "none";
         }
 
         acceptButton.addEventListener("click", function () {
