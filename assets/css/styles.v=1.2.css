@@ -177,9 +177,15 @@ main {
 }
 
 .card.selected-location {
-    border: 2px solid #007BFF;  /* Blue border or any style */
-    background-color: #EAF3FF;  /* Light background */
+    border: 2px solid #E25B00;  /* Blue border or any style */
+    background-color: #f3e8e1;  /* Light background */
   }
+
+.card-empty {
+    border: 2px white; /* Dashed border */
+    border-style: dashed;
+    background-color: transparent; /* Light background */
+}
   
 .overlay {
     position: absolute;
@@ -265,7 +271,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 100; /* Ensures it stays on top */
+    z-index: 1100; /* Ensures it stays on top */
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
     overflow-y: auto;
@@ -406,6 +412,11 @@ main {
 #disclaimer-overlay.hidden {
     opacity: 0;
     pointer-events: none; /* Prevents interaction when hidden */
+}
+
+.tippy-box {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Example shadow */
+    /* Add any other Tippy box styles you have */
 }
 
 .legend-button {

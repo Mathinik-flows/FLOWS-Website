@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLOWS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.v=1.2.css">
     
     
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
     <link href="https://unpkg.com/tippy.js/themes/light.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.js"></script>
     
 
@@ -126,7 +127,7 @@
         <div id="disclaimer-overlay">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-9 col-lg-6">
-                    <div class="card rounded-5 p-4 px-md-5">
+                    <div class="card rounded-5 p-4 px-md-5" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" data-aos-anchor-placement="center-bottom">
                         <div class="card-body text-center">
                             <h2 class=" fw-semibold text-darkOrange m-0" >Before you proceed...</h2>
                             <h6 class="lead text-darkBlue fs-6 lh-sm mt-3">We would like to remind you that this project is an initial release based on historical data and flood simulations, and should not be solely depended on. Please exercise caution in acting on what the predictions show. The developers and researchers will not be liable for any damages and losses of any party as a result of using this website, its contents, and functionalities. 
@@ -145,7 +146,7 @@
         <div id="map"></div>
         <div class="overlay mt-2 d-none d-md-block">
             <div class="sub-overlay">
-                <div class="card bg-lightBlue rounded-5 border-0 p-2">
+                <div class="card bg-lightBlue rounded-5 shadow border-0 p-2">
                     <div class="card-body">
                         <div class="overlay-header">
                             <h6 class="fw-bold text-white ">Showing prediction for:</h6>
@@ -167,41 +168,57 @@
                 </div>
             </div>
             <div class="sub-overlay mt-2" style="z-index: 13;">	
-                <div class="card bg-lightBlue border-0 rounded-5 p-2">
+                <div class="card bg-lightBlue border-0 rounded-5 shadow p-2">
                     <div class="card-body">
                         <div class="overlay-header mb-0">
                             <h6 class="fw-bold text-white m-0">Monitored Locations</h6>
-                            <button class="btn toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonitoredLocations" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="btn toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMonitoredLocations" aria-expanded="true" aria-controls="collapseExample">
                                 <img id="toggle-icon" src="assets/arrow-down.svg" alt="Remove" width="20" height="20">
                             </button>
                         </div>
                         <div class="overlay-content">
-                            <div class="collapse mt-2" id="collapseMonitoredLocations">
+                            <div class="collapse show mt-2" id="collapseMonitoredLocations">
                                 <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
                                 <div id="search-container2"></div>
                                 <div id="location-list-container">
                                     <div class="monitored-list" id="monitored-list">
+                                        <div class="card mb-2 rounded-4 card-empty mt-3">
+                                            <div class="card-body d-flex align-items-center p-3 ">
+                                                <div>
+                                                    <h6 class="fw-bold text-darkBlue text-white">Nothing to show here yet...</h6>
+                                                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add a monitored location to see a flood alert level.</p>
+                                                </div>
+                                            </div>
+                                        </div>  
                                     </div>
-                                </div>
+                                </div>                              
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="sub-overlay mt-2" style="z-index: 10;">
-                <div class="card bg-lightBlue border-0 rounded-5 p-2">
+                <div class="card bg-lightBlue border-0 rounded-5 shadow p-2">
                     <div class="card-body">
                         <div class="overlay-header mb-0">
                             <h6 class="fw-bold text-white m-0">Nearby Critical Facilities</h6>
-                            <button class="btn toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNearbyLocations" aria-expanded="false" aria-controls="collapseExample">
+                            <button class="btn toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNearbyLocations" aria-expanded="true" aria-controls="collapseExample">
                                 <img id="toggle-icon" src="assets/arrow-down.svg" alt="Remove" width="20" height="20">
                             </button>
                         </div>
                         <div class="overlay-content">
-                            <div class="collapse mt-2" id="collapseNearbyLocations">
+                            <div class="collapse show mt-2" id="collapseNearbyLocations">
                                 <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
                                 <div id="location-list-container">
                                     <div class="location-list" id="location-list">
+                                        <div class="card mb-2 rounded-4 card-empty mt-1">
+                                            <div class="card-body d-flex align-items-center p-3 ">
+                                                <div>
+                                                    <h6 class="fw-bold text-darkBlue text-white">Nothing to show here yet...</h6>
+                                                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add/select a monitored location to show nearby facilities.</p>
+                                                </div>
+                                            </div>
+                                        </div>  
                                     </div>
                                 </div>
                             </div>    
@@ -215,7 +232,7 @@
         <button id="myButton" class="legend-button">
             <img id="toggle-icon" src="assets/question.svg" alt="Remove" width="50" height="50">
         </button>
-        <div id="template" style="display: none; ">
+        <div id="template" class="shadow-lg" style="display: none; ">
             <div>
                 <h6 class="legend-title mb-2 fs-5">Legend</h6>
                 <div class="legend-item">
@@ -234,7 +251,7 @@
                     <span class="legend-icon"><img src="assets/pinpoint_selected.svg" alt="pinpoint_selected" width="15" height="15"></span>Selected Location
                 </div>
                 <div class="legend-item">
-                    <p class="fst-italic m-0"><small>Flood level legends are based on MMDA's Flood Gauge</small></p>
+                    <p class="fst-italic m-0 lh-sm"><small>Flood level legends are based on MMDA's Flood Gauge</small></p>
                 </div>
                 
             </div>
@@ -261,13 +278,18 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    
     <script>
     // TO MAKE THE MAP APPEAR YOU MUST
 	// ADD YOUR ACCESS TOsKEN FROM
 	// https://account.mapbox.com
 
     //BOOTSTRAP
-        
+    
+    AOS.init();
+
 
     document.addEventListener("DOMContentLoaded", function () {
         const overlay = document.getElementById("disclaimer-overlay");
@@ -275,7 +297,7 @@
 
         // Check if the disclaimer has been accepted before (use localStorage)
         if (localStorage.getItem("disclaimerAccepted")) {
-            // overlay.style.display = "none";
+            overlay.style.display = "none";
         }
 
         acceptButton.addEventListener("click", function () {
@@ -324,8 +346,8 @@
         allowHTML: true,
         trigger: "click",
         hideOnClick: 'toggle',
-        placement: 'left-end',
-        offset: [0, -5]
+        placement: 'top-end',
+        offset: [-10, 0]
         // content: 'My tooltip!',
     });
 
@@ -526,8 +548,7 @@
 
     async function fetchBand1Value(lng, lat) {
         try {
-            //  const response = await fetch("/api/get-band1", # for server deployment
-            const response = await fetch("http://localhost:5000/get-band1", {
+            const response = await fetch("/api/get-band1", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ lng, lat })
@@ -562,6 +583,25 @@
     function updateLocationList(map) {
         // Select all elements with the class "monitored-list"
         const monitoredLists = document.querySelectorAll(".monitored-list");
+
+        if (selectedLocations.length === 0) {
+            const emptyCardHTML = `
+            <div class="card mb-2 rounded-4 card-empty mt-3">
+                <div class="card-body d-flex align-items-center p-3 ">
+                <div>
+                    <h6 class="fw-bold text-darkBlue text-white">Nothing to show here yet...</h6>
+                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add a monitored location to see a flood alert level.</p>
+                </div>
+                </div>
+            </div>
+            `;
+
+            // Set the innerHTML of *each* monitored-list element to the empty message
+            monitoredLists.forEach(monitoredList => {
+                monitoredList.innerHTML = emptyCardHTML;
+            });
+            return; // Exit the function early
+        }
 
         // Clear the inner HTML of each monitored list
         monitoredLists.forEach(monitoredList => {
@@ -639,6 +679,26 @@
     function updateNearby(features, map) {
         // Select all elements with the class "location-list"
         const locationLists = document.querySelectorAll(".location-list");
+
+        
+        if (selectedLocations.length === 0) {
+            const emptyCardHTML = `
+            <div class="card mb-2 rounded-4 card-empty mt-3">
+                <div class="card-body d-flex align-items-center p-3 ">
+                <div>
+                    <h6 class="fw-bold text-darkBlue text-white">Nothing to show here yet...</h6>
+                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add a monitored location to see a flood alert level.</p>
+                </div>
+                </div>
+            </div>
+            `;
+
+            // Set the innerHTML of *each* monitored-list element to the empty message
+            locationLists.forEach(monitoredList => {
+                locationList.innerHTML = emptyCardHTML;
+            });
+            return; // Exit the function early
+        }
 
         // Clear previous entries and populate each location list
         locationLists.forEach(locationList => {
