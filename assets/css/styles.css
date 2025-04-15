@@ -332,7 +332,7 @@ main {
     display: block;
   
     /* --- Image Settings --- */
-    background-image: url('./assets/path.svg'); /* ! tärkeää: CHANGE THIS PATH */
+    background-image: url('../path.svg'); /* ! tärkeää: CHANGE THIS PATH */
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: contain; /* Or specify dimensions */
