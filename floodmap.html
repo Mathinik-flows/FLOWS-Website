@@ -87,7 +87,7 @@
         </nav>    
     </header>
 
-    <div class="modal fade" id="MonitoredLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="MonitoredLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 10000 !important;">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -96,7 +96,7 @@
                 </div>
                 <div class="modal-body">
                 
-                    <p class=" text-dark lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
+                    <p class=" text-dark lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press 'x' to remove the location.</p>
                     <div id="search-container"></div>
                     <div id="location-list-container">
                         <div class="monitored-list" id="monitored-list">
@@ -109,7 +109,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="NearbyLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="NearbyLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 10000 !important;">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
             <div class="modal-header">
@@ -195,7 +195,7 @@
                         </div>
                         <div class="overlay-content">
                             <div class="collapse show mt-2" id="collapseMonitoredLocations">
-                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add <span id="monitored">monitored locations</span> within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
+                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add <span id="monitored">monitored locations</span> within Camaligan to see the predicted flood level for this specific date and time. Press 'x' to remove the location.</p>
                                 <div id="search-container2"></div>
                                 <div id="location-list-container">
                                     <div class="monitored-list" id="monitored-list">
@@ -368,6 +368,7 @@
         offset: [-10, 0],
         interactive: true,
         showOnCreate: true,
+        zIndex: 1100,
         // content: 'My tooltip!',
     });
 
@@ -403,7 +404,7 @@
     function setupMap(center) {
         const map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l/draft', // style URL
+            style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l', // style URL
             //style: 'mapbox://styles/mapbox/satellite-streets-v12',
             center: [123.160705, 13.623460], // starting position [lng, lat]. Note that lat must be set between -90 and 90
             zoom: 15.5, // starting zoom
@@ -413,6 +414,19 @@
 
         map.on('load', () => {
             console.log("Map loaded.");
+            // --- Define the ID of the layer you want your tilesets to appear BELOW ---
+                const layerToAppearBelow = 'camaligan-crit-facilities'; // Your critical facilities layer ID
+
+            // Check if the reference layer actually exists before trying to add layers below it
+            if (!map.getLayer(layerToAppearBelow)) {
+                console.error(`Error: The layer "${layerToAppearBelow}" does not exist in the map style. Cannot add tileset layers below it.`);
+                // Optionally, you could add the layers without the second argument here,
+                // so they still appear, just potentially on top.
+                // Or simply return to stop processing.
+                return;
+            } else {
+                console.log(`Found reference layer: ${layerToAppearBelow}. Adding tilesets below it.`);
+            }
 
             // --- Add all sources and layers initially (SAME AS BEFORE) ---
             for (let i = 0; i < totalTilesets; i++) {
@@ -439,8 +453,10 @@
                         },
                         layout: {
                             'visibility': (i === 0) ? 'visible' : 'none' // Only layer 0 visible initially
-                        }
-                    });
+                        },
+                        slot: 'middle'
+                    },
+                );
                 }
             }
             console.log("Initial layers added or confirmed.");
@@ -628,7 +644,7 @@
                 name: placeName,
                 coordinates: coordinates,
                 floodLevel: result.level,
-                floodValue: result.value  // You can also include result.value if needed
+                floodValue: +result.value.toFixed(2)  // You can also include result.value if needed
             });
 
             // Add marker to the map

@@ -69,7 +69,7 @@ def get_band1_value():
         index = data["layerIndex"]  # Default to 1 if not provided
         app.logger.info(f"Processing coordinates: lng={lng}, lat={lat} and layerIndex={index}")
 
-        TIF_FILE_PATH = f'var/www/html/assets/map/original/tif_rgb_00.tif' if index == 0 else f'var/www/html/assets/map/original/tif_rgb_{index}.tif';  # Update this path as needed
+        TIF_FILE_PATH = f'/var/www/html/assets/map/original/tif_rgb_0.tif' if index == 0 else f'/var/www/html/assets/map/original/tif_rgb_{index}.tif';  # Update this path as needed
         # Consider opening the dataset once at app startup for efficiency if the app
         # handles high traffic, but be mindful of Gunicorn workers.
         # Per-request opening is simpler to manage initially.
@@ -96,14 +96,14 @@ def get_band1_value():
                  app.logger.warning(f"Coordinates lng={lng}, lat={lat} (x={x}, y={y}) are outside raster bounds.")
                  return jsonify({
                       "error": "Coordinates are outside the raster file bounds",
-                      "value": None, # Indicate no valid value
+                      "value": 0, # Indicate no valid value
                       "flood_level": "Outside Bounds"
                  }), 404 # Not Found status seems appropriate
 
             # Read Band 1 value at the given row/col
             # Ensure band index is correct (usually 1-based for dataset.read)
             band1 = dataset.read(1)
-            value = round(band1[row, col], 2)
+            value = band1[row, col]
             app.logger.info(f"Raw value at (row={row}, col={col}): {value}")
 
             # Classify the value
@@ -113,7 +113,7 @@ def get_band1_value():
         # Prepare successful response
         response_data = {
             # Convert numpy types (like float32) to standard Python float for JSON
-            "value": float(value) if value is not None else None,
+            "value": float(value) if value != -9999 else 0,
             "flood_level": flood_level,
             "row": row,
             "col": col,
@@ -123,19 +123,28 @@ def get_band1_value():
         return jsonify(response_data), 200
 
     # Specific Error Handling
-    except KeyError as e:
-         app.logger.error(f"Missing key in JSON data: {e}", exc_info=True)
-         return jsonify({"error": f"Missing expected data in request: {e}"}), 400 # Bad request
-    except (RasterioIOError, FileNotFoundError) as e:
-         app.logger.error(f"Error opening or reading raster file '{TIF_FILE_PATH}': {e}", exc_info=True)
-         return jsonify({"error": f"Could not access or read the raster data file."}), 500 # Server error
-    except CRSError as e:
-         app.logger.error(f"Coordinate transformation error: {e}", exc_info=True)
-         return jsonify({"error": "Error during coordinate system transformation."}), 500 # Server error
     except Exception as e:
-         # Catch-all for other unexpected errors
-         app.logger.error(f"An unexpected error occurred: {e}", exc_info=True)
-         return jsonify({"error": "An internal server error occurred."}), 500 # Server error
+        return jsonify({
+            "value": 0,  # âœ… Convert to native float
+            "flood_level": "Not in scope",
+            "row": 0,
+            "col": 0,
+            "message": "Band1 value retrieved unsuccessfully",
+            "error": str(e)})
+        #return jsonify({"error": str(e)}), 500
+    # except KeyError as e:
+    #      app.logger.error(f"Missing key in JSON data: {e}", exc_info=True)
+    #      return jsonify({"error": f"Missing expected data in request: {e}"}), 400 # Bad request
+    # except (RasterioIOError, FileNotFoundError) as e:
+    #      app.logger.error(f"Error opening or reading raster file '{TIF_FILE_PATH}': {e}", exc_info=True)
+    #      return jsonify({"error": f"Could not access or read the raster data file."}), 500 # Server error
+    # except CRSError as e:
+    #      app.logger.error(f"Coordinate transformation error: {e}", exc_info=True)
+    #      return jsonify({"error": "Error during coordinate system transformation."}), 600 # Server error
+    # except Exception as e:
+    #      # Catch-all for other unexpected errors
+    #      app.logger.error(f"An unexpected error occurred: {e}", exc_info=True)
+    #      return jsonify({"error": "An internal server error occurred."}), 700 # Server error
 
 
 # --- Optional: Root Endpoint for Health Check ---
