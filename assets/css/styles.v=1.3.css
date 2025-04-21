@@ -362,8 +362,6 @@ main::before {
     }
 }
 
-
-
 /* For extra small screens (max-width: 575.98px) */
 @media (max-width: 575.98px) {
     #disclaimer-overlay .card-title {
@@ -463,7 +461,7 @@ main::before {
 .legend-item {
     display: flex;
     align-items: center;
-    font-size: 14px;
+    font-size: 10px;
     color: #1e3a8a;
     margin-bottom: 6px;
 }
@@ -489,6 +487,15 @@ main::before {
     border-radius: 2rem;
     padding: 15px
 }
+
+.tippy-box[data-theme~='tooltips'] {
+    background-color: white;
+    color: #E25B00;
+  }
+
+  .tippy-box[data-theme~='tooltips'] > .tippy-arrow::before {
+    transform: scale(0);
+  }
 
 .tippy-box[data-theme~='legend'] > .tippy-arrow::before {
     transform: scale(0);

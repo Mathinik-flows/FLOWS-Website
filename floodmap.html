@@ -118,7 +118,7 @@
             </div>
             <div class="modal-body">
             
-                <p class="card-subtitle text-dark lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
+                <p class="card-subtitle text-dark lh-sm fs-6 mb-2">These are essential public structures such as hospitals, schools, evacuation centers, or government offices near your selected location.</p>
                 <div id="location-list-container">
                     <div class="location-list" id="location-list">
                     </div>
@@ -179,7 +179,7 @@
                                     <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="11">Oct 22, 2024 11PM</a></li>
                                 </ul>
                             </div>
-                            <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0"><small>Map predictions last updated at 05/12/2025 1:01PM.</small></p>
+                            <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0"><small>Map predictions last updated at 04/16/2025 10AM.</small></p>
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                         </div>
                         <div class="overlay-content">
                             <div class="collapse show mt-2" id="collapseMonitoredLocations">
-                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
+                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add <span id="monitored">monitored locations</span> within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
                                 <div id="search-container2"></div>
                                 <div id="location-list-container">
                                     <div class="monitored-list" id="monitored-list">
@@ -251,15 +251,15 @@
         </button>
         <div id="template" class="shadow-lg" style="display: none; ">
             <div>
-                <h6 class="legend-title mb-2 fs-5">Legend</h6>
+                <h6 class="legend-title mb-2 fs-6">Legend</h6>
                 <div class="legend-item">
-                    <span class="legend-circle" style="background-color: #f4b400;"></span> Low Flood Level 0.1-0.24m
+                    <span class="legend-circle" style="background-color: #f4b400;"></span> <span class="fw-semibold">Low Flood Level&nbsp; </span> 0.1-0.24m
                 </div>
                 <div class="legend-item">
-                    <span class="legend-circle" style="background-color: #fb8c00;"></span> Moderate Flood Level 0.25-0.5m
+                    <span class="legend-circle" style="background-color: #fb8c00;"></span> <span class="fw-semibold">Moderate Flood Level&nbsp; </span></span> 0.25-0.5m
                 </div>
                 <div class="legend-item">
-                    <span class="legend-circle" style="background-color: #d50000;"></span> High Flood Level >0.5m
+                    <span class="legend-circle" style="background-color: #d50000;"></span> <span class="fw-semibold">High Flood Level&nbsp; </span> >0.5m
                 </div>
                 <div class="legend-item">
                     <span class="legend-icon"><img src="assets/pinpoint.svg" alt="pinpoint" width="15" height="15"></span>Monitored Location(s)
@@ -268,7 +268,7 @@
                     <span class="legend-icon"><img src="assets/pinpoint_selected.svg" alt="pinpoint_selected" width="15" height="15"></span>Selected Location
                 </div>
                 <div class="legend-item">
-                    <p class="fst-italic m-0 lh-sm"><small>Flood level legends are based on MMDA's Flood Gauge</small></p>
+                    <p class="fst-italic m-0 lh-sm"><small>Flood level legends are based on <a href="https://www.facebook.com/MMDAPH/posts/know-when-it-is-safe-to-drive-through-flooded-areas-with-the-mmda-flood-gauge-th/4397217110316917/" target="_blank">MMDA's Flood Gauge</a></small></p>
                 </div>
                 
             </div>
@@ -307,6 +307,7 @@
     
     AOS.init();
 
+    
 
     document.addEventListener("DOMContentLoaded", function () {
         const overlay = document.getElementById("disclaimer-overlay");
@@ -364,10 +365,16 @@
         trigger: "click",
         hideOnClick: 'toggle',
         placement: 'top-end',
-        offset: [-10, 0]
+        offset: [-10, 0],
+        interactive: true,
+        showOnCreate: true,
         // content: 'My tooltip!',
     });
 
+    tippy('#monitored', {
+        theme: 'tooltips',
+        content: 'These are locations you would llike to see the flood levels for.',
+      });
 
 
 
@@ -409,7 +416,7 @@
 
             // --- Add all sources and layers initially (SAME AS BEFORE) ---
             for (let i = 0; i < totalTilesets; i++) {
-                const tilesetId = (i === 0) ? `tif_rgb_00` : `tif_rgb_${i}`;
+                const tilesetId = (i === 0) ? `tif_rgb0` : `tif_rgb_${i}`;
                 const sourceId = `source_${tilesetId}`;
                 const layerId = `layer_${tilesetId}`;
 
@@ -467,7 +474,7 @@
                             // --- Map Layer Visibility Logic (Stays the Same) ---
                             // This part affects the single map globally based on the index
                             for (let i = 0; i < totalTilesets; i++) {
-                                const layerId = (i === 0) ? `layer_tif_rgb_00` : `layer_tif_rgb_${i}`;
+                                const layerId = (i === 0) ? `layer_tif_rgb0` : `layer_tif_rgb_${i}`;
                                 if (map.getLayer(layerId)) {
                                     const visibility = (i === selectedIndex) ? 'visible' : 'none';
                                     map.setLayoutProperty(layerId, 'visibility', visibility);
@@ -477,7 +484,7 @@
                             }
                             // --- End Map Layer Logic ---
 
-                            refreshSelectedLocations(selectedIndex, map);
+                            refreshMonitoredLocations(selectedIndex, map);
                         }
                     });
                 });
@@ -501,10 +508,10 @@
         });
 
         map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-        map.addControl(new mapboxgl.GeolocateControl({
-            positionOptions: { enableHighAccuracy: true },
-            trackUserLocation: true
-        }), 'top-right');
+        // map.addControl(new mapboxgl.GeolocateControl({
+        //     positionOptions: { enableHighAccuracy: true },
+        //     trackUserLocation: true
+        // }), 'top-right');
 
         fetch('assets/datasets/dataset.geojson') // Load the downloaded GeoJSON file
         .then(response => response.json())
@@ -620,7 +627,8 @@
             selectedLocations.push({
                 name: placeName,
                 coordinates: coordinates,
-                floodLevel: result.level  // You can also include result.value if needed
+                floodLevel: result.level,
+                floodValue: result.value  // You can also include result.value if needed
             });
 
             // Add marker to the map
@@ -678,7 +686,7 @@
      * @param {number} layerIndex The new layer index (0-11) to fetch data for.
      * @param {mapboxgl.Map} map The Mapbox map instance.
      */
-    async function refreshSelectedLocations(layerIndex, map) {
+    async function refreshMonitoredLocations(layerIndex, map) {
         console.log(`Refreshing ${selectedLocations.length} selected locations for index ${layerIndex}...`);
 
         if (selectedLocations.length === 0) {
@@ -697,7 +705,7 @@
                 .then(result => {
                     // --- Directly update the object in the selectedLocations array ---
                     location.floodLevel = result.level;
-                    // location.value = result.value; // Update value too if you store it
+                    location.value = result.value; // Update value too if you store it
                     console.log(`Refreshed ${location.name}: Level=${location.floodLevel}`);
                     return { status: 'fulfilled', index: index }; // Indicate success
                 })
@@ -705,7 +713,7 @@
                     console.error(`Failed to refresh ${location.name}: ${error.message}`);
                     // --- Update the object to show an error state ---
                     location.floodLevel = "Error";
-                    // location.value = null;
+                    location.value = null;
                     return { status: 'rejected', index: index, reason: error.message }; // Indicate failure
                 })
         );
@@ -761,7 +769,7 @@
                     <div class="card-body d-flex justify-content-between align-items-center p-3">
                         <div>
                             <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
-                            <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
+                            <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel} ${loc.floodValue}m</h4>
                         </div>
                         <button class="btn btn-sm remove-btn" onclick="removeLocation(${index}, window._mapRef)" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
                             <img src="assets/remove.svg" alt="Remove" width="30" height="30">

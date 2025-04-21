@@ -103,7 +103,7 @@ def get_band1_value():
             # Read Band 1 value at the given row/col
             # Ensure band index is correct (usually 1-based for dataset.read)
             band1 = dataset.read(1)
-            value = band1[row, col]
+            value = round(band1[row, col], 2)
             app.logger.info(f"Raw value at (row={row}, col={col}): {value}")
 
             # Classify the value

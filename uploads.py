@@ -18,8 +18,8 @@ base_tif_path = r'assets/map' # Base directory containing your TIF files
 # --- Loop through file numbers 1 to 11 ---
 for i in range(0, 1): # range(1, 12) generates numbers 1, 2, ..., 11
     file_index = i
-    tileset_id = f'{username}.tif_rgb_00' # Dynamic tileset ID, e.g., username.tif_1
-    tileset_name = f'Flood_Map_{file_index}'   # Dynamic tileset name, e.g., Flood Map 1
+    tileset_id = f'{username}.tif_rgb0' # Dynamic tileset ID, e.g., username.tif_1
+    tileset_name = f'Flood_Map {file_index}'   # Dynamic tileset name, e.g., Flood Map 1
     tif_path = os.path.join(base_tif_path, f'tif_rgb_{file_index}.tif') # Construct full path, e.g., assets/map/tif_1.tif
 
     print(f"\n--- Processing file {i}: {tif_path} ---")
