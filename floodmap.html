@@ -334,21 +334,6 @@
         });
     });
 
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     document.querySelectorAll(".toggle").forEach(button => {
-    //         const collapseTarget = document.querySelector(button.getAttribute("data-bs-target"));
-    //         const icon = button.querySelector(".toggleIcon");
-
-    //         collapseTarget.addEventListener("shown.bs.collapse", function () {
-    //             icon.src = "assets/arrow-up.svg"; // Change to "up" icon when expanded
-    //         });
-
-    //         collapseTarget.addEventListener("hidden.bs.collapse", function () {
-    //             icon.src = "assets/arrow-down.svg"; // Change back to "down" icon when collapsed
-    //         });
-    //     });
-    // });
-
     document.addEventListener("DOMContentLoaded", function () {
         var popoverTrigger = new bootstrap.Popover(document.getElementById("legend-toggle"), {
             container: "body", // Ensures the popover does not get clipped
@@ -367,7 +352,7 @@
         placement: 'top-end',
         offset: [-10, 0],
         interactive: true,
-        showOnCreate: true,
+        showOnCreate: false,
         zIndex: 1100,
         // content: 'My tooltip!',
     });
@@ -592,8 +577,8 @@
             // Initial visibility check
             updateGeocoderVisibility();
 
-            // Update visibility on window resize
-            window.addEventListener('resize', updateGeocoderVisibility);
+            // Update where geocoder instance is applied when resizing the window!! Not necessarily needed to be handled sine the resize listener interferes with android keyboard.
+            //window.addEventListener('resize', updateGeocoderVisibility);
 
             // document.getElementById('search-container').appendChild(geocoder.onAdd(map));
             // document.getElementById('search-container2').appendChild(geocoder.onAdd(map));
