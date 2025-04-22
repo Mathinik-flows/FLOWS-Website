@@ -366,10 +366,9 @@
 
     //MAPBOX
 
-    
-    const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY204YjBqNGVhMWEwYzJuczc5dmcyOWM0biJ9.Fsdka6-GWmAFXeLPsg9_dg';
+    const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWlpIiwiYSI6ImNtOXJuYTFldTF0OXAybHB4eTg2bnFiNDIifQ.qfCkZkEpDTtdhTkHcUQ0Cg';
 	mapboxgl.accessToken = ACCESS_TOKEN;
-    const username = 'gavincii'; // Replace with your Mapbox username
+    const username = 'gavinciii'; // Replace with your Mapbox username
     
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, { enableHighAccuracy: true });
     const datasetId = 'cm89a2b3m4ab51mpd8gm1v4u9'; // Replace with your actual dataset ID
@@ -389,7 +388,7 @@
     function setupMap(center) {
         const map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l', // style URL
+            style: 'mapbox://styles/gavinciii/cm9ro1smy008b01spb1yydza4/draft', // style URL
             //style: 'mapbox://styles/mapbox/satellite-streets-v12',
             center: [123.160705, 13.623460], // starting position [lng, lat]. Note that lat must be set between -90 and 90
             zoom: 15.5, // starting zoom
@@ -399,8 +398,9 @@
 
         map.on('load', () => {
             console.log("Map loaded.");
+
             // --- Define the ID of the layer you want your tilesets to appear BELOW ---
-                const layerToAppearBelow = 'camaligan-crit-facilities'; // Your critical facilities layer ID
+            const layerToAppearBelow = 'camaligan-crit-facilities'; // Your critical facilities layer ID
 
             // Check if the reference layer actually exists before trying to add layers below it
             if (!map.getLayer(layerToAppearBelow)) {
@@ -588,11 +588,10 @@
             // When the geocoder returns a result
             const point = event.result.center; // Capture the result 
             const placeName = event.result.text;
-            const tileset = 'gavincii.cm8bbl9jm8w9n1nnbrh5vzu9t-4sfg3'; // replace this with the ID of the tileset you created
+            const tileset = 'gavinciii.81ck42dr'; // replace this with the ID of the tileset you created
             const radius = 1609; // 1609 meters is roughly equal to one mile
             const limit = 10; // The maximum amount of results to return
 
-           // marker.setLngLat(point).addTo(map); // Add the marker to the map at the result coordinates
             const query = await fetch(
                 `https://api.mapbox.com/v4/${tileset}/tilequery/${point[0]},${point[1]}.json?radius=${radius}&limit=${limit}&access_token=${mapboxgl.accessToken}`,
                 { method: 'GET' }
@@ -629,7 +628,7 @@
                 name: placeName,
                 coordinates: coordinates,
                 floodLevel: result.level,
-                floodValue: +result.value.toFixed(2)  // You can also include result.value if needed
+                floodValue: +result.value.toFixed(2)   // You can also include result.value if needed
             });
 
             // Add marker to the map
