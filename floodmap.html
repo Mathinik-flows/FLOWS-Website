@@ -63,13 +63,14 @@
                         Select prediction shown
                     </button>
                     <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 100%;">
-                        <li><h6 class="dropdown-header">Show predictions for...</h6></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12NN</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5PM</a></li>
+                        <li><h6 class="dropdown-header">Predictions for early Oct 22, 2024 (Kristine)</h6></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12MN</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1AM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2AM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3AM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4AM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5AM</a></li>
+                        <li><h6 class="dropdown-header">Predictions for late Oct 22, 2024 (Kristine)</h6></li>
                         <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="6">Oct 22, 2024 6PM</a></li>
                         <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="7">Oct 22, 2024 7PM</a></li>
                         <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="8">Oct 22, 2024 8PM</a></li>
@@ -165,12 +166,14 @@
                                     Select prediction shown
                                 </button>
                                 <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton2" style="width: 100%;">
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12NN</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5PM</a></li>
+                                    <li><h6 class="dropdown-header">Predictions for early Oct 22, 2024 (Kristine)</h6></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12MN</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1AM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2AM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3AM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4AM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5AM</a></li>
+                                    <li><h6 class="dropdown-header">Predictions for late Oct 22, 2024 (Kristine)</h6></li>
                                     <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="6">Oct 22, 2024 6PM</a></li>
                                     <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="7">Oct 22, 2024 7PM</a></li>
                                     <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="8">Oct 22, 2024 8PM</a></li>
@@ -388,7 +391,7 @@
     function setupMap(center) {
         const map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/gavinciii/cm9ro1smy008b01spb1yydza4/draft', // style URL
+            style: 'mapbox://styles/gavinciii/cm9ro1smy008b01spb1yydza4', // style URL
             //style: 'mapbox://styles/mapbox/satellite-streets-v12',
             center: [123.160705, 13.623460], // starting position [lng, lat]. Note that lat must be set between -90 and 90
             zoom: 15.5, // starting zoom
@@ -399,23 +402,23 @@
         map.on('load', () => {
             console.log("Map loaded.");
 
-            // --- Define the ID of the layer you want your tilesets to appear BELOW ---
-            const layerToAppearBelow = 'camaligan-crit-facilities'; // Your critical facilities layer ID
+            // // --- Define the ID of the layer you want your tilesets to appear BELOW ---
+            // const layerToAppearBelow = 'camaligan-crit-facilities'; // Your critical facilities layer ID
 
-            // Check if the reference layer actually exists before trying to add layers below it
-            if (!map.getLayer(layerToAppearBelow)) {
-                console.error(`Error: The layer "${layerToAppearBelow}" does not exist in the map style. Cannot add tileset layers below it.`);
-                // Optionally, you could add the layers without the second argument here,
-                // so they still appear, just potentially on top.
-                // Or simply return to stop processing.
-                return;
-            } else {
-                console.log(`Found reference layer: ${layerToAppearBelow}. Adding tilesets below it.`);
-            }
+            // // Check if the reference layer actually exists before trying to add layers below it
+            // if (!map.getLayer(layerToAppearBelow)) {
+            //     console.error(`Error: The layer "${layerToAppearBelow}" does not exist in the map style. Cannot add tileset layers below it.`);
+            //     // Optionally, you could add the layers without the second argument here,
+            //     // so they still appear, just potentially on top.
+            //     // Or simply return to stop processing.
+            //     return;
+            // } else {
+            //     console.log(`Found reference layer: ${layerToAppearBelow}. Adding tilesets below it.`);
+            // }
 
             // --- Add all sources and layers initially (SAME AS BEFORE) ---
             for (let i = 0; i < totalTilesets; i++) {
-                const tilesetId = (i === 0) ? `tif_rgb0` : `tif_rgb_${i}`;
+                const tilesetId = `tif_rgb${i}`;
                 const sourceId = `source_${tilesetId}`;
                 const layerId = `layer_${tilesetId}`;
 
@@ -426,6 +429,7 @@
                         url: `mapbox://${username}.${tilesetId}`,
                         tileSize: 256
                     });
+                    console.log(`AddedSource: ${sourceId}`);
                 }
 
                 if (!map.getLayer(layerId)) {
@@ -441,7 +445,8 @@
                         },
                         slot: 'middle'
                     },
-                );
+                    );
+                    console.log(`AddedSource: ${layerId}`);
                 }
             }
             console.log("Initial layers added or confirmed.");
@@ -475,7 +480,7 @@
                             // --- Map Layer Visibility Logic (Stays the Same) ---
                             // This part affects the single map globally based on the index
                             for (let i = 0; i < totalTilesets; i++) {
-                                const layerId = (i === 0) ? `layer_tif_rgb0` : `layer_tif_rgb_${i}`;
+                                const layerId = `layer_tif_rgb${i}`;
                                 if (map.getLayer(layerId)) {
                                     const visibility = (i === selectedIndex) ? 'visible' : 'none';
                                     map.setLayoutProperty(layerId, 'visibility', visibility);
@@ -705,7 +710,7 @@
                 .then(result => {
                     // --- Directly update the object in the selectedLocations array ---
                     location.floodLevel = result.level;
-                    location.value = result.value; // Update value too if you store it
+                    location.floodValue = +result.value.toFixed(2)   // Update value too if you store it
                     console.log(`Refreshed ${location.name}: Level=${location.floodLevel}`);
                     return { status: 'fulfilled', index: index }; // Indicate success
                 })
@@ -713,7 +718,7 @@
                     console.error(`Failed to refresh ${location.name}: ${error.message}`);
                     // --- Update the object to show an error state ---
                     location.floodLevel = "Error";
-                    location.value = null;
+                    location.value = 0;
                     return { status: 'rejected', index: index, reason: error.message }; // Indicate failure
                 })
         );
@@ -759,7 +764,7 @@
             selectedLocations.forEach((loc, index) => {
                 let textColor = loc.floodLevel === "High Flood Level" ? "red" :
                                 loc.floodLevel === "Moderate Flood Level" ? "orange" :
-                                loc.floodLevel === "Low Flood Level" ? "yellow" : "green";
+                                loc.floodLevel === "Low Flood Level" ? "#F5C548" : "green";
 
                 let card = document.createElement("div");
                 card.className = "card my-2 rounded-4 monitored-location";

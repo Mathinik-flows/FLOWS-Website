@@ -69,7 +69,7 @@ def get_band1_value():
         index = data["layerIndex"]  # Default to 1 if not provided
         app.logger.info(f"Processing coordinates: lng={lng}, lat={lat} and layerIndex={index}")
 
-        TIF_FILE_PATH = f'/var/www/html/assets/map/original/tif_rgb_0.tif' if index == 0 else f'/var/www/html/assets/map/original/tif_rgb_{index}.tif';  # Update this path as needed
+        TIF_FILE_PATH = f'/var/www/html/assets/map/original/tif_rgb_{index}.tif';  # Update this path as needed
         # Consider opening the dataset once at app startup for efficiency if the app
         # handles high traffic, but be mindful of Gunicorn workers.
         # Per-request opening is simpler to manage initially.

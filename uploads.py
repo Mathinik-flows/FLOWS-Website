@@ -11,15 +11,15 @@ import os
 # import zipfile # Not needed based on your active S3 upload code
 
 # --- Configuration ---
-username = 'gavincii' # Replace with your actual Mapbox username
-mapbox_token = 'sk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY205Zjl3NHhkMGlvYzJyc2MwNm05b2c0ayJ9.OTA15_jphYcO85Cj46F4VQ' # Replace with your secret Mapbox API token (keep this secure!)
-base_tif_path = r'assets/map' # Base directory containing your TIF files
+username = 'gavinciii' # Replace with your actual Mapbox username
+mapbox_token = 'sk.eyJ1IjoiZ2F2aW5jaWlpIiwiYSI6ImNtOXJxYzBieTFsamsya3I3a3RkaXRidmoifQ.AKsqwHhiw5MMo66QVQeIRw' # Replace with your secret Mapbox API token (keep this secure!)
+base_tif_path = r'assets/map/8bit' # Base directory containing your TIF files
 
 # --- Loop through file numbers 1 to 11 ---
-for i in range(0, 1): # range(1, 12) generates numbers 1, 2, ..., 11
+for i in range(6, 12): # range(1, 12) generates numbers 1, 2, ..., 11
     file_index = i
-    tileset_id = f'{username}.tif_rgb_{i}' # Dynamic tileset ID, e.g., username.tif_1
-    tileset_name = f'Flood_Map {file_index}'   # Dynamic tileset name, e.g., Flood Map 1
+    tileset_id = f'{username}.tif_rgb{i}' # Dynamic tileset ID, e.g., username.tif_1
+    tileset_name = f'Flood_Map_{file_index}'   # Dynamic tileset name, e.g., Flood Map 1
     tif_path = os.path.join(base_tif_path, f'tif_rgb_{file_index}.tif') # Construct full path, e.g., assets/map/tif_1.tif
 
     print(f"\n--- Processing file {i}: {tif_path} ---")
