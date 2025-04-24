@@ -2,7 +2,7 @@ Message  | Notes generated when writing the computation files:
 Message  | Testing program set the number of cores for 2d flow area: 'camaligan' from 0 to 0
 Message  | 
 Message  | Plan: 'Testing' (flows.p01)
-Message  | Simulation started at: 24Apr2025 05:10:51 PM
+Message  | Simulation started at: 24Apr2025 10:30:21 PM
 Message  | 
 Message  | PROCESS:RasProcess
 Message  | Writing Plan GIS Data...
@@ -36,11 +36,11 @@ Progress | 0.1
 Progress | 0.2
 Progress | 0.3
 Message  |  
-Progress | 0.071875
+Progress | 0.0359375
 Message  | 	
 Message  | Unsteady Input Summary:
 Message  |      2D Unsteady Diffusion Wave Equation Set (fastest)
-Message  |      2D number of Solver Cores:    4
+Message  |      2D number of Solver Cores:   10
 Progress | 0.3
 Progress | 0.4
 Progress | 0.5
@@ -87,8 +87,8 @@ Progress | 0.95
 Progress | 0.9733334
 Progress | 1
 Message  | 
-Message  | Overall Volume Accounting Error in 1000 m^3:      0.0000005542
-Message  | Overall Volume Accounting Error as percentage:      0.0000003193
+Message  | Overall Volume Accounting Error in 1000 m^3:      0.0000005633
+Message  | Overall Volume Accounting Error as percentage:      0.0000003245
 Message  | Please review "Computational Log File" output for volume accounting details
 Message  | 
 Message  | Writing Results to DSS
@@ -104,12 +104,12 @@ Message  |
 Message  | Computations Summary
 Message  | 
 Message  | Computation Task	Time(hh:mm:ss)
-Message  | Completing Geometry, Flow and Plan	       2
+Message  | Completing Geometry, Flow and Plan	       1
 Message  | Preprocessing Geometry	<1
-Message  | Unsteady Flow Computations	      10
+Message  | Unsteady Flow Computations	       6
 Message  | Computing Maps	<1
-Message  | Complete Process	      14
+Message  | Complete Process	       8
 Message  | 
 Message  | Computation Speed	Simulation/Runtime
-Message  | Unsteady Flow Computations	1662x
-Message  | Complete Process	1220x
+Message  | Unsteady Flow Computations	2831x
+Message  | Complete Process	2129x

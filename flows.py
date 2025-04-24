@@ -11,8 +11,8 @@ scripts = [
     SCRIPT_DIR / "prediction.py",
     SCRIPT_DIR / "simulation.py",
     SCRIPT_DIR / "exporttif.py",
-    SCRIPT_DIR / "convert.py"
-    # SCRIPT_DIR / "upload.py" # Uncomment this if you want to include the upload script
+    SCRIPT_DIR / "convert.py",
+    SCRIPT_DIR / "upload.py" # Uncomment this if you want to include the upload script
 ]
 #remove last value if wala ung upload script
 delays = [10, 60, 20] #,30]  # Note: len(delays) = len(scripts) - 1

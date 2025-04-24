@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLOWS</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/styles.v=1.2.css">
+    <link rel="stylesheet" href="assets/css/styles.v=1.3.css">
     
     
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css" rel="stylesheet">
@@ -29,7 +29,7 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="./assets/logo.png" alt="Flows Logo" width="50" height="45">
                 </a>
-                <button class="navbar-toggler border-0  ms-auto" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler border-0 ms-auto" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
                     aria-label="Toggle navigation" href="/">
                     <span class="navbar-toggler-icon"></span>
@@ -38,10 +38,10 @@
                 <div class="collapse navbar-collapse fw-semibold justify-content-end" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto align-items-lg-center align-items-end">
                         <li class="nav-item ">
-                            <a class="nav-link fs-6 mx-2 fw-semibold text-black underline-image" href="map.html">Flood Extent Map</a>
+                            <a class="nav-link fs-6 mx-2 fw-semibold underline-image main-nav-link" href="floodmap.html">Flood Extent Map</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link fs-6 fw-semibold mx-2 text-black" href="about.html">About</a>
+                            <a class="nav-link fs-6 fw-semibold mx-2 " href="about.html">About</a>
                         </li>  
                         <li class="nav-item ">
                             <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-6" href="#">Read the Paper</a>
@@ -49,7 +49,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>    
+        </nav>   
     </header>
 
     <header class="d-md-none">
@@ -58,15 +58,25 @@
                 <a class="navbar-brand" href="index.html">
                     <img src="./assets/logo.png" alt="Flows Logo" width="50" height="45">
                 </a>
-                <div class="dropdown" >
-                    <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%"; >
-                    Select prediction shown
+                <div class="dropdown">
+                    <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
+                        Select prediction shown
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%";>
-                        <li><h6 class="dropdown-header">Show predictions for...</h6></li>
-                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">April 9 1:00PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">April 9 2:00PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">April 9 3:00PM</a></li>
+                    <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 100%;">
+                        <li><h6 class="dropdown-header">Predictions for early Oct 22, 2024 (Kristine)</h6></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12MN</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1AM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2AM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3AM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4AM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5AM</a></li>
+                        <li><h6 class="dropdown-header">Predictions for late Oct 22, 2024 (Kristine)</h6></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="6">Oct 22, 2024 6PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="7">Oct 22, 2024 7PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="8">Oct 22, 2024 8PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="9">Oct 22, 2024 9PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="10">Oct 22, 2024 10PM</a></li>
+                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="11">Oct 22, 2024 11PM</a></li>
                     </ul>
                 </div>
                 <div class="navbar-nav ms-auto align-items-lg-center align-items-end">
@@ -78,7 +88,7 @@
         </nav>    
     </header>
 
-    <div class="modal fade" id="MonitoredLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="MonitoredLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 10000 !important;">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
@@ -87,7 +97,7 @@
                 </div>
                 <div class="modal-body">
                 
-                    <p class=" text-dark lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
+                    <p class=" text-dark lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press 'x' to remove the location.</p>
                     <div id="search-container"></div>
                     <div id="location-list-container">
                         <div class="monitored-list" id="monitored-list">
@@ -100,7 +110,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="NearbyLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="NearbyLocations" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 10000 !important;">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
             <div class="modal-header">
@@ -109,7 +119,7 @@
             </div>
             <div class="modal-body">
             
-                <p class="card-subtitle text-dark lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
+                <p class="card-subtitle text-dark lh-sm fs-6 mb-2">These are essential public structures such as hospitals, schools, evacuation centers, or government offices near your selected location.</p>
                 <div id="location-list-container">
                     <div class="location-list" id="location-list">
                     </div>
@@ -130,10 +140,9 @@
                     <div class="card rounded-5 p-4 px-md-5" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" data-aos-anchor-placement="center-bottom">
                         <div class="card-body text-center">
                             <h2 class=" fw-semibold text-darkOrange m-0" >Before you proceed...</h2>
-                            <h6 class="lead text-darkBlue fs-6 lh-sm mt-3">We would like to remind you that this project is an initial release based on historical data and flood simulations, and should not be solely depended on. Please exercise caution in acting on what the predictions show. The developers and researchers will not be liable for any damages and losses of any party as a result of using this website, its contents, and functionalities. 
-        
+                            <h6 class="lead text-darkBlue fs-6 lh-sm mt-3">Please note that this system is still in its early stages and is based on historical data and flood simulations. While it aims to provide helpful information, it should not be your only source for making important safety decisions. Always stay alert and follow official updates from your local authorities. The developers and researchers are not responsible for any damages or losses that may occur from using this website or its features.
                             <br><br>
-                            This project is limited to the <span class="fw-semibold">Municipality of Camaligan, Camarines Sur</span>
+                            This project is limited to the <span class="fw-semibold">Municipality of Camaligan, Camarines Sur ONLY</span>
                   
                             </h6>
                             <button id="accept-disclaimer" class="btn btn-darkBlue rounded-pill fw-semibold px-4 fs-5 mt-3" href="#">I understand.</button>
@@ -152,17 +161,28 @@
                             <h6 class="fw-bold text-white ">Showing prediction for:</h6>
                         </div>
                         <div class="overlay-content">
-                            <div class="dropdown" >
-                                <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%"; >
-                                Select an option
+                            <div class="dropdown">
+                                <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
+                                    Select prediction shown
                                 </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%";>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 1">April 9 1:00PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 2">April 9 2:00PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue" href="#" data-value="Option 3">April 9 3:00PM</a></li>
+                                <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton2" style="width: 100%;">
+                                    <li><h6 class="dropdown-header">Predictions for early Oct 22, 2024 (Kristine)</h6></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12MN</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1AM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2AM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3AM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4AM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5AM</a></li>
+                                    <li><h6 class="dropdown-header">Predictions for late Oct 22, 2024 (Kristine)</h6></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="6">Oct 22, 2024 6PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="7">Oct 22, 2024 7PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="8">Oct 22, 2024 8PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="9">Oct 22, 2024 9PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="10">Oct 22, 2024 10PM</a></li>
+                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="11">Oct 22, 2024 11PM</a></li>
                                 </ul>
                             </div>
-                            <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0"><small>Map predictions last updated at 05/12/2025 1:01PM.</small></p>
+                            <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0"><small>Map predictions last updated at 04/16/2025 10AM.</small></p>
                         </div>
                     </div>
                 </div>
@@ -178,7 +198,7 @@
                         </div>
                         <div class="overlay-content">
                             <div class="collapse show mt-2" id="collapseMonitoredLocations">
-                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add locations within Camaligan to see the predicted flood level for this specific date and time. Press '×' to remove the location.</p>
+                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">Add <span id="monitored">monitored locations</span> within Camaligan to see the predicted flood level for this specific date and time. Press 'x' to remove the location.</p>
                                 <div id="search-container2"></div>
                                 <div id="location-list-container">
                                     <div class="monitored-list" id="monitored-list">
@@ -208,14 +228,14 @@
                         </div>
                         <div class="overlay-content">
                             <div class="collapse show mt-2" id="collapseNearbyLocations">
-                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are important locations such as evacuation centers, schools, and medical centers near your current selected pinpoint.</p>
+                                <p class="card-subtitle text-white lh-sm fs-6 mb-2">These are essential public structures such as hospitals, schools, evacuation centers, or government offices near your selected location.</p>
                                 <div id="location-list-container">
                                     <div class="location-list" id="location-list">
                                         <div class="card mb-2 rounded-4 card-empty mt-1">
                                             <div class="card-body d-flex align-items-center p-3 ">
                                                 <div>
-                                                    <h6 class="fw-bold text-darkBlue text-white">Nothing to show here yet...</h6>
-                                                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add/select a monitored location to show nearby facilities.</p>
+                                                    <h6 class="fw-bold text-darkBlue text-white">Nothing nearby to show yet...</h6>
+                                                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add/select a monitored location to see nearby facilities</p>
                                                 </div>
                                             </div>
                                         </div>  
@@ -234,15 +254,15 @@
         </button>
         <div id="template" class="shadow-lg" style="display: none; ">
             <div>
-                <h6 class="legend-title mb-2 fs-5">Legend</h6>
+                <h6 class="legend-title mb-2 fs-6">Legend</h6>
                 <div class="legend-item">
-                    <span class="legend-circle" style="background-color: #f4b400;"></span> Low Flood Level 0.1-0.24m
+                    <span class="legend-circle" style="background-color: #f4b400;"></span> <span class="fw-semibold">Low Flood Level&nbsp; </span> 0.1-0.24m
                 </div>
                 <div class="legend-item">
-                    <span class="legend-circle" style="background-color: #fb8c00;"></span> Moderate Flood Level 0.25-0.5m
+                    <span class="legend-circle" style="background-color: #fb8c00;"></span> <span class="fw-semibold">Moderate Flood Level&nbsp; </span></span> 0.25-0.5m
                 </div>
                 <div class="legend-item">
-                    <span class="legend-circle" style="background-color: #d50000;"></span> High Flood Level >0.5m
+                    <span class="legend-circle" style="background-color: #d50000;"></span> <span class="fw-semibold">High Flood Level&nbsp; </span> >0.5m
                 </div>
                 <div class="legend-item">
                     <span class="legend-icon"><img src="assets/pinpoint.svg" alt="pinpoint" width="15" height="15"></span>Monitored Location(s)
@@ -251,7 +271,7 @@
                     <span class="legend-icon"><img src="assets/pinpoint_selected.svg" alt="pinpoint_selected" width="15" height="15"></span>Selected Location
                 </div>
                 <div class="legend-item">
-                    <p class="fst-italic m-0 lh-sm"><small>Flood level legends are based on MMDA's Flood Gauge</small></p>
+                    <p class="fst-italic m-0 lh-sm"><small>Flood level legends are based on <a href="https://www.facebook.com/MMDAPH/posts/know-when-it-is-safe-to-drive-through-flooded-areas-with-the-mmda-flood-gauge-th/4397217110316917/" target="_blank">MMDA's Flood Gauge</a></small></p>
                 </div>
                 
             </div>
@@ -290,6 +310,7 @@
     
     AOS.init();
 
+    
 
     document.addEventListener("DOMContentLoaded", function () {
         const overlay = document.getElementById("disclaimer-overlay");
@@ -316,21 +337,6 @@
         });
     });
 
-    // document.addEventListener("DOMContentLoaded", function () {
-    //     document.querySelectorAll(".toggle").forEach(button => {
-    //         const collapseTarget = document.querySelector(button.getAttribute("data-bs-target"));
-    //         const icon = button.querySelector(".toggleIcon");
-
-    //         collapseTarget.addEventListener("shown.bs.collapse", function () {
-    //             icon.src = "assets/arrow-up.svg"; // Change to "up" icon when expanded
-    //         });
-
-    //         collapseTarget.addEventListener("hidden.bs.collapse", function () {
-    //             icon.src = "assets/arrow-down.svg"; // Change back to "down" icon when collapsed
-    //         });
-    //     });
-    // });
-
     document.addEventListener("DOMContentLoaded", function () {
         var popoverTrigger = new bootstrap.Popover(document.getElementById("legend-toggle"), {
             container: "body", // Ensures the popover does not get clipped
@@ -347,23 +353,30 @@
         trigger: "click",
         hideOnClick: 'toggle',
         placement: 'top-end',
-        offset: [-10, 0]
+        offset: [-10, 0],
+        interactive: true,
+        showOnCreate: false,
+        zIndex: 1100,
         // content: 'My tooltip!',
     });
 
+    tippy('#monitored', {
+        theme: 'tooltips',
+        content: 'These are locations you would llike to see the flood levels for.',
+      });
 
 
 
     //MAPBOX
 
-    
-    const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY204YjBqNGVhMWEwYzJuczc5dmcyOWM0biJ9.Fsdka6-GWmAFXeLPsg9_dg';
+    const ACCESS_TOKEN = 'pk.eyJ1IjoiZ2F2aW5jaWlpIiwiYSI6ImNtOXJuYTFldTF0OXAybHB4eTg2bnFiNDIifQ.qfCkZkEpDTtdhTkHcUQ0Cg';
 	mapboxgl.accessToken = ACCESS_TOKEN;
-    const username = 'gavincii'; // Replace with your Mapbox username
-    const tilesetId = 'flood-map'; // Replace with your actual tileset ID
+    const username = 'gavinciii'; // Replace with your Mapbox username
+    
     navigator.geolocation.getCurrentPosition(successLocation, errorLocation, { enableHighAccuracy: true });
     const datasetId = 'cm89a2b3m4ab51mpd8gm1v4u9'; // Replace with your actual dataset ID
     const accessToken = ACCESS_TOKEN; // Replace with your access token
+    layerIndex = 0;
     
 
     function successLocation(position) {
@@ -378,42 +391,135 @@
     function setupMap(center) {
         const map = new mapboxgl.Map({
             container: 'map', // container ID
-            style: 'mapbox://styles/gavincii/cm7e1z9x6007j01ri5nboff2l/draft', // style URL
+            style: 'mapbox://styles/gavinciii/cm9ro1smy008b01spb1yydza4', // style URL
             //style: 'mapbox://styles/mapbox/satellite-streets-v12',
             center: [123.160705, 13.623460], // starting position [lng, lat]. Note that lat must be set between -90 and 90
             zoom: 15.5, // starting zoom
             pitch: 45
         });
-
+        const totalTilesets = 6; // 0 through 11
 
         map.on('load', () => {
-            const sourceId = 'flood-tiff';
-            const layerId = 'flood-layer';
-            if (map.getLayer(layerId)) map.removeLayer(layerId);
-            if (map.getSource(sourceId)) map.removeSource(sourceId);
-            map.addSource('flood-tiff', {
-                type: 'raster',
-                url: `mapbox://${username}.${tilesetId}`,  // replace this with your actual tileset ID
-                tileSize: 256
+            console.log("Map loaded.");
+
+            // // --- Define the ID of the layer you want your tilesets to appear BELOW ---
+            // const layerToAppearBelow = 'camaligan-crit-facilities'; // Your critical facilities layer ID
+
+            // // Check if the reference layer actually exists before trying to add layers below it
+            // if (!map.getLayer(layerToAppearBelow)) {
+            //     console.error(`Error: The layer "${layerToAppearBelow}" does not exist in the map style. Cannot add tileset layers below it.`);
+            //     // Optionally, you could add the layers without the second argument here,
+            //     // so they still appear, just potentially on top.
+            //     // Or simply return to stop processing.
+            //     return;
+            // } else {
+            //     console.log(`Found reference layer: ${layerToAppearBelow}. Adding tilesets below it.`);
+            // }
+
+            // --- Add all sources and layers initially (SAME AS BEFORE) ---
+            for (let i = 0; i < totalTilesets; i++) {
+                const tilesetId = `flood-map-${i}`;
+                const sourceId = `source_${tilesetId}`;
+                const layerId = `layer_${tilesetId}`;
+
+                // Safety check: Don't re-add if already exists (useful for hot-reloading dev envs)
+                if (!map.getSource(sourceId)) {
+                    map.addSource(sourceId, {
+                        type: 'raster',
+                        url: `mapbox://${username}.${tilesetId}`,
+                        tileSize: 256
+                    });
+                    console.log(`AddedSource: ${sourceId}`);
+                }
+
+                if (!map.getLayer(layerId)) {
+                    map.addLayer({
+                        id: layerId,
+                        type: 'raster',
+                        source: sourceId,
+                        paint: {
+                            'raster-opacity': 0.7
+                        },
+                        layout: {
+                            'visibility': (i === 0) ? 'visible' : 'none' // Only layer 0 visible initially
+                        },
+                        slot: 'middle'
+                    },
+                    );
+                    console.log(`AddedSource: ${layerId}`);
+                }
+            }
+            console.log("Initial layers added or confirmed.");
+
+            // --- NEW Event listener setup for MULTIPLE Bootstrap Dropdowns ---
+            const dropdownMenus = document.querySelectorAll('.tileset-dropdown-menu'); // Select ALL menus by common class
+
+            if (dropdownMenus.length > 0) {
+                dropdownMenus.forEach(menu => { // Attach listener to each menu found
+                    menu.addEventListener('click', (event) => {
+                        // Check if the clicked element is a dropdown item with the data attribute
+                        if (event.target.matches('.dropdown-item[data-tileset-index]')) {
+                            event.preventDefault(); // Prevent default anchor link behavior
+
+                            const selectedIndex = parseInt(event.target.dataset.tilesetIndex, 10);
+                            const selectedText = event.target.textContent;
+                            layerIndex = selectedIndex;
+
+                            console.log(`Dropdown item clicked. Selected index: ${selectedIndex}`);
+
+                            // Find the button associated *specifically* with the clicked menu
+                            const parentDropdown = event.target.closest('.dropdown'); // Find the parent .dropdown container
+                            if (parentDropdown) {
+                                const button = parentDropdown.querySelector('.dropdown-toggle'); // Find the button within that container
+                                if (button) {
+                                    button.textContent = selectedText; // Update the correct button's text
+                                }
+                            }
+
+
+                            // --- Map Layer Visibility Logic (Stays the Same) ---
+                            // This part affects the single map globally based on the index
+                            for (let i = 0; i < totalTilesets; i++) {
+                                const layerId = `layer_flood-map-${i}`;
+                                if (map.getLayer(layerId)) {
+                                    const visibility = (i === selectedIndex) ? 'visible' : 'none';
+                                    map.setLayoutProperty(layerId, 'visibility', visibility);
+                                } else {
+                                    console.warn(`Layer ${layerId} not found on map during visibility toggle.`);
+                                }
+                            }
+                            // --- End Map Layer Logic ---
+
+                            refreshMonitoredLocations(selectedIndex, map);
+                        }
+                    });
+                });
+                console.log(`Bootstrap dropdown event listeners added to ${dropdownMenus.length} menus.`);
+
+                // Set initial button text for ALL dropdowns based on default layer (layer 0)
+                dropdownMenus.forEach(menu => {
+                    const initialItem = menu.querySelector('[data-tileset-index="0"]');
+                    const parentDropdown = menu.closest('.dropdown');
+                    if (initialItem && parentDropdown) {
+                        const button = parentDropdown.querySelector('.dropdown-toggle');
+                        if (button) {
+                            button.textContent = initialItem.textContent;
+                        }
+                    }
                 });
 
-            map.addLayer({
-                id: 'flood-layer',
-                type: 'raster',
-                source: 'flood-tiff',
-                paint: {
-                    'raster-opacity': 0.9  // adjust as needed
-                }
-            });
+            } else {
+                console.error("Could not find any dropdown menu elements with class 'tileset-dropdown-menu'.");
+            }
         });
 
         map.addControl(new mapboxgl.NavigationControl(), 'top-right');
-        map.addControl(new mapboxgl.GeolocateControl({
-            positionOptions: { enableHighAccuracy: true },
-            trackUserLocation: true
-        }), 'top-right');
+        // map.addControl(new mapboxgl.GeolocateControl({
+        //     positionOptions: { enableHighAccuracy: true },
+        //     trackUserLocation: true
+        // }), 'top-right');
 
-        fetch('assets/datasets/dataset.geojson') // Load the downloaded GeoJSON file
+        fetch('assets/datasets/Camaligan-Crit-Facilities.geojson') // Load the downloaded GeoJSON file
         .then(response => response.json())
         .then(geojsonData => {
             
@@ -476,8 +582,8 @@
             // Initial visibility check
             updateGeocoderVisibility();
 
-            // Update visibility on window resize
-            window.addEventListener('resize', updateGeocoderVisibility);
+            // Update where geocoder instance is applied when resizing the window!! Not necessarily needed to be handled sine the resize listener interferes with android keyboard.
+            //window.addEventListener('resize', updateGeocoderVisibility);
 
             // document.getElementById('search-container').appendChild(geocoder.onAdd(map));
             // document.getElementById('search-container2').appendChild(geocoder.onAdd(map));
@@ -487,22 +593,19 @@
             // When the geocoder returns a result
             const point = event.result.center; // Capture the result 
             const placeName = event.result.text;
-            const tileset = 'gavincii.cm8bbl9jm8w9n1nnbrh5vzu9t-4sfg3'; // replace this with the ID of the tileset you created
+            const tileset = 'gavinciii.81ck42dr'; // replace this with the ID of the tileset you created
             const radius = 1609; // 1609 meters is roughly equal to one mile
             const limit = 10; // The maximum amount of results to return
 
-           // marker.setLngLat(point).addTo(map); // Add the marker to the map at the result coordinates
             const query = await fetch(
                 `https://api.mapbox.com/v4/${tileset}/tilequery/${point[0]},${point[1]}.json?radius=${radius}&limit=${limit}&access_token=${mapboxgl.accessToken}`,
                 { method: 'GET' }
             );
             const json = await query.json();
             // console.log(json);
-            updateNearby(json.features, map);
-            addMonitored(map, placeName, point);
-
-            
-     
+           
+            addMonitored(map, placeName, point);  
+            updateNearby(json.features, map);   
             });
 
             
@@ -529,7 +632,8 @@
             selectedLocations.push({
                 name: placeName,
                 coordinates: coordinates,
-                floodLevel: result.level  // You can also include result.value if needed
+                floodLevel: result.level,
+                floodValue: +result.value.toFixed(2)   // You can also include result.value if needed
             });
 
             // Add marker to the map
@@ -548,10 +652,12 @@
 
     async function fetchBand1Value(lng, lat) {
         try {
-            const response = await fetch("/api/get-band1", {
+            const flaskServerUrl = 'http://127.0.0.1:5000';
+            const response = await fetch(`${flaskServerUrl}/api/get-band1`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ lng, lat })
+
+                body: JSON.stringify({ lng, lat, layerIndex })
             });
 
             if (!response.ok) {
@@ -578,6 +684,53 @@
             throw err;  // Re-throw to be handled by the caller
         }
 
+    }
+
+        /**
+     * Re-fetches flood levels for all currently monitored locations based on the provided layer index,
+     * updates the selectedLocations array, and refreshes the UI list.
+     * @param {number} layerIndex The new layer index (0-11) to fetch data for.
+     * @param {mapboxgl.Map} map The Mapbox map instance.
+     */
+    async function refreshMonitoredLocations(layerIndex, map) {
+        console.log(`Refreshing ${selectedLocations.length} selected locations for index ${layerIndex}...`);
+
+        if (selectedLocations.length === 0) {
+            console.log("No locations selected, nothing to refresh.");
+            // Ensure the list shows the "empty" message if needed
+            updateLocationList(map); // Call it even if empty to show the correct message
+            return;
+        }
+
+        // Set a temporary "Loading..." state in the UI if desired
+        // selectedLocations.forEach(loc => loc.floodLevel = "Updating...");
+        // updateLocationList(map); // Show "Updating..." immediately
+
+        const updatePromises = selectedLocations.map((location, index) => // Use map to preserve order if needed later
+            fetchBand1Value(location.coordinates[0], location.coordinates[1])
+                .then(result => {
+                    // --- Directly update the object in the selectedLocations array ---
+                    location.floodLevel = result.level;
+                    location.floodValue = +result.value.toFixed(2)   // Update value too if you store it
+                    console.log(`Refreshed ${location.name}: Level=${location.floodLevel}`);
+                    return { status: 'fulfilled', index: index }; // Indicate success
+                })
+                .catch(error => {
+                    console.error(`Failed to refresh ${location.name}: ${error.message}`);
+                    // --- Update the object to show an error state ---
+                    location.floodLevel = "Error";
+                    location.value = 0;
+                    return { status: 'rejected', index: index, reason: error.message }; // Indicate failure
+                })
+        );
+
+        // Wait for all fetches to complete or fail
+        await Promise.allSettled(updatePromises); // Use allSettled
+        console.log("Finished refreshing selected locations batch.");
+
+        // --- Now call your existing function to redraw the list ---
+        // updateLocationList will use the updated floodLevel values in the selectedLocations array
+        updateLocationList(map);
     }
 
     function updateLocationList(map) {
@@ -612,7 +765,7 @@
             selectedLocations.forEach((loc, index) => {
                 let textColor = loc.floodLevel === "High Flood Level" ? "red" :
                                 loc.floodLevel === "Moderate Flood Level" ? "orange" :
-                                loc.floodLevel === "Low Flood Level" ? "yellow" : "green";
+                                loc.floodLevel === "Low Flood Level" ? "#F5C548" : "green";
 
                 let card = document.createElement("div");
                 card.className = "card my-2 rounded-4 monitored-location";
@@ -622,7 +775,7 @@
                     <div class="card-body d-flex justify-content-between align-items-center p-3">
                         <div>
                             <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
-                            <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel}</h4>
+                            <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel} ${loc.floodValue}m</h4>
                         </div>
                         <button class="btn btn-sm remove-btn" onclick="removeLocation(${index}, window._mapRef)" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
                             <img src="assets/remove.svg" alt="Remove" width="30" height="30">
@@ -680,26 +833,26 @@
         // Select all elements with the class "location-list"
         const locationLists = document.querySelectorAll(".location-list");
 
-        
-        if (selectedLocations.length === 0) {
-            const emptyCardHTML = `
+        // Define the HTML for the "Nothing nearby to show" message
+        const emptyNearbyHTML = `
             <div class="card mb-2 rounded-4 card-empty mt-3">
-                <div class="card-body d-flex align-items-center p-3 ">
+            <div class="card-body d-flex align-items-center p-3 ">
                 <div>
-                    <h6 class="fw-bold text-darkBlue text-white">Nothing to show here yet...</h6>
-                    <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add a monitored location to see a flood alert level.</p>
-                </div>
+                <h6 class="fw-bold text-darkBlue text-white">Nothing nearby to show yet...</h6>
+                <p class="card-subtitle text-white fw-medium fs-6 fst-italic lh-1">Please add/select a monitored location to see nearby facilities.</p>
                 </div>
             </div>
-            `;
+            </div>
+        `;
 
-            // Set the innerHTML of *each* monitored-list element to the empty message
-            locationLists.forEach(monitoredList => {
-                locationList.innerHTML = emptyCardHTML;
+        if (features.length === 0) {
+            // If there are no features, set the innerHTML of each location-list to the empty message
+            locationLists.forEach(locationList => {
+            locationList.innerHTML = emptyNearbyHTML;
             });
             return; // Exit the function early
         }
-
+  
         // Clear previous entries and populate each location list
         locationLists.forEach(locationList => {
             locationList.innerHTML = ""; // Clear previous entries

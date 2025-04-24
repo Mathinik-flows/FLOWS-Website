@@ -7,7 +7,7 @@ from glob import glob
 # CONFIGURATION
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 mapbox_token = 'sk.eyJ1IjoiZ2F2aW5jaWlpIiwiYSI6ImNtOXJxYzBieTFsamsya3I3a3RkaXRidmoifQ.AKsqwHhiw5MMo66QVQeIRw'
-username = 'gavincii'
+username = 'gavinciii'
 input_folder = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'converted_rgb'))
 
 def upload_single_tif(tif_path, index):
