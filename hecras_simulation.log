@@ -336,3 +336,9 @@
 2025-04-03 15:52:29,961 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
 2025-04-03 15:52:30,448 - Error: 'NoneType' object has no attribute 'XSize'
 2025-04-03 15:52:30,477 - HEC-RAS closed successfully.
+2025-04-24 17:10:49,166 - HEC-RAS Controller initialized.
+2025-04-24 17:10:49,174 - Unsteady flow file updated successfully.
+2025-04-24 17:10:49,174 - Stage Hydrograph= 6
+2025-04-24 17:10:49,174 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+

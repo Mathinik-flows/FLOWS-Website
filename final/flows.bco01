@@ -2,7 +2,7 @@
                                               HEC-RAS - River Analysis System
  
  
-Project File:  C:\Yna\Thesis\hecrasfinal\final\flows.prj
+Project File:  D:\FLOWS\Ver2\FLOWS-Website\final\flows.prj
  
 Project Name:  flows
  
@@ -25,7 +25,7 @@ Ending Time:     09Apr2025 0500
                 #                                              #
                 #          HEC-RAS 6.7 Beta January 2025       #
                 #                                              #
-                #             09APR25 at 20:43:37              #
+                #             24APR25 at 17:10:54              #
                 #                                              #
                 ################################################
                 
@@ -49,22 +49,22 @@ Ending Time:     09Apr2025 0500
            *******    ************      **********      **********     ***********           *****   *************
  
  
-         camaligan           274.0           223.3           47.99           98.73         0.03863         0.03914
+         camaligan           173.6           173.6    0.0000011117    0.0000016658    0.0000005542           49.85
 
 
 
                  ***  Total Volume Accounting (for the entire model) in 1000 m^3   ***
 
-Total Boundary Flux of Water In            47.99
-Total Boundary Flux of Water Out           98.73
+Total Boundary Flux of Water In     0.0000011117
+Total Boundary Flux of Water Out    0.0000016658
 
-Starting Volume                            274.0
-Ending Volume                              223.3
+Starting Volume                            173.6
+Ending Volume                              173.6
 
 
                              Error   Percent Error
                              *****   *************
-                           0.03863         0.01200
+                      0.0000005542    0.0000003193
 
 
 

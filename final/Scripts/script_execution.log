@@ -1,0 +1,85 @@
+2025-04-22 09:09:05,794 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py
+2025-04-22 09:09:14,780 - \u274c Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py failed with error:
+D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py:2: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+Traceback (most recent call last):
+  File "D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py", line 171, in <module>
+    print(f"\u2705 Saved predictions for {ts_batch[0]} to {ts_batch[-1]} \u2192 {OUTPUT_CSV}")
+  File "C:\Users\mj\AppData\Local\Programs\Python\Python39\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
+2025-04-22 09:09:14,781 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\simulation.py
+2025-04-22 09:09:18,755 - \u2705 Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\simulation.py completed successfully.
+2025-04-22 09:09:18,755 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\exporttif.py
+2025-04-22 09:09:29,141 - \u2705 Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\exporttif.py completed successfully.
+2025-04-22 09:09:29,141 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\convert.py
+2025-04-22 09:09:32,199 - \u274c Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\convert.py failed with error:
+Traceback (most recent call last):
+  File "D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\convert.py", line 103, in <module>
+    convert_to_8bit_rasterio(input_path, temp_colormap_path)
+  File "D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\convert.py", line 57, in convert_to_8bit_rasterio
+    print(f"\u2705 Converted to 8-bit with colormap: {os.path.basename(output_path_colormap)}")
+  File "C:\Users\mj\AppData\Local\Programs\Python\Python39\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
+2025-04-22 09:11:32,909 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py
+2025-04-22 09:11:41,443 - \u274c Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py failed with error:
+D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py:2: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+Traceback (most recent call last):
+  File "D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py", line 171, in <module>
+    print(f"\u2705 Saved predictions for {ts_batch[0]} to {ts_batch[-1]} \u2192 {OUTPUT_CSV}")
+  File "C:\Users\mj\AppData\Local\Programs\Python\Python39\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
+2025-04-22 09:11:41,443 - \u23f3 Waiting 20 seconds before the next script...
+2025-04-22 09:12:00,727 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py
+2025-04-22 09:12:09,418 - \u274c Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py failed with error:
+D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py:2: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+Traceback (most recent call last):
+  File "D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\prediction.py", line 171, in <module>
+    print(f"\u2705 Saved predictions for {ts_batch[0]} to {ts_batch[-1]} \u2192 {OUTPUT_CSV}")
+  File "C:\Users\mj\AppData\Local\Programs\Python\Python39\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
+2025-04-22 09:12:09,418 - \u23f3 Waiting 20 seconds before the next script...
+2025-04-22 09:12:29,421 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\simulation.py
+2025-04-22 09:12:33,361 - \u2705 Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\simulation.py completed successfully.
+2025-04-22 09:12:33,361 - \u23f3 Waiting 20 seconds before the next script...
+2025-04-22 09:12:53,374 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\exporttif.py
+2025-04-22 09:13:18,214 - \u2705 Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\exporttif.py completed successfully.
+2025-04-22 09:13:18,215 - \u23f3 Waiting 20 seconds before the next script...
+2025-04-22 09:13:38,226 - Starting script: D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\convert.py
+2025-04-22 09:13:39,272 - \u274c Script D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\convert.py failed with error:
+Traceback (most recent call last):
+  File "D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\convert.py", line 103, in <module>
+    convert_to_8bit_rasterio(input_path, temp_colormap_path)
+  File "D:\FLOWS\Ver2\FLOWS-Website\final\Scripts\convert.py", line 57, in convert_to_8bit_rasterio
+    print(f"\u2705 Converted to 8-bit with colormap: {os.path.basename(output_path_colormap)}")
+  File "C:\Users\mj\AppData\Local\Programs\Python\Python39\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+
