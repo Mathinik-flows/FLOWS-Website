@@ -69,15 +69,16 @@ def get_band1_value():
         index = data["layerIndex"]  # Default to 1 if not provided
         app.logger.info(f"Processing coordinates: lng={lng}, lat={lat} and layerIndex={index}")
 
-        TIF_FILE_PATH = f'/var/www/html/assets/map/original/tif_rgb_{index}.tif';  # Update this path as needed
+        TIF_FILE_PATH = f'./assets/original/tif_rgb_{index}.tif';  # Update this path as needed
         # Consider opening the dataset once at app startup for efficiency if the app
         # handles high traffic, but be mindful of Gunicorn workers.
         # Per-request opening is simpler to manage initially.
         with rasterio.open(TIF_FILE_PATH) as dataset:
             app.logger.debug(f"Opened dataset: {TIF_FILE_PATH}")
-            target_crs = dataset.crs
+            target_crs = "EPSG:32651"
+            app.logger.debug(f"Dataset CRS: {target_crs}")
 
-            # Transform coordinate to raster CRS if needed
+            # # Transform coordinate to raster CRS if needed
             if target_crs != CRS.from_epsg(4326):
                 app.logger.debug(f"Transforming coordinates from EPSG:4326 to {target_crs}")
                 transformer = Transformer.from_crs("EPSG:4326", target_crs, always_xy=True)
@@ -87,8 +88,10 @@ def get_band1_value():
                 x, y = lng, lat
                 app.logger.debug(f"Using original coordinates (dataset is EPSG:4326): x={x}, y={y}")
 
+            # app.logger.debug(f"Transformed coordinates: x={x}, y={y}")
             # Convert map coordinates to pixel row/col
             # Add error handling in case coordinates are outside bounds
+
             try:
                  row, col = dataset.index(x, y)
                  app.logger.debug(f"Raster index: row={row}, col={col}")
@@ -161,5 +164,5 @@ def index():
 
 # --- IMPORTANT: NO app.run() HERE ---
 # Gunicorn will start the app via the systemd service.
-# if __name__ == "__main__":
-#     app.run(debug=True) # DO NOT USE THIS FOR PRODUCTION
+if __name__ == "__main__":
+    app.run(debug=True) # DO NOT USE THIS FOR PRODUCTION

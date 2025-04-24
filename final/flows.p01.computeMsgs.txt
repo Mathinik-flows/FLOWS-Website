@@ -1,0 +1,115 @@
+Message  | Notes generated when writing the computation files:
+Message  | Testing program set the number of cores for 2d flow area: 'camaligan' from 0 to 0
+Message  | 
+Message  | Plan: 'Testing' (flows.p01)
+Message  | Simulation started at: 24Apr2025 10:30:21 PM
+Message  | 
+Message  | PROCESS:RasProcess
+Message  | Writing Plan GIS Data...
+Progress | 100
+Message  | Completed Writing Plan GIS Data
+Message  | Writing Geometry...
+Message  | camaligan: Mesh property tables are current.
+Progress | 30
+Progress | 50
+Progress | 80
+Progress | 100
+Message  | Completed Writing Geometry
+Message  | Writing Event Conditions ...
+Message  | Completed Writing Event Condition Data
+Message  | 
+Message  | PROCESS:RASGeomPreprocess
+Message  | 	
+Message  | Geometric Preprocessor HEC-RAS 6.7 Beta January 2025
+Progress | 0.2
+Progress | 0.3
+Message  |  
+Progress | 0.3333333
+Progress | 1
+Message  | 
+Message  | Finished Processing Geometry
+Message  | 
+Message  | PROCESS:RasUnsteady
+Message  | 
+Message  | Performing Unsteady Flow Simulation  HEC-RAS 6.7 Beta January 2025
+Progress | 0.1
+Progress | 0.2
+Progress | 0.3
+Message  |  
+Progress | 0.0359375
+Message  | 	
+Message  | Unsteady Input Summary:
+Message  |      2D Unsteady Diffusion Wave Equation Set (fastest)
+Message  |      2D number of Solver Cores:   10
+Progress | 0.3
+Progress | 0.4
+Progress | 0.5
+Progress | 0.6
+Progress | 0.7333333
+Progress | 3.333333E-03
+Progress | 3.333334E-02
+Progress | 0.06
+Progress | 8.666667E-02
+Progress | 0.1133333
+Progress | 0.1466667
+Progress | 0.17
+Progress | 0.1966667
+Progress | 0.22
+Progress | 0.2433333
+Progress | 0.2666667
+Progress | 0.29
+Progress | 0.3166667
+Progress | 0.34
+Progress | 0.3633333
+Progress | 0.39
+Progress | 0.4166667
+Progress | 0.44
+Progress | 0.4666666
+Progress | 0.49
+Progress | 0.5166667
+Progress | 0.54
+Progress | 0.5666667
+Progress | 0.59
+Progress | 0.6166667
+Progress | 0.6433333
+Progress | 0.67
+Progress | 0.6933333
+Progress | 0.72
+Progress | 0.7433333
+Progress | 0.77
+Progress | 0.7933334
+Progress | 0.8166667
+Progress | 0.8433334
+Progress | 0.87
+Progress | 0.8966666
+Progress | 0.9233333
+Progress | 0.95
+Progress | 0.9733334
+Progress | 1
+Message  | 
+Message  | Overall Volume Accounting Error in 1000 m^3:      0.0000005633
+Message  | Overall Volume Accounting Error as percentage:      0.0000003245
+Message  | Please review "Computational Log File" output for volume accounting details
+Message  | 
+Message  | Writing Results to DSS
+Message  | 
+Message  | Finished Unsteady Flow Simulation
+Message  | 
+Message  | 1D Post Process Skipped (simulation is all 2D)
+Message  | 
+Message  | PROCESS:RasProcess
+Message  | Computing Stored Results Maps
+Message  | 0 Maps generated for 'flows.p01.hdf'
+Message  | 
+Message  | Computations Summary
+Message  | 
+Message  | Computation Task	Time(hh:mm:ss)
+Message  | Completing Geometry, Flow and Plan	       1
+Message  | Preprocessing Geometry	<1
+Message  | Unsteady Flow Computations	       6
+Message  | Computing Maps	<1
+Message  | Complete Process	       8
+Message  | 
+Message  | Computation Speed	Simulation/Runtime
+Message  | Unsteady Flow Computations	2831x
+Message  | Complete Process	2129x

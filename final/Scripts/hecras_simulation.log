@@ -1,0 +1,160 @@
+2025-04-21 22:51:24,500 - Error: name 'np' is not defined
+2025-04-21 22:51:58,971 - Error: name 'np' is not defined
+2025-04-21 22:52:57,013 - Error: name 'np' is not defined
+2025-04-21 22:54:47,520 - Error: name 'np' is not defined
+2025-04-21 22:55:33,737 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 22:55:33,737 - Stage Hydrograph= 6
+2025-04-21 22:55:33,737 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 22:57:31,846 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 22:57:31,846 - Stage Hydrograph= 6
+2025-04-21 22:57:31,847 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 22:59:14,978 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 22:59:14,979 - Stage Hydrograph= 6
+2025-04-21 22:59:14,979 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 23:01:15,965 - HEC-RAS Controller initialized.
+2025-04-21 23:01:15,972 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:01:15,972 - Stage Hydrograph= 6
+2025-04-21 23:01:15,973 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 23:04:03,869 - HEC-RAS Controller initialized.
+2025-04-21 23:04:03,875 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:04:03,875 - Stage Hydrograph= 6
+2025-04-21 23:04:03,875 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 23:06:59,788 - HEC-RAS Controller initialized.
+2025-04-21 23:06:59,795 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:06:59,795 - Stage Hydrograph= 6
+2025-04-21 23:06:59,795 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 23:09:29,301 - HEC-RAS Controller initialized.
+2025-04-21 23:09:29,307 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:09:29,308 - Stage Hydrograph= 6
+2025-04-21 23:09:29,308 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 23:13:48,059 - HEC-RAS Controller initialized.
+2025-04-21 23:13:48,065 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:13:48,065 - Stage Hydrograph= 6
+2025-04-21 23:13:48,065 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 23:22:33,601 - HEC-RAS Controller initialized.
+2025-04-21 23:22:33,608 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:22:33,608 - Stage Hydrograph= 6
+2025-04-21 23:22:33,608 - Formatted Values:
+   0.927   0.417   0.103   0.000   0.000   0.129
+
+2025-04-21 23:37:55,690 - HEC-RAS Controller initialized.
+2025-04-21 23:37:55,696 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:37:55,697 - Stage Hydrograph= 6
+2025-04-21 23:37:55,697 - Formatted Values:
+   1.800   1.800   1.800   1.800   1.800   1.800
+
+2025-04-21 23:41:22,484 - HEC-RAS Controller initialized.
+2025-04-21 23:41:22,490 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:41:22,491 - Stage Hydrograph= 6
+2025-04-21 23:41:22,491 - Formatted Values:
+   1.800   1.800   1.800   1.800   1.800   1.800
+
+2025-04-21 23:42:31,289 - HEC-RAS Controller initialized.
+2025-04-21 23:42:31,304 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:42:31,305 - Stage Hydrograph= 6
+2025-04-21 23:42:31,305 - Formatted Values:
+   1.800   1.800   1.800   1.800   1.800   1.800
+
+2025-04-21 23:45:14,337 - HEC-RAS Controller initialized.
+2025-04-21 23:45:14,344 - \u2705 Unsteady flow file updated successfully.
+2025-04-21 23:45:14,344 - Stage Hydrograph= 6
+2025-04-21 23:45:14,344 - Formatted Values:
+   2.482   2.902   3.138   3.052   3.370   3.401
+
+2025-04-22 07:50:56,890 - HEC-RAS Controller initialized.
+2025-04-22 07:50:56,964 - \u2705 Unsteady flow file updated successfully.
+2025-04-22 07:50:56,965 - Stage Hydrograph= 6
+2025-04-22 07:50:56,966 - Formatted Values:
+   2.482   2.902   3.138   3.052   3.370   3.401
+
+2025-04-22 07:55:25,868 - HEC-RAS Controller initialized.
+2025-04-22 07:55:25,884 - \u2705 Unsteady flow file updated successfully.
+2025-04-22 07:55:25,885 - Stage Hydrograph= 6
+2025-04-22 07:55:25,886 - Formatted Values:
+   1.400   1.400   1.400   1.469   1.525   1.400
+
+2025-04-22 07:58:27,342 - HEC-RAS Controller initialized.
+2025-04-22 07:58:27,354 - \u2705 Unsteady flow file updated successfully.
+2025-04-22 07:58:27,355 - Stage Hydrograph= 6
+2025-04-22 07:58:27,355 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-22 09:02:10,606 - \u2705 Unsteady flow file updated successfully.
+2025-04-22 09:02:13,169 - \u2705 HEC-RAS Unsteady Flow Simulation completed successfully.
+2025-04-22 09:02:13,176 - \u2705 Saved predictions for 2024-10-03 01:00:00 to 2024-10-03 06:00:00 \u2192 flood_predictions.csv
+2025-04-22 09:09:16,157 - HEC-RAS Controller initialized.
+2025-04-22 09:09:16,173 - \u2705 Unsteady flow file updated successfully.
+2025-04-22 09:09:16,173 - Stage Hydrograph= 6
+2025-04-22 09:09:16,173 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-22 09:09:18,642 - Error: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-04-22 09:09:18,646 - HEC-RAS closed successfully.
+2025-04-22 09:12:30,795 - HEC-RAS Controller initialized.
+2025-04-22 09:12:30,812 - \u2705 Unsteady flow file updated successfully.
+2025-04-22 09:12:30,812 - Stage Hydrograph= 6
+2025-04-22 09:12:30,812 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-22 09:12:33,250 - Error: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-04-22 09:12:33,255 - HEC-RAS closed successfully.
+2025-04-22 09:16:35,596 - HEC-RAS Controller initialized.
+2025-04-22 09:16:35,603 - \u2705 Unsteady flow file updated successfully.
+2025-04-22 09:16:35,603 - Stage Hydrograph= 6
+2025-04-22 09:16:35,603 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-22 09:17:52,410 - HEC-RAS Controller initialized.
+2025-04-22 09:17:52,419 - \u2705 Unsteady flow file updated successfully.
+2025-04-22 09:17:52,419 - Stage Hydrograph= 6
+2025-04-22 09:17:52,419 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-22 09:17:54,881 - Error: 'charmap' codec can't encode character '\u2705' in position 0: character maps to <undefined>
+2025-04-22 09:17:54,885 - HEC-RAS closed successfully.
+2025-04-22 09:25:36,050 - HEC-RAS Controller initialized.
+2025-04-22 09:25:36,058 - Unsteady flow file updated successfully.
+2025-04-22 09:25:36,058 - Stage Hydrograph= 6
+2025-04-22 09:25:36,058 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-22 09:28:39,477 - HEC-RAS Controller initialized.
+2025-04-22 09:28:39,485 - Unsteady flow file updated successfully.
+2025-04-22 09:28:39,485 - Stage Hydrograph= 6
+2025-04-22 09:28:39,485 - Formatted Values:
+   2.482   2.902   3.138   3.052   3.370   3.401
+
+2025-04-22 09:31:50,458 - HEC-RAS Controller initialized.
+2025-04-22 09:31:50,465 - Unsteady flow file updated successfully.
+2025-04-22 09:31:50,466 - Stage Hydrograph= 6
+2025-04-22 09:31:50,466 - Formatted Values:
+   2.482   2.902   3.138   3.052   3.370   3.401
+
+2025-04-22 09:38:44,513 - HEC-RAS Controller initialized.
+2025-04-22 09:38:44,529 - Unsteady flow file updated successfully.
+2025-04-22 09:38:44,529 - Stage Hydrograph= 6
+2025-04-22 09:38:44,529 - Formatted Values:
+   3.255   3.721   3.769   3.258   3.323   3.256
+
+2025-04-24 16:50:29,027 - HEC-RAS Controller initialized.
+2025-04-24 16:50:29,045 - Unsteady flow file updated successfully.
+2025-04-24 16:50:29,045 - Stage Hydrograph= 6
+2025-04-24 16:50:29,045 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+

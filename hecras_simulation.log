@@ -336,3 +336,63 @@
 2025-04-03 15:52:29,961 - Project 'C:\Yna\Thesis\FLOWS\hecras\flow.prj' opened.
 2025-04-03 15:52:30,448 - Error: 'NoneType' object has no attribute 'XSize'
 2025-04-03 15:52:30,477 - HEC-RAS closed successfully.
+2025-04-24 17:10:49,166 - HEC-RAS Controller initialized.
+2025-04-24 17:10:49,174 - Unsteady flow file updated successfully.
+2025-04-24 17:10:49,174 - Stage Hydrograph= 6
+2025-04-24 17:10:49,174 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 21:57:00,707 - HEC-RAS Controller initialized.
+2025-04-24 21:57:00,722 - Unsteady flow file updated successfully.
+2025-04-24 21:57:00,723 - Stage Hydrograph= 6
+2025-04-24 21:57:00,723 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 21:59:36,755 - HEC-RAS Controller initialized.
+2025-04-24 21:59:36,765 - Unsteady flow file updated successfully.
+2025-04-24 21:59:36,765 - Stage Hydrograph= 6
+2025-04-24 21:59:36,765 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 22:01:38,730 - HEC-RAS Controller initialized.
+2025-04-24 22:01:38,739 - Unsteady flow file updated successfully.
+2025-04-24 22:01:38,739 - Stage Hydrograph= 6
+2025-04-24 22:01:38,739 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 22:04:57,291 - HEC-RAS Controller initialized.
+2025-04-24 22:04:57,299 - Unsteady flow file updated successfully.
+2025-04-24 22:04:57,300 - Stage Hydrograph= 6
+2025-04-24 22:04:57,300 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 22:08:36,512 - HEC-RAS Controller initialized.
+2025-04-24 22:08:36,520 - Unsteady flow file updated successfully.
+2025-04-24 22:08:36,521 - Stage Hydrograph= 6
+2025-04-24 22:08:36,521 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 22:10:19,430 - HEC-RAS Controller initialized.
+2025-04-24 22:10:19,439 - Unsteady flow file updated successfully.
+2025-04-24 22:10:19,439 - Stage Hydrograph= 6
+2025-04-24 22:10:19,439 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 22:16:06,253 - HEC-RAS Controller initialized.
+2025-04-24 22:16:06,263 - Unsteady flow file updated successfully.
+2025-04-24 22:16:06,263 - Stage Hydrograph= 6
+2025-04-24 22:16:06,263 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 22:27:35,341 - HEC-RAS Controller initialized.
+2025-04-24 22:27:35,351 - Unsteady flow file updated successfully.
+2025-04-24 22:27:35,351 - Stage Hydrograph= 6
+2025-04-24 22:27:35,351 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+
+2025-04-24 22:30:19,737 - HEC-RAS Controller initialized.
+2025-04-24 22:30:19,748 - Unsteady flow file updated successfully.
+2025-04-24 22:30:19,748 - Stage Hydrograph= 6
+2025-04-24 22:30:19,748 - Formatted Values:
+   1.700   1.700   1.700   1.700   1.700   1.700
+

@@ -5,7 +5,7 @@ Boundary Location=                ,                ,        ,        ,          
 Boundary Location=                ,                ,        ,        ,                ,camaligan       ,                ,left                            ,                                
 Interval=1HOUR
 Stage Hydrograph= 6 
-   1.853   1.943   1.975   1.844   1.673   1.502
+   1.700   1.700   1.700   1.700   1.700   1.700
 Stage Hydrograph Use Initial Stage=-1
 Stage Hydrograph TW Check=0
 DSS Path=
@@ -75,17 +75,17 @@ Met BC=Air Pressure|Constant Units=mb
 Met BC=Air Pressure|Point Interpolation=
 Met BC=Air Pressure|Gridded Source=DSS
 Met BC=Air Pressure|Gridded Interpolation=
-Non-Newtonian Method= 0 ,  
+Non-Newtonian Method= 0 ,   
 Non-Newtonian Constant Vol Conc=0
-Non-Newtonian Yield Method= 0 ,  
+Non-Newtonian Yield Method= 0 ,   
 Non-Newtonian Yield Coef=0, 0
 User Yeild=   0
-Non-Newtonian Sed Visc= 0 ,  
+Non-Newtonian Sed Visc= 0 ,   
 Non-Newtonian Obrian B=0
 User Viscosity=0
 User Viscosity Ratio=0
 Herschel-Bulkley Coef=0, 0
-Clastic Method= 0 ,  
+Clastic Method= 0 ,   
 Coulomb Phi=0
 Voellmy X=0
 Non-Newtonian Hindered FV= 0 

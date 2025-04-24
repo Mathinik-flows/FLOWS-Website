@@ -2,7 +2,7 @@
                                               HEC-RAS - River Analysis System
  
  
-Project File:  d:\FLOWS\FLOWS-Website\final\flows.prj
+Project File:  C:\Yna\Thesis\FLOWS\final\flows.prj
  
 Project Name:  flows
  
@@ -23,9 +23,9 @@ Ending Time:     09Apr2025 0500
                 #       1D and 2D Unsteady Flow Module         #
                 #                                              #
                 #                                              #
-                #          HEC-RAS 6.7 Beta2 April 2025        #
+                #          HEC-RAS 6.7 Beta January 2025       #
                 #                                              #
-                #             17APR25 at 22:33:00              #
+                #             24APR25 at 22:30:22              #
                 #                                              #
                 ################################################
                 
@@ -49,22 +49,22 @@ Ending Time:     09Apr2025 0500
            *******    ************      **********      **********     ***********           *****   *************
  
  
-         camaligan           274.0           223.3           47.99           98.73         0.03863         0.03914
+         camaligan           173.6           173.6    0.0000011075    0.0000016705    0.0000005633           50.86
 
 
 
                  ***  Total Volume Accounting (for the entire model) in 1000 m^3   ***
 
-Total Boundary Flux of Water In            47.99
-Total Boundary Flux of Water Out           98.73
+Total Boundary Flux of Water In     0.0000011075
+Total Boundary Flux of Water Out    0.0000016705
 
-Starting Volume                            274.0
-Ending Volume                              223.3
+Starting Volume                            173.6
+Ending Volume                              173.6
 
 
                              Error   Percent Error
                              *****   *************
-                           0.03863         0.01200
+                      0.0000005633    0.0000003245
 
 
 
