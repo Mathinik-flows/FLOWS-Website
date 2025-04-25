@@ -62,21 +62,8 @@
                     <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
                         Select prediction shown
                     </button>
-                    <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton1" style="width: 100%;">
-                        <li><h6 class="dropdown-header">Predictions for early Oct 22, 2024 (Kristine)</h6></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12MN</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1AM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2AM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3AM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4AM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5AM</a></li>
-                        <li><h6 class="dropdown-header">Predictions for late Oct 22, 2024 (Kristine)</h6></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="6">Oct 22, 2024 6PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="7">Oct 22, 2024 7PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="8">Oct 22, 2024 8PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="9">Oct 22, 2024 9PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="10">Oct 22, 2024 10PM</a></li>
-                        <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="11">Oct 22, 2024 11PM</a></li>
+                    <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%;">
+                    
                     </ul>
                 </div>
                 <div class="navbar-nav ms-auto align-items-lg-center align-items-end">
@@ -165,24 +152,11 @@
                                 <button class="btn btn-dropdown text-start fw-semibold d-flex justify-content-between align-items-center rounded-5 dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="width: 100%;">
                                     Select prediction shown
                                 </button>
-                                <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton2" style="width: 100%;">
-                                    <li><h6 class="dropdown-header">Predictions for early Oct 22, 2024 (Kristine)</h6></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="0">Oct 22, 2024 12MN</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="1">Oct 22, 2024 1AM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="2">Oct 22, 2024 2AM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="3">Oct 22, 2024 3AM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="4">Oct 22, 2024 4AM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="5">Oct 22, 2024 5AM</a></li>
-                                    <li><h6 class="dropdown-header">Predictions for late Oct 22, 2024 (Kristine)</h6></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="6">Oct 22, 2024 6PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="7">Oct 22, 2024 7PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="8">Oct 22, 2024 8PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="9">Oct 22, 2024 9PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="10">Oct 22, 2024 10PM</a></li>
-                                    <li><a class="dropdown-item text-darkBlue text-truncate" href="#" data-tileset-index="11">Oct 22, 2024 11PM</a></li>
+                                <ul class="dropdown-menu tileset-dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 100%;">
+                                    
                                 </ul>
                             </div>
-                            <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0"><small>Map predictions last updated at 04/16/2025 10AM.</small></p>
+                            <p class="class-subtitle text-white lh-sm fs-6 fst-italic mt-1 mb-0" id="update"></p>
                         </div>
                     </div>
                 </div>
@@ -775,7 +749,8 @@
                     <div class="card-body d-flex justify-content-between align-items-center p-3">
                         <div>
                             <p class="fw-semibold lh-sm text-darkBlue m-0 text-truncate" style="max-width: 90%;">${loc.name}</p>
-                            <h4 class="fw-bold m-0" style="color:${textColor}; font-weight:bold;">${loc.floodLevel} ${loc.floodValue}m</h4>
+                            <h4 class="fw-bold m-0" style="color:${textColor};">${loc.floodLevel}</h4>
+                            <h6 class="fw-normal fst-italic m-0" style="color:${textColor};">${loc.floodValue} meters</h6>
                         </div>
                         <button class="btn btn-sm remove-btn" onclick="removeLocation(${index}, window._mapRef)" style="--bs-btn-padding-y: 0rem; --bs-btn-padding-x: 0rem;">
                             <img src="assets/remove.svg" alt="Remove" width="30" height="30">
@@ -893,6 +868,164 @@
                 locationList.appendChild(card);
             });
         });
+    }
+
+    /**
+     * Fetches a CSV file with date/time info, parses it, and formats rows for a dropdown.
+     * Assumes CSV columns: Year, Month, Day, Hour, PredictedFWaterLevel
+     * Creates objects { text: "Formatted Date/Time", index: rowNumber }
+     * @param {string} csvUrl - The path/URL to the CSV file.
+     * @returns {Promise<Array<{text: string, index: number}>>} A promise that resolves with an array of objects.
+     */
+    async function loadAndFormatCsvForDropdown(csvUrl) {
+        // --- THIS FUNCTION REMAINS THE SAME AS THE PREVIOUS ANSWER ---
+        // (Includes fetch, parse, format logic)
+        console.log(`Workspaceing CSV data for dropdown from: ${csvUrl}`);
+        try {
+            const response = await fetch(csvUrl);
+            if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status} - Failed to fetch ${csvUrl}`); }
+
+            // --- Get and Log the Last-Modified Header ---
+            const headers = response.headers; // Get the Headers object
+            const lastModifiedHeader = headers.get('Last-Modified'); // Get the specific header value
+
+            if (lastModifiedHeader) {
+                console.log(`CSV File Last Modified (from header): ${lastModifiedHeader}`);
+                try {
+                    // Optionally, convert it to a JavaScript Date object for further use/formatting
+                    const lastModifiedDate = new Date(lastModifiedHeader);
+                    console.log(`CSV File Last Modified (as Date object):`, lastModifiedDate);
+
+                    // Example: You could display this date somewhere on your page
+                    const displayElement = document.getElementById('update');
+                    if (displayElement) {
+                        displayElement.innerHTML = `<small>Map predictions last updated at ${lastModifiedDate.toLocaleString()}.</small>`; // Format as needed
+                    }
+
+                } catch(dateParseError) {
+                    console.warn("Could not parse Last-Modified header string into a Date object:", dateParseError);
+                }
+            } else {
+                // This means the server didn't send the header for this file
+                console.log("Server did not send a Last-Modified header for the CSV file.");
+            }
+            
+            const csvText = await response.text();
+            console.log("CSV text fetched successfully.");
+            const lines = csvText.trim().split('\n');
+            const dropdownItemsData = [];
+            const dateTimeFormatter = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', /*minute: '2-digit',*/ hour12: true });
+
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line === "") continue;
+                const columns = line.split(',');
+                if (columns.length >= 4) {
+                    const year = parseInt(columns[0].trim(), 10);
+                    const month = parseInt(columns[1].trim(), 10);
+                    const day = parseInt(columns[2].trim(), 10);
+                    const hour = parseInt(columns[3].trim(), 10);
+                    if (isNaN(year) || isNaN(month) || isNaN(day) || isNaN(hour)) { console.warn(`Skipping line ${i + 1}: Invalid date/time components. Line: "${line}"`); continue; }
+                    try {
+                        const dateObject = new Date(year, month - 1, day, hour);
+                        let formattedString = dateTimeFormatter.format(dateObject);
+                        if (!formattedString.includes(':')) { formattedString = formattedString.replace(/ (AM|PM)$/, ':00 $1'); } // Add :00 if needed
+                        dropdownItemsData.push({ text: formattedString, index: i - 1 });
+                    } catch (dateError) { console.warn(`Skipping line ${i + 1}: Could not create Date object. Error: ${dateError.message}. Line: "${line}"`); }
+                } else { console.warn(`Skipping line ${i + 1}: Expected at least 4 columns, found ${columns.length}. Line: "${line}"`); }
+            }
+            console.log(`Successfully parsed ${dropdownItemsData.length} data rows for dropdown.`);
+            return dropdownItemsData;
+        } catch (error) { console.error("Error loading or parsing CSV data for dropdown:", error); return []; }
+        // --- END OF UNCHANGED FUNCTION ---
+    }
+
+    // --- How to Use (Modified for Multiple Dropdowns) ---
+
+    const csvFilePath = 'assets/flood_predictions.csv'; // <--- CHANGE TO YOUR CSV FILE PATH
+    const menuSelector = '.tileset-dropdown-menu'; // <--- Use the class selector for the <ul> elements
+
+    // Get all menu elements that need updating
+    const dropdownMenus = document.querySelectorAll(menuSelector);
+
+    if (dropdownMenus.length === 0) {
+        console.error(`No dropdown menus found using selector "${menuSelector}"!`);
+    } else {
+        console.log(`Found ${dropdownMenus.length} dropdown menus to populate.`);
+        loadAndFormatCsvForDropdown(csvFilePath)
+            .then(itemsData => {
+                if (itemsData && itemsData.length > 0) {
+                    console.log("Formatted Dropdown Items Data:", itemsData);
+
+                    // --- Loop through each dropdown menu found ---
+                    dropdownMenus.forEach((menuElement, menuIndex) => {
+                        console.log(`Populating menu #${menuIndex + 1}`);
+
+                        // --- Try to find the corresponding button for this menu ---
+                        // Assumes button is the direct previous sibling or within the same parent .dropdown div
+                        let buttonElement = menuElement.previousElementSibling;
+                        // If button is not direct sibling, try finding within parent .dropdown
+                        if (!buttonElement || !buttonElement.classList.contains('dropdown-toggle')) {
+                        const parentDropdown = menuElement.closest('.dropdown');
+                        if(parentDropdown) {
+                                buttonElement = parentDropdown.querySelector('.dropdown-toggle');
+                        }
+                        }
+
+                        if (!buttonElement) {
+                            console.warn(`Could not find corresponding button for menu #${menuIndex + 1}`);
+                        }
+                        // ----------------------------------------------------------
+
+                        // Clear existing dynamic options from *this specific menu*
+                        menuElement.innerHTML = '<li><h6 class="dropdown-header">Show predictions for...</h6></li>'; // Reset with header
+
+
+                        // Populate *this specific menu*
+                        itemsData.forEach(item => {
+                            const listItem = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.classList.add('dropdown-item', 'text-darkBlue'); // Add your classes
+                            link.href = '#';
+                            link.textContent = item.text;
+                            // IMPORTANT: Store the index associated with this row/layer
+                            link.dataset.tilesetIndex = item.index; // e.g., data-tileset-index="0"
+
+                            listItem.appendChild(link);
+                            menuElement.appendChild(listItem);
+                        });
+
+                        // Optional: Set the corresponding button text to the first item initially
+                        if (buttonElement) {
+                            buttonElement.textContent = itemsData[0].text;
+                        }
+
+                    }); // --- End loop through each menu ---
+
+                    console.log("All dropdowns populated dynamically.");
+
+                    // REMINDER: Ensure your click event listener(s) for the dropdown items
+                    // are set up correctly to handle clicks from items in *either* dropdown menu.
+                    // Using event delegation on a parent element or querySelectorAll might be needed.
+
+                } else {
+                    console.log("No dropdown options generated from CSV.");
+                    // Update all buttons if no data
+                    dropdownMenus.forEach((menuElement, menuIndex) => {
+                        let buttonElement = menuElement.previousElementSibling;
+                        if (!buttonElement || !buttonElement.classList.contains('dropdown-toggle')) {
+                            const parentDropdown = menuElement.closest('.dropdown');
+                            if(parentDropdown) { buttonElement = parentDropdown.querySelector('.dropdown-toggle'); }
+                        }
+                        if (buttonElement) {
+                            buttonElement.textContent = "No predictions";
+                        }
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("An unexpected error occurred during dropdown population:", error);
+            });
     }
 
 
