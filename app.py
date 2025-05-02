@@ -32,13 +32,13 @@ def classify_flood_level(value):
     # nodata_value = -9999 # Example NoData value
     # if value == nodata_value:
     #     return "No Data"
-    if value < 0.1:
+    if value <= 0:
         return "No Flood"
-    elif 0.1 <= value <= 0.24:
+    elif 0 < value <= 0.24:
         return "Low Flood Level"
-    elif 0.25 <= value <= 0.5:
+    elif 0.25 <= value < 0.5:
         return "Moderate Flood Level"
-    elif value > 0.5:
+    elif value >= 0.5:
         return "High Flood Level"
     else:
         # This case might indicate an issue or NoData if not handled explicitly

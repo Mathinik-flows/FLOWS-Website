@@ -44,7 +44,7 @@
                             <a class="nav-link fs-6 fw-semibold mx-2 " href="about.html">About</a>
                         </li>  
                         <li class="nav-item ">
-                            <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-6" href="#">Read the Paper</a>
+                            <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-6" href="https://drive.google.com/file/d/1QaqgTMnCULeN42uzdxNoRuxhj_3yaH96/view?usp=sharing" target="_blank">Read the Paper</a>
                         </li>                    
                     </ul>
                 </div>
@@ -376,21 +376,6 @@
         map.on('load', () => {
             console.log("Map loaded.");
 
-            // // --- Define the ID of the layer you want your tilesets to appear BELOW ---
-            // const layerToAppearBelow = 'camaligan-crit-facilities'; // Your critical facilities layer ID
-
-            // // Check if the reference layer actually exists before trying to add layers below it
-            // if (!map.getLayer(layerToAppearBelow)) {
-            //     console.error(`Error: The layer "${layerToAppearBelow}" does not exist in the map style. Cannot add tileset layers below it.`);
-            //     // Optionally, you could add the layers without the second argument here,
-            //     // so they still appear, just potentially on top.
-            //     // Or simply return to stop processing.
-            //     return;
-            // } else {
-            //     console.log(`Found reference layer: ${layerToAppearBelow}. Adding tilesets below it.`);
-            // }
-
-            // --- Add all sources and layers initially (SAME AS BEFORE) ---
             for (let i = 0; i < totalTilesets; i++) {
                 const tilesetId = `flood-map-${i}`;
                 const sourceId = `source_${tilesetId}`;

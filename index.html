@@ -31,7 +31,7 @@
                             <a class="nav-link fs-6 fw-semibold mx-2 " href="about.html">About</a>
                         </li>  
                         <li class="nav-item ">
-                            <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-6" href="#">Read the Paper</a>
+                            <a class="btn btn-darkBlue rounded-pill fw-semibold m-2 px-4 fs-6" href="https://drive.google.com/file/d/1QaqgTMnCULeN42uzdxNoRuxhj_3yaH96/view?usp=sharing" target="_blank">Read the Paper</a>
                         </li>                    
                     </ul>
                 </div>
@@ -88,7 +88,14 @@
                     </div>
                     
                     <div class="col-xl-5 col-lg-6 col-md-12">
-                        <h6 class="fw-semibold lh-sm text-white fs-4 m-0">Disclaimer</h6>
+                        <audio id="myMusic" src="assets/The_Flood.mp3" preload="auto">
+                            Your browser does not support the audio element.
+                        </audio>
+                    
+                        <button type="button" id="musicToggle" class="btn btn-darkBlue text-whitefw-semibold lh-sm text-white fs-4 m-0 p-0" aria-pressed="false">
+                            Disclaimer
+                        </button>
+                        <!-- //<h6 class="fw-semibold lh-sm text-white fs-4 m-0">Disclaimer</h6> -->
                         <h6 class="fw-normal pt-1 text-white fs-6 lh-sm">
                             FLOWS is an initial release from a research study and only provides predictions based on the methods described in the paper. The developers and researchers are not responsible for any damages or losses that may occur from using this website or its features.
                         </h6>
@@ -101,45 +108,68 @@
         </section>
     </footer>
   
-    <!-- <footer class="content-footer footer bg-darkBlue">
-        <section id="contactinfo">
-            <div class="container py-3 px-5">
-                <div class="row gx-5 py-4 mb-1 mt-3 align-items-center">
-                    <div class="col-lg-4 col-md-6">
-                        <img src="./assets/logo_full.svg" alt="Logo" style="max-width: max-content;" >
-                       
-                    </div>
-                    <div class="col-lg-3 col-md-6 ">
-                        <h6 class="fw-semibold lh-sm text-white fs-6 mt-2">In Partnership with</h6>
-                        <div class="d-flex flex-row mt-2 gap-2">
-                            <img src="./assets/logo_cbsua.png" alt="Bagong_Pilipinas_Logo"
-                                width="50px" height="50px">
-                            <img src="./assets/logo_pagasa.svg"
-                                    alt="GPPB_Logo" width="50px" height="50px"></a>
-                            <img src="./assets/logo_cadressmo.png"
-                                alt="Philippine_Transparency_Seal" width="60px" height="60px">
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-12">
-                        <h6 class="fw-semibold lh-sm text-white fs-4 m-0">Disclaimer</h6>
-                        <h6 class="fw-normal pt-1 text-white fs-6 lh-sm">
-                            FLOWS is currently an initial release from a research study and only provides predictions based on the methods described in the paper. The developers and researchers will not be liable for any damages and losses of any party as a result of using this website, its contents, and functionalities.
-                        </h6>
-                        
-                        
-                    </div>
-    
-                </div>
-            </div>
-        </section>
-    </footer>
   
-    Scripts -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
         AOS.init();
+
+        // Wait for the HTML document to be fully loaded
+        document.addEventListener('DOMContentLoaded', (event) => {
+
+        // Get references to the audio element and the button
+        const music = document.getElementById('myMusic');
+        const toggleButton = document.getElementById('musicToggle');
+
+        // Check if the elements were found
+        if (!music || !toggleButton) {
+            console.error("Couldn't find the audio element or the toggle button.");
+            return; // Stop execution if elements aren't found
+        }
+
+        // Add an event listener to the button for the 'click' event
+        toggleButton.addEventListener('click', function() {
+            // Check if the music is currently paused or has not started
+            if (music.paused) {
+                // If paused, play the music
+                music.play()
+                    .then(() => {
+                        // Update button text and ARIA state if playback starts successfully
+                        toggleButton.setAttribute('aria-pressed', 'true');
+                    })
+                    .catch(error => {
+                        // Handle potential errors like browser restrictions
+                        console.error("Error playing audio:", error);
+                        // Optionally, inform the user
+                        // alert("Could not play audio. Please interact with the page first.");
+                    });
+            } else {
+                // If playing, pause the music
+                music.pause();
+                // Update button text and ARIA state
+                // toggleButton.textContent = 'Play Music';
+                toggleButton.setAttribute('aria-pressed', 'false');
+            }
+        });
+
+        // (Optional) Update button text if music ends naturally
+        music.addEventListener('ended', function() {
+            // toggleButton.textContent = 'Play Music';
+            toggleButton.setAttribute('aria-pressed', 'false');
+            // Optional: reset playback position to the beginning if you don't have loop
+            // music.currentTime = 0;
+        });
+
+        // (Optional) Handle potential loading errors
+        music.addEventListener('error', function(e) {
+            console.error("Error loading audio file:", music.error);
+            // toggleButton.textContent = 'Audio Error';
+            // toggleButton.disabled = true; // Disable button if audio fails to load
+        });
+
+        }); // End of DOMContentLoaded listener
     </script>
 </body>
 </html>
