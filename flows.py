@@ -12,10 +12,12 @@ scripts = [
     SCRIPT_DIR / "simulation.py",
     SCRIPT_DIR / "exporttif.py",
     SCRIPT_DIR / "convert.py",
-    SCRIPT_DIR / "upload.py" # Uncomment this if you want to include the upload script
+    SCRIPT_DIR / "upload.py", # Uncomment this if you want to include the upload script
+    SCRIPT_DIR / "reports.py",
+    SCRIPT_DIR / "crit.py",
 ]
 #remove last value if wala ung upload script
-delays = [10, 60, 20] #,30]  # Note: len(delays) = len(scripts) - 1
+delays = [10, 60, 20, 30, 60, 20]  # Note: len(delays) = len(scripts) - 1
 
 def run_scripts_with_custom_delays(scripts, delays):
     for idx, script in enumerate(scripts):

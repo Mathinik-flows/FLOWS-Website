@@ -32,17 +32,17 @@ try:
     rasmapper_but = pyautogui.locateCenterOnScreen(os.path.join(ICON_FOLDER, "rasmapper.png"), confidence=0.7)
     print("rasmapper.png found")
     pyautogui.click(rasmapper_but)
-    time.sleep(2)
+    time.sleep(5)
 
     results_but = pyautogui.locateOnScreen(os.path.join(ICON_FOLDER, "results.png"), confidence=0.7)
     print("results.png found")
     pyautogui.rightClick(results_but)
-    time.sleep(2)
+    time.sleep(10)
 
     createmultimaps_but = pyautogui.locateOnScreen(os.path.join(ICON_FOLDER, "createmultimaps.png"), confidence=0.7)
     print("createmultimaps.png found")
     pyautogui.click(createmultimaps_but)
-    time.sleep(2)
+    time.sleep(5)
 
     min_but = pyautogui.locateOnScreen(os.path.join(ICON_FOLDER, "min.png"), confidence=0.7)
     print("min.png found")

@@ -41,6 +41,9 @@
                             <a class="nav-link fs-6 mx-2 fw-semibold underline-image main-nav-link" href="floodmap.html">Flood Extent Map</a>
                         </li>
                         <li class="nav-item ">
+                            <a class="nav-link fs-6 fw-semibold mx-2 " href="report.html">Reports</a>
+                        </li> 
+                        <li class="nav-item ">
                             <a class="nav-link fs-6 fw-semibold mx-2 " href="about.html">About</a>
                         </li>  
                         <li class="nav-item ">
@@ -759,12 +762,13 @@
 
                         map.flyTo({
                             center: location.coordinates,
-                            zoom: 15,
+                            zoom: 18,
                             essential: true
                         });
 
                         markers.forEach(marker => {
                             marker.remove();
+
                         });
                         markers = selectedLocations.map((loc, i) => {
                             const color = (i === currentIndex) ? '#FF6700' : 'blue'; // orange for selected
@@ -789,6 +793,8 @@
         updateLocationList(map);
     }
  
+    let currentFacilityPopup = null;
+
     function updateNearby(features, map) {
         // Select all elements with the class "location-list"
         const locationLists = document.querySelectorAll(".location-list");
@@ -810,6 +816,11 @@
             locationLists.forEach(locationList => {
             locationList.innerHTML = emptyNearbyHTML;
             });
+
+            if (currentFacilityPopup) {
+                currentFacilityPopup.remove();
+                currentFacilityPopup = null;
+            }
             return; // Exit the function early
         }
   
@@ -836,7 +847,7 @@
 
                 // Create Bootstrap Card
                 let card = document.createElement("div");
-                card.className = "card mb-2 rounded-4"; // Add Bootstrap card classes
+                card.className = "card mb-2 rounded-4 facility-card"; // Add Bootstrap card classes
                 card.innerHTML = `
                     <div class="card-body d-flex align-items-center p-3">
                         <div class="me-3">
@@ -848,6 +859,73 @@
                         </div>
                     </div>
                 `;
+
+                // Add the click event listener to the card
+                card.addEventListener('click', async() => {
+                    
+                    
+                                
+                    map.flyTo({
+                        center: coordinates, // Use the coordinates from the feature
+                        zoom: 18,          // Set a desired zoom level (adjust as needed)
+                        essential: true    // Mark this animation as essential
+                    });
+                    // You could also use map.easeTo() or map.jumpTo()
+                    // map.easeTo({ center: coordinates, zoom: 15 });
+                    // map.jumpTo({ center: coordinates, zoom: 15 });
+
+                    // 2. Remove existing popup, if any
+                    if (currentFacilityPopup) {
+                        currentFacilityPopup.remove();
+                        currentFacilityPopup = null; // Clear the reference
+                    }
+
+                    // Fetch flood level asynchronously
+                    let floodLevel = "Loading...";
+                    try {
+                        const result = await fetchBand1Value(coordinates[0], coordinates[1]);
+                        floodLevel = result.level || "Unknown";
+                        floodValue = +result.value.toFixed(2) || "Unknown";
+                    } catch (err) {
+                        console.error("Failed to fetch flood level:", err);
+                        floodLevel = "Unavailable";
+                    }
+
+                    let textColor = floodLevel === "High Flood Level" ? "red" :
+                                floodLevel === "Moderate Flood Level" ? "orange" :
+                                floodLevel === "Low Flood Level" ? "#F5C548" : "green";
+
+                    // 3. Create and display the new popup
+                    // The default popup style has an anchor pointing down ('bottom'), fulfilling the "dot below it" idea
+                    currentFacilityPopup = new mapboxgl.Popup({
+                        closeButton: true,
+                        closeOnClick: false,
+                        offset: 15
+                    })
+                    .setLngLat(coordinates)
+                    .setHTML(`
+                        <div>
+                            <p class="fw-semibold lh-sm text-darkBlue m-0 text-wrap" style="max-width: 90%;">${name}</p>
+                            <h4 class="fw-bold m-0" style="color:${textColor};">${floodLevel}</h4>
+                            <h6 class="fw-normal fst-italic m-0" style="color:${textColor};">${floodValue} meters</h6>
+                            
+                           
+                        </div>
+                    `)
+                    .addTo(map);
+
+                    // Apply rounded corners to the popup container
+                    const popupEl = currentFacilityPopup.getElement();
+                    const contentEl = popupEl.querySelector('.mapboxgl-popup-content');
+                    if (contentEl) {
+                        contentEl.style.borderRadius = '12px';
+                        contentEl.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
+                    }
+
+                    currentFacilityPopup.on('close', () => {
+                        currentFacilityPopup = null;
+                    });
+                });
 
                 // Append the card to the facility list
                 locationList.appendChild(card);

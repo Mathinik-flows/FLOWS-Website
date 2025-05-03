@@ -2,14 +2,13 @@ Message  | Notes generated when writing the computation files:
 Message  | Testing program set the number of cores for 2d flow area: 'camaligan' from 0 to 0
 Message  | 
 Message  | Plan: 'Testing' (flows.p01)
-Message  | Simulation started at: 24Apr2025 10:30:21 PM
+Message  | Simulation started at: 03May2025 08:09:41 PM
 Message  | 
 Message  | PROCESS:RasProcess
 Message  | Writing Plan GIS Data...
 Progress | 100
 Message  | Completed Writing Plan GIS Data
 Message  | Writing Geometry...
-Message  | camaligan: Mesh property tables are current.
 Progress | 30
 Progress | 50
 Progress | 80
@@ -20,7 +19,7 @@ Message  | Completed Writing Event Condition Data
 Message  | 
 Message  | PROCESS:RASGeomPreprocess
 Message  | 	
-Message  | Geometric Preprocessor HEC-RAS 6.7 Beta January 2025
+Message  | Geometric Preprocessor HEC-RAS 6.7 Beta2 April 2025
 Progress | 0.2
 Progress | 0.3
 Message  |  
@@ -31,17 +30,17 @@ Message  | Finished Processing Geometry
 Message  | 
 Message  | PROCESS:RasUnsteady
 Message  | 
-Message  | Performing Unsteady Flow Simulation  HEC-RAS 6.7 Beta January 2025
+Message  | Performing Unsteady Flow Simulation  HEC-RAS 6.7 Beta2 April 2025
 Progress | 0.1
 Progress | 0.2
 Progress | 0.3
 Message  |  
-Progress | 0.0359375
+Progress | 0.2414062
+Progress | 0.2859375
 Message  | 	
 Message  | Unsteady Input Summary:
 Message  |      2D Unsteady Diffusion Wave Equation Set (fastest)
-Message  |      2D number of Solver Cores:   10
-Progress | 0.3
+Message  |      2D number of Solver Cores:    2
 Progress | 0.4
 Progress | 0.5
 Progress | 0.6
@@ -87,8 +86,8 @@ Progress | 0.95
 Progress | 0.9733334
 Progress | 1
 Message  | 
-Message  | Overall Volume Accounting Error in 1000 m^3:      0.0000005633
-Message  | Overall Volume Accounting Error as percentage:      0.0000003245
+Message  | Overall Volume Accounting Error in 1000 m^3:           0.04086
+Message  | Overall Volume Accounting Error as percentage:          0.000596
 Message  | Please review "Computational Log File" output for volume accounting details
 Message  | 
 Message  | Writing Results to DSS
@@ -104,12 +103,12 @@ Message  |
 Message  | Computations Summary
 Message  | 
 Message  | Computation Task	Time(hh:mm:ss)
-Message  | Completing Geometry, Flow and Plan	       1
-Message  | Preprocessing Geometry	<1
-Message  | Unsteady Flow Computations	       6
-Message  | Computing Maps	<1
-Message  | Complete Process	       8
+Message  | Completing Geometry, Flow and Plan	      10
+Message  | Preprocessing Geometry	       1
+Message  | Unsteady Flow Computations	      41
+Message  | Computing Maps	       1
+Message  | Complete Process	      55
 Message  | 
 Message  | Computation Speed	Simulation/Runtime
-Message  | Unsteady Flow Computations	2831x
-Message  | Complete Process	2129x
+Message  | Unsteady Flow Computations	430x
+Message  | Complete Process	323x

@@ -5,7 +5,7 @@ Boundary Location=                ,                ,        ,        ,          
 Boundary Location=                ,                ,        ,        ,                ,camaligan       ,                ,left                            ,                                
 Interval=1HOUR
 Stage Hydrograph= 6 
-   1.700   1.700   1.700   1.700   1.700   1.700
+   4.192   4.166   4.219   4.158   4.108   4.068
 Stage Hydrograph Use Initial Stage=-1
 Stage Hydrograph TW Check=0
 DSS Path=

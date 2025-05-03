@@ -2,7 +2,7 @@
                                               HEC-RAS - River Analysis System
  
  
-Project File:  C:\Yna\Thesis\FLOWS\final\flows.prj
+Project File:  D:\FLOWS\FLOWS-Website\final\flows.prj
  
 Project Name:  flows
  
@@ -23,9 +23,9 @@ Ending Time:     09Apr2025 0500
                 #       1D and 2D Unsteady Flow Module         #
                 #                                              #
                 #                                              #
-                #          HEC-RAS 6.7 Beta January 2025       #
+                #          HEC-RAS 6.7 Beta2 April 2025        #
                 #                                              #
-                #             24APR25 at 22:30:22              #
+                #             03MAY25 at 20:09:54              #
                 #                                              #
                 ################################################
                 
@@ -49,22 +49,22 @@ Ending Time:     09Apr2025 0500
            *******    ************      **********      **********     ***********           *****   *************
  
  
-         camaligan           173.6           173.6    0.0000011075    0.0000016705    0.0000005633           50.86
+         camaligan           6683.           6129.           177.9           731.3         0.04086        0.005587
 
 
 
                  ***  Total Volume Accounting (for the entire model) in 1000 m^3   ***
 
-Total Boundary Flux of Water In     0.0000011075
-Total Boundary Flux of Water Out    0.0000016705
+Total Boundary Flux of Water In            177.9
+Total Boundary Flux of Water Out           731.3
 
-Starting Volume                            173.6
-Ending Volume                              173.6
+Starting Volume                            6683.
+Ending Volume                              6129.
 
 
                              Error   Percent Error
                              *****   *************
-                      0.0000005633    0.0000003245
+                           0.04086        0.000596
 
 
 
