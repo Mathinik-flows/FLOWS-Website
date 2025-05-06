@@ -121,6 +121,8 @@
         </div>
     </div>
 
+
+    
        
     <!--Map-->    
     <section id="map">
@@ -224,6 +226,10 @@
                 </div>
             </div>
         </div>
+
+        <div id="toast-container" class="position-fixed top-0 end-0 p-3" style="margin-top: 90px; z-index: 1100;"></div>
+
+
         
         <!-- Legend Button -->
         <button id="myButton" class="legend-button">
@@ -412,6 +418,7 @@
                 }
             }
             console.log("Initial layers added or confirmed.");
+            loadTop5FromCSV(0); 
 
             // --- NEW Event listener setup for MULTIPLE Bootstrap Dropdowns ---
             const dropdownMenus = document.querySelectorAll('.tileset-dropdown-menu'); // Select ALL menus by common class
@@ -453,6 +460,8 @@
                             // --- End Map Layer Logic ---
 
                             refreshMonitoredLocations(selectedIndex, map);
+                            loadTop5FromCSV(selectedIndex); 
+
                         }
                     });
                 });
@@ -1089,6 +1098,71 @@
             .catch(error => {
                 console.error("An unexpected error occurred during dropdown population:", error);
             });
+    }
+
+    function loadTop5FromCSV(selectedIndex) {
+        const filePath = `assets/reports/top5_${selectedIndex}.csv`;
+
+        fetch(filePath)
+            .then(response => {
+                if (!response.ok) throw new Error("File not found");
+                return response.text();
+            })
+            .then(csvText => {
+                const lines = csvText.trim().split("\n");
+                const headers = lines[0].split(",").map(h => h.trim());
+
+                const data = lines.slice(1).map(line => {
+                    const values = line.split(",");
+                    const obj = {};
+
+                    headers.forEach((header, i) => {
+                        // Use empty string if value is missing
+                        obj[header] = (values[i] || "").trim();
+                    });
+
+                    return obj;
+                });
+
+                displayTop5Barangays(data);
+            })
+            .catch(err => {
+                console.error("Error loading CSV:", err);
+                document.getElementById("top5-barangays").innerHTML = "Could not load data.";
+            });
+    }
+
+    function displayTop5Barangays(data) {
+        const container = document.getElementById("toast-container");
+        container.innerHTML = ""; // Clear previous toasts
+
+        const listItems = data.map((item, index) => {
+            const keys = Object.keys(item);
+            const barangay = item.Barangay || "Unknown";
+            const floodValue = item[keys[1]] || "N/A";
+
+            return `<div class="fs-6"><strong>#${index + 1}</strong> ${barangay} — <span class="fw-bold">${floodValue} m </div>`;
+        }).join("");
+
+        const toast = document.createElement("div");
+        toast.className = "toast text-darkBlue bg-white border-0 rounded-3 show";
+        toast.setAttribute("role", "alert");
+        toast.setAttribute("aria-live", "polite");
+        toast.setAttribute("aria-atomic", "true");
+
+        toast.innerHTML = `
+            <div class="toast-header">
+                <strong class="me-auto fs-6 text-darkBlue">Barangays at most risk</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                <div class="mb-0 mt-2">${listItems}</div>
+            </div>
+        `;
+
+        container.appendChild(toast);
+        new bootstrap.Toast(toast, { autohide: false }).show();
+
     }
 
 

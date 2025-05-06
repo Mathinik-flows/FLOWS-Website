@@ -194,8 +194,23 @@ for col in report_df.columns:
         # Check dtype before rounding
         if pd.api.types.is_numeric_dtype(report_df[col]):
             report_df[col] = report_df[col].round(2) # Example: 2 decimal places
-        report_df[col] = report_df[col].apply(classify_flood_level) # Classify flood levels
+        #report_df[col] = report_df[col].apply(classify_flood_level) # Classify flood levels
 
+count = 0
+for hour in report_df.columns[1:]:
+    # Sort by flood value (descending), get top 5
+    top5 = report_df[['Barangay', hour]].sort_values(by=hour, ascending=False).head(5)
+    
+    
+    filename = f"assets/reports/top5_{count}.csv"
+    count += 1
+    
+    # Save to CSV
+    top5.to_csv(filename, index=False)
+
+for col in report_df.columns:
+    if col != 'Barangay':
+        report_df[col] = report_df[col].apply(classify_flood_level) # Classify flood levels
 
 # Add units description somewhere? Maybe as a note or modify headers slightly?
 # Example: Add units to column names AFTER processing
@@ -210,11 +225,11 @@ except Exception as e:
     print(f"\nError saving report to CSV: {e}")
 
 # Optional: Print to console
-print("\n--- Flood Report Preview ---")
-# Increase display width for potentially long headers
-with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'display.width', 1000):
-    print(report_df)
-print("--- End Report ---")
+# print("\n--- Flood Report Preview ---")
+# # Increase display width for potentially long headers
+# with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'display.width', 1000):
+#     print(report_df)
+# print("--- End Report ---")
 
 
 # # 1. Load Barangay Data
