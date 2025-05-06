@@ -6,15 +6,15 @@ from datetime import datetime
 import numpy as np # For handling NaN potentially
 
 # --- Configuration ---
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # --- INPUTS ---
 # Path to the GeoJSON file with critical facility points
-facilities_geojson_path = "assets/map/Camaligan_Crit_Facilities.geojson"
+facilities_geojson_path = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'map', 'Camaligan_Crit_Facilities.geojson'))
 # Column name in your GeoJSON 'properties' that holds the facility names
 facility_name_column = 'name' # <--- IMPORTANT: Change this to match your file's property name!
 amenity_name_column = 'amenity' # <--- IMPORTANT: Change this to match your file's property name!
 # Directory containing your GeoTIFF flood maps
-geotiff_directory = "assets/original"
+geotiff_directory = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'original'))
 # List GeoTIFF filenames IN THE SAME ORDER as the rows in datetime_csv_path
 geotiff_files = [
     "tif_rgb_0.tif",
@@ -26,10 +26,10 @@ geotiff_files = [
     # Add all relevant GeoTIFF filenames IN ORDER
 ]
 # Path to the CSV containing Year, Month, Day, Hour data
-datetime_csv_path = "assets/flood_predictions.csv"
+datetime_csv_path = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'flood_predictions.csv'))
 
 # --- OUTPUT ---
-output_report_csv = "assets/reports/critical_facilities_flood_report.csv"
+output_report_csv = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'reports', 'critical_facilities_flood_report.csv'))
 
 # --- ANALYSIS SETTINGS ---
 # Base name for statistic column - header will be the date/time
