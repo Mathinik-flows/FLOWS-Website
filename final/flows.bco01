@@ -2,7 +2,7 @@
                                               HEC-RAS - River Analysis System
  
  
-Project File:  D:\FLOWS\FLOWS-Website\final\flows.prj
+Project File:  D:\FLOWS\Ver2\FLOWS-Website\final\flows.prj
  
 Project Name:  flows
  
@@ -23,9 +23,9 @@ Ending Time:     09Apr2025 0500
                 #       1D and 2D Unsteady Flow Module         #
                 #                                              #
                 #                                              #
-                #          HEC-RAS 6.7 Beta2 April 2025        #
+                #          HEC-RAS 6.7 Beta January 2025       #
                 #                                              #
-                #             03MAY25 at 20:09:54              #
+                #             07MAY25 at 05:20:13              #
                 #                                              #
                 ################################################
                 
@@ -49,22 +49,22 @@ Ending Time:     09Apr2025 0500
            *******    ************      **********      **********     ***********           *****   *************
  
  
-         camaligan           6683.           6129.           177.9           731.3         0.04086        0.005587
+         camaligan           1573.           3766.           2193.                        0.000442    0.0000201567
 
 
 
                  ***  Total Volume Accounting (for the entire model) in 1000 m^3   ***
 
-Total Boundary Flux of Water In            177.9
-Total Boundary Flux of Water Out           731.3
+Total Boundary Flux of Water In            2193.
+Total Boundary Flux of Water Out    0.0000000000
 
-Starting Volume                            6683.
-Ending Volume                              6129.
+Starting Volume                            1573.
+Ending Volume                              3766.
 
 
                              Error   Percent Error
                              *****   *************
-                           0.04086        0.000596
+                          0.000442    0.0000117379
 
 
 

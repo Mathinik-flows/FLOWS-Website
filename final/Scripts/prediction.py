@@ -18,7 +18,7 @@ OUTPUT_CSV = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'flood
 # Parameters
 n_y, n_u = 48, 48
 PREDICT_HOURS = 6
-START_DATETIME = datetime(2024, 10, 25, 0, 0) #add plus two days to desired day
+START_DATETIME = datetime(2024, 10, 24, 0, 0) #add plus two days to desired day
 START_YEAR = START_DATETIME.year
 START_MONTH = START_DATETIME.month
 START_DAY = START_DATETIME.day

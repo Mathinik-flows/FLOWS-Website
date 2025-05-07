@@ -158,3 +158,9 @@
 2025-04-24 16:50:29,045 - Formatted Values:
    1.700   1.700   1.700   1.700   1.700   1.700
 
+2025-05-07 05:19:29,374 - HEC-RAS Controller initialized.
+2025-05-07 05:19:29,381 - Unsteady flow file updated successfully.
+2025-05-07 05:19:29,381 - Stage Hydrograph= 6
+2025-05-07 05:19:29,381 - Formatted Values:
+   3.022   3.399   3.738   3.672   3.977   4.054
+

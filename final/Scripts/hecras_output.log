@@ -41,3 +41,7 @@
 2025-04-24 22:12:39,008 - Error: PyAutoGUI was unable to import pyscreeze. (This is likely because you're running a version of Python that Pillow (which pyscreeze depends on) doesn't support currently.) Please install this module to enable the function you tried to call.
 2025-04-24 22:12:39,031 - HEC-RAS closed successfully.
 2025-04-24 22:14:28,069 - HEC-RAS Controller initialized.
+2025-05-07 05:21:42,593 - HEC-RAS Controller initialized.
+2025-05-07 05:22:00,958 - Error: 
+2025-05-07 05:22:01,330 - HEC-RAS closed successfully.
+2025-05-07 05:22:07,161 - HEC-RAS Controller initialized.

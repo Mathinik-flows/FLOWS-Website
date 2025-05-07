@@ -2,13 +2,112 @@ Message  | Notes generated when writing the computation files:
 Message  | Testing program set the number of cores for 2d flow area: 'camaligan' from 0 to 0
 Message  | 
 Message  | Plan: 'Testing' (flows.p01)
-Message  | Simulation started at: 03May2025 08:09:41 PM
+Message  | Simulation started at: 07May2025 05:19:39 AM
 Message  | 
 Message  | PROCESS:RasProcess
 Message  | Writing Plan GIS Data...
 Progress | 100
 Message  | Completed Writing Plan GIS Data
 Message  | Writing Geometry...
+Message  | Computing 2D Flow Area 'camaligan' tables: Property tables do not exist.
+Progress | 0.01
+Progress | 0.04
+Progress | 0.07
+Progress | 0.09
+Progress | 0.12
+Progress | 0.14
+Progress | 0.17
+Progress | 0.2
+Progress | 0.23
+Progress | 0.26
+Progress | 0.29
+Progress | 0.32
+Progress | 0.35
+Progress | 0.39
+Progress | 0.44
+Progress | 0.47
+Progress | 0.49
+Progress | 0.52
+Progress | 0.55
+Progress | 0.58
+Progress | 0.6
+Progress | 0.84
+Progress | 1
+Progress | 0.01
+Progress | 0.04
+Progress | 0.07
+Progress | 0.09
+Progress | 0.12
+Progress | 0.14
+Progress | 0.17
+Progress | 0.2
+Progress | 0.23
+Progress | 0.26
+Progress | 0.28
+Progress | 0.3
+Progress | 0.33
+Progress | 0.36
+Progress | 0.39
+Progress | 0.41
+Progress | 0.43
+Progress | 0.46
+Progress | 0.49
+Progress | 0.52
+Progress | 0.54
+Progress | 0.57
+Progress | 0.6
+Progress | 0.63
+Progress | 0.66
+Progress | 0.69
+Progress | 0.72
+Progress | 0.75
+Progress | 0.78
+Progress | 0.8
+Progress | 0.83
+Progress | 0.85
+Progress | 0.88
+Progress | 0.91
+Progress | 0.94
+Progress | 0.97
+Progress | 1
+Progress | 0.01
+Progress | 0.04
+Progress | 0.07
+Progress | 0.09
+Progress | 0.12
+Progress | 0.14
+Progress | 0.17
+Progress | 0.2
+Progress | 0.23
+Progress | 0.26
+Progress | 0.28
+Progress | 0.3
+Progress | 0.33
+Progress | 0.36
+Progress | 0.39
+Progress | 0.41
+Progress | 0.43
+Progress | 0.46
+Progress | 0.49
+Progress | 0.52
+Progress | 0.54
+Progress | 0.57
+Progress | 0.6
+Progress | 0.63
+Progress | 0.66
+Progress | 0.69
+Progress | 0.72
+Progress | 0.75
+Progress | 0.78
+Progress | 0.8
+Progress | 0.83
+Progress | 0.85
+Progress | 0.88
+Progress | 0.91
+Progress | 0.94
+Progress | 0.97
+Progress | 1
+Message  | 2D Flow Area 'camaligan' tables complete 29.88 sec
 Progress | 30
 Progress | 50
 Progress | 80
@@ -19,7 +118,7 @@ Message  | Completed Writing Event Condition Data
 Message  | 
 Message  | PROCESS:RASGeomPreprocess
 Message  | 	
-Message  | Geometric Preprocessor HEC-RAS 6.7 Beta2 April 2025
+Message  | Geometric Preprocessor HEC-RAS 6.7 Beta January 2025
 Progress | 0.2
 Progress | 0.3
 Message  |  
@@ -30,17 +129,17 @@ Message  | Finished Processing Geometry
 Message  | 
 Message  | PROCESS:RasUnsteady
 Message  | 
-Message  | Performing Unsteady Flow Simulation  HEC-RAS 6.7 Beta2 April 2025
+Message  | Performing Unsteady Flow Simulation  HEC-RAS 6.7 Beta January 2025
 Progress | 0.1
 Progress | 0.2
 Progress | 0.3
 Message  |  
-Progress | 0.2414062
-Progress | 0.2859375
+Progress | 0.1007812
 Message  | 	
 Message  | Unsteady Input Summary:
 Message  |      2D Unsteady Diffusion Wave Equation Set (fastest)
-Message  |      2D number of Solver Cores:    2
+Message  |      2D number of Solver Cores:    4
+Progress | 0.3
 Progress | 0.4
 Progress | 0.5
 Progress | 0.6
@@ -86,8 +185,8 @@ Progress | 0.95
 Progress | 0.9733334
 Progress | 1
 Message  | 
-Message  | Overall Volume Accounting Error in 1000 m^3:           0.04086
-Message  | Overall Volume Accounting Error as percentage:          0.000596
+Message  | Overall Volume Accounting Error in 1000 m^3:          0.000442
+Message  | Overall Volume Accounting Error as percentage:      0.0000117379
 Message  | Please review "Computational Log File" output for volume accounting details
 Message  | 
 Message  | Writing Results to DSS
@@ -103,12 +202,12 @@ Message  |
 Message  | Computations Summary
 Message  | 
 Message  | Computation Task	Time(hh:mm:ss)
-Message  | Completing Geometry, Flow and Plan	      10
-Message  | Preprocessing Geometry	       1
-Message  | Unsteady Flow Computations	      41
+Message  | Completing Geometry, Flow and Plan	      33
+Message  | Preprocessing Geometry	<1
+Message  | Unsteady Flow Computations	      50
 Message  | Computing Maps	       1
-Message  | Complete Process	      55
+Message  | Complete Process	    1:25
 Message  | 
 Message  | Computation Speed	Simulation/Runtime
-Message  | Unsteady Flow Computations	430x
-Message  | Complete Process	323x
+Message  | Unsteady Flow Computations	355x
+Message  | Complete Process	210x

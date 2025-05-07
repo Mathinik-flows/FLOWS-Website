@@ -6,14 +6,16 @@ import pandas as pd
 import os # To handle multiple files
 
 # --- Configuration ---
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # --- INPUTS ---
 # Path to the vector file with barangay boundaries
+
 # Make sure this file contains *only* Camaligan barangays or has a column to filter by.
-barangay_vector_path = "assets/map/Camaligan_Barangay_Boundary" # Or .shp, etc.
-datetime_csv_path = "assets/flood_predictions.csv"
+barangay_vector_path = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'map', 'Camaligan_Barangay_Boundary')) # Or .shp, etc.
+datetime_csv_path = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'flood_predictions.csv'))
 # Directory containing your GeoTIFF flood maps
-geotiff_directory = "assets/original"
+geotiff_directory = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'original'))
 # List of specific GeoTIFF filenames to process (or find them automatically)
 geotiff_files = [
     "tif_rgb_0.tif",
@@ -28,7 +30,7 @@ geotiff_files = [
 barangay_name_column = 'name_bgy' # <--- IMPORTANT: Change this to match your file's column name!
 
 # --- OUTPUT ---
-output_report_csv = "assets/reports/barangay_flood_report.csv"
+output_report_csv = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'reports', 'barangay_flood_report.csv'))
 
 # --- ANALYSIS SETTINGS ---
 stats_to_calculate = ['max'] # Calculate maximum value within each zone
@@ -201,8 +203,7 @@ for hour in report_df.columns[1:]:
     # Sort by flood value (descending), get top 5
     top5 = report_df[['Barangay', hour]].sort_values(by=hour, ascending=False).head(5)
     
-    
-    filename = f"assets/reports/top5_{count}.csv"
+    filename = os.path.abspath(os.path.join(BASE_DIR, '..', '..', 'assets', 'reports', f'top5_{count}.csv'))
     count += 1
     
     # Save to CSV
