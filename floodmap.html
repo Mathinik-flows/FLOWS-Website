@@ -1000,7 +1000,6 @@
                     if (isNaN(year) || isNaN(month) || isNaN(day) || isNaN(hour)) { console.warn(`Skipping line ${i + 1}: Invalid date/time components. Line: "${line}"`); continue; }
                     try {
                         const dateObject = new Date(year, month - 1, day, hour);
-                        dateObject.setDate(dateObject.getDate() - 2);
                         let formattedString = dateTimeFormatter.format(dateObject);
                         if (!formattedString.includes(':')) { formattedString = formattedString.replace(/ (AM|PM)$/, ':00 $1'); } // Add :00 if needed
                         dropdownItemsData.push({ text: formattedString, index: i - 1 });
