@@ -11,8 +11,8 @@ import os
 # import zipfile # Not needed based on your active S3 upload code
 
 # --- Configuration ---
-username = 'gavinciii' # Replace with your actual Mapbox username
-mapbox_token = 'sk.eyJ1IjoiZ2F2aW5jaWlpIiwiYSI6ImNtOXJxYzBieTFsamsya3I3a3RkaXRidmoifQ.AKsqwHhiw5MMo66QVQeIRw' # Replace with your secret Mapbox API token (keep this secure!)
+username = '' # Replace with your actual Mapbox username
+mapbox_token = '' # Replace with your secret Mapbox API token (keep this secure!)
 base_tif_path = r'assets/map/8bit' # Base directory containing your TIF files
 
 # --- Loop through file numbers 1 to 11 ---
