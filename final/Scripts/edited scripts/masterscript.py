@@ -13,8 +13,8 @@ from glob import glob
 import re
 
 # === CONFIGURATION ===
-mapbox_token = 'sk.eyJ1IjoiZ2F2aW5jaWkiLCJhIjoiY205Zjl3NHhkMGlvYzJyc2MwNm05b2c0ayJ9.OTA15_jphYcO85Cj46F4VQ'
-username = 'gavincii'
+mapbox_token = ''
+username = ''
 PROJECT_FILE = r"D:\FLOWS\Ver2\FLOWS-Website\final\flow.prj"
 UNSTEADY_FILE = r"D:\FLOWS\Ver2\FLOWS-Website\final\flow.u01"
 CSV_FILE = r"D:\FLOWS\Ver2\FLOWS-Website\final\Config\october2024_predictions.csv"
